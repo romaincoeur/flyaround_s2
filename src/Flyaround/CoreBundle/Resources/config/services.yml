@@ -1,0 +1,7 @@
+parameters:
+#    flyaround_welcome.example.class: Flyaround\WelcomeBundle\Example
+
+services:
+#    flyaround_welcome.example:
+#        class: %flyaround_welcome.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

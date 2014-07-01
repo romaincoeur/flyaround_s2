@@ -1,5 +1,9 @@
-flyaround_welcome:
-    resource: "@FlyaroundWelcomeBundle/Resources/config/routing.yml"
+flyaround_map:
+    resource: "@FlyaroundMapBundle/Resources/config/routing.yml"
+    prefix:   /
+
+flyaround_core:
+    resource: "@FlyaroundCoreBundle/Resources/config/routing.yml"
     prefix:   /
 
 
@@ -36,6 +40,6 @@ _sonata_admin:
     type: sonata_admin
     prefix: /admin
 
-# error-prevention
 homepage:
- pattern: /
+    pattern:  /
+    defaults: { _controller: FlyaroundCoreBundle:Default:index }

@@ -1,0 +1,128 @@
+{# src/Flyaround/MapBundle/Resources/views/index.html.twig #}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>{% block title %}Flyaround{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/bootstrap.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/global.css') }}" type="text/css"/>
+    {% endblock %}
+
+    <!-- FONTS -->
+    <style type="text/css">
+
+        /*@import url("http://fast.fonts.net/lt/1.css?apiType=css&c=6c3db46d-2348-428f-89b7-2e11bb00ab65&fontids=1122878,1122872");*/
+        @font-face {
+            font-family: "ITCAvantGardeW04-Book";
+            src: url("{{ asset('bundles/flyaroundcore/fonts/1122878/daa5c000-4e87-40e9-9689-eec7fd2a19e1.eot?#iefix') }}");
+            src: url("{{ asset('bundles/flyaroundcore/fonts/1122878/daa5c000-4e87-40e9-9689-eec7fd2a19e1.eot?#iefix') }}") format("eot"), url("{{ asset('bundles/flyaroundcore/fonts/1122878/e58aa4f4-3fa9-4138-9cc9-712e1955902c.woff') }}") format("woff"), url("{{ asset('bundles/flyaroundcore/fonts/1122878/b335d0cc-8594-4212-a73a-eb2a55d2b008.ttf') }}") format("truetype"), url("{{ asset('bundles/flyaroundcore/fonts/1122878/3fec63b6-5c06-495d-8bad-0555b665ab8e.svg#3fec63b6-5c06-495d-8bad-0555b665ab8e') }}") format("svg");
+        }
+
+        @font-face {
+            font-family: "ITCAvantGardeW04-Bold";
+            src: url("{{ asset('bundles/flyaroundcore/fonts/1122872/4440e247-5f11-4b81-81fc-4f2e5a9573ff.eot?#iefix') }}");
+            src: url("{{ asset('bundles/flyaroundcore/fonts/fonts/1122872/4440e247-5f11-4b81-81fc-4f2e5a9573ff.eot?#iefix') }}") format("eot"), url("{{ asset('bundles/flyaroundcore/fonts/1122872/b4cf0471-a031-48a8-a02a-0000def6fd87.woff') }}") format("woff"), url("{{ asset('bundles/flyaroundcore/fonts/1122872/67eef87d-0308-420c-99da-8e75af66f09f.ttf') }}") format("truetype"), url("{{ asset('bundles/flyaroundcore/fonts/1122872/91b0afed-75b4-473d-a2ae-04a3679f2a1c.svg#91b0afed-75b4-473d-a2ae-04a3679f2a1c') }}") format("svg");
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <div class="left">
+        <a href="{{ path('homepage') }}">
+            <img class="logo" src="{{ asset('bundles/flyaroundcore/images/logo.png') }}" alt="logo de Flyaround"
+                 width="40px">
+
+            <h1><b>fly</b>around</h1>
+        </a>
+        <img class="point icon" src="{{ asset('bundles/flyaroundcore/images/point.png') }}" alt="separateur">
+
+        <h2>survoler, découvrir, admirer</h2>
+    </div>
+    <div class="right">
+        {% block userBlock %}
+            {{ render(controller("ApplicationSonataUserBundle:Default:viewModule")) }}
+        {% endblock %}
+
+    </div>
+    <div class="clearfix"></div>
+</header>
+
+<div id="map" style="width:100%; height:100%">
+    Veuillez patienter pendant le chargement de la carte...
+</div>
+
+<div class="leftPanel col-md-2">
+    <div class="header">
+        <img src="" alt="photo profil">
+
+        <div class="name">Marc Degranjean</div>
+        <hr>
+        <div class="description">Pilote chez Air France</div>
+        <div class="city"><img src="" alt="marker">Paris</div>
+    </div>
+    <div class="menu">
+        <button id="news-button">ACTUALITE</button>
+        <button id="flylist-button">MA FLY'LIST</button>
+        <button id="myadds-button">MES AJOUTS</button>
+        <button id="favorites-button">MES FAVORIS</button>
+        <button id="profile-button">MON PROFIL</button>
+    </div>
+</div>
+
+<div id="news-panel" class="panel col-md-5">
+    Actualités
+</div>
+<div id="flylist-panel" class="panel col-md-5">
+    Ma flylist
+</div>
+<div id="myadds-panel" class="panel col-md-5">
+    Mes ajouts
+</div>
+<div id="favorites-panel" class="panel col-md-5">
+    Mes favoris
+</div>
+<div id="profile-panel" class="panel col-md-5">
+    Mon profil
+</div>
+
+{# jquery est chargé en local si l'environnement est dev #}
+{% if app.environment == 'dev' %}
+    <script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/jquery.js') }}"></script>
+{% else %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+{% endif %}
+<script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/bootstrap.js') }}"></script>
+
+<!-- Google map -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+
+    var latlng = new google.maps.LatLng({{ latitude }}, {{ longitude }});
+    // paris : 48.8575162	2.3426246
+    //objet contenant des propriétés avec des identificateurs prédéfinis dans Google Maps permettant
+    //de définir des options d'affichage de notre carte
+    var options = {
+        center: latlng,
+        zoom: {{ zoom }},
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true
+    };
+
+    //constructeur de la carte qui prend en paramêtre le conteneur HTML
+    //dans lequel la carte doit s'afficher et les options
+    var map = new google.maps.Map(document.getElementById("map"), options);
+
+</script>
+
+<script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/map.js') }}"></script>
+
+</body>
+</html>

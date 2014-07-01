@@ -1,0 +1,3 @@
+flyaround_map_homepage:
+    pattern:  /app
+    defaults: { _controller: FlyaroundMapBundle:Default:index }

@@ -16,7 +16,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Flyaround\WelcomeBundle\FlyaroundWelcomeBundle(),
+            new Flyaround\CoreBundle\FlyaroundCoreBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Flyaround\MapBundle\FlyaroundMapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
