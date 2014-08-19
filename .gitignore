@@ -8,4 +8,6 @@
 /build/
 /vendor/
 /bin/
-/composer.phar//.idea//
+/composer.phar
+out/*
+.idea/*
