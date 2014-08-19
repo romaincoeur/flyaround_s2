@@ -5,7 +5,22 @@
 {% block title %}{{ parent() }} - Index{% endblock %}
 
 {% block body %}
-    <div id="gmap" style="width:100%; height:700px">
+    <div id="bg">
+        <img style="width:1350px;height:auto;" src="{{ asset('bundles/flyaroundcore/images/calvi.png') }}">
+    </div>
+    <div class="logo_centre">
+        <a href="{{ path('homepage') }}">
+            <img class="logo" src="{{ asset('bundles/flyaroundcore/images/logo-white.png') }}" alt="logo de Flyaround"
+                 width="230px">
+            <img class="logo" src="{{ asset('bundles/flyaroundcore/images/logo-white-32.png') }}" alt="logo de Flyaround"
+                 width="auto">
+        </a>
+        <p> <h2>survoler, découvrir, admirer</h2></p>
+
+
+    </div>
+
+    <!--<div id="gmap" style="width:100%; height:700px">
         Veuillez patienter pendant le chargement de la carte...
     </div>
 
@@ -21,7 +36,7 @@
                 <b>Rechercher un site</b>
             </div>
         </a>
-    </div>
+    </div>-->
 
     <div id="suggestions" class="bg-grey">
         <div id="controls">
