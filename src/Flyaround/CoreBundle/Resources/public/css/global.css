@@ -161,11 +161,12 @@ header h2 {
 .logo_centre{
     position: absolute;
     top: 165px;
-    left: 475px;
+    left: 50%;
     color: #FFFFFF;
     text-align: center;
-    width:400px;
+    width:440px;
     font-size: 18px;
+    margin-left:-220px;
 }
 
 .instructions {

@@ -10,4 +10,4 @@
 /bin/
 /composer.phar
 .idea/*
-composer.lock
+/composer.lock
