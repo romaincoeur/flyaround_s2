@@ -16,8 +16,8 @@ body {
 
 .icon {
     display: inline-block;
-    max-width: 25px;
-    max-height: 25px;
+    max-width: 40px;
+    max-height: 40px;
     padding: 0;
 }
 
@@ -26,6 +26,7 @@ body {
 }
 
 .left {
+
     display: inline-block;
     float: left;
 }
@@ -83,6 +84,7 @@ h2 {
 /*************************************************/
 
 header {
+
     margin: 0;
     color: #000000;
     position: fixed;
@@ -93,8 +95,22 @@ header {
 }
 
 header .right {
-    width: 240px;
-    margin-top: 10px;
+    width: 400px;
+    margin-top: 20px;
+    float: right;
+}
+
+header .left .icon {
+    margin-left: 10px;
+    width: 32px;
+    margin-top: 15px;
+}
+
+header .right .icon {
+    margin-left: 0px;
+    width: 32px;
+    height: 32px;
+    margin-top: 5px;
 }
 
 header img.logo {
@@ -124,17 +140,33 @@ header h2 {
 }
 
 .user-btn {
+
+    background-color: #f5f5f5;
     border-radius: 10px;
+    width: 35%;
+    margin-left: 30px;
+    box-shadow: #808080 0px 3px 1px;
+
 }
 
 .user-btn:hover {
-    border: solid #444444 2px;
+    border: solid #444444 1px;
     color: #000000;
+    box-shadow: none;
 }
 
 /*************************************************/
 /*               Page d'accueil                  */
 /*************************************************/
+.logo_centre{
+    position: absolute;
+    top: 165px;
+    left: 475px;
+    color: #FFFFFF;
+    text-align: center;
+    width:400px;
+    font-size: 18px;
+}
 
 .instructions {
     position: absolute;
