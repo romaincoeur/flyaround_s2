@@ -11,10 +11,13 @@ class DefaultController extends Controller
         $latitude = $this->get('request')->get('lat');
         $longitude = $this->get('request')->get('lon');
         $zoom = $this->get('request')->get('zoom');
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('FlyaroundMapBundle:Fly')->findAll();
         return $this->render('FlyaroundMapBundle:Default:index.html.twig', array(
             'latitude' => $latitude,
             'longitude' => $longitude,
             'zoom' => $zoom,
+            'flies' => $entities
         ));
     }
 }

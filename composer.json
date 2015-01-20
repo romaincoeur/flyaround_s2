@@ -30,7 +30,8 @@
         "sonata-project/user-bundle": "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "sonata-project/core-bundle": "dev-master",
-        "sonata-project/jquery-bundle": "1.8.x-dev"
+        "sonata-project/jquery-bundle": "1.8.x-dev",
+        "willdurand/faker-bundle": "~1.0"
     },
     "scripts": {
         "post-install-cmd": [

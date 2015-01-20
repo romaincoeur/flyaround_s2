@@ -132,6 +132,18 @@
     //constructeur de la carte qui prend en paramêtre le conteneur HTML
     //dans lequel la carte doit s'afficher et les options
     var map = new google.maps.Map(document.getElementById("map"), options);
+    {% for entity in flies %}
+    {% if entity.latitude and entity.longitude %}
+    var fly_position{{ loop.index }} = new google.maps.LatLng({{ entity.latitude }},{{ entity.longitude }});
+    var fly_m{{ loop.index }} = new google.maps.Marker({
+        position: fly_position{{ loop.index }},
+        map: map
+    });
+    /* google.maps.event.addListener(job_m{{ loop.index }}, 'click', function() {
+        job_info{{ loop.index }}.open(map,job_m{{ loop.index }});
+    }); */
+    {% endif %}
+    {% endfor %}
 
 </script>
 
