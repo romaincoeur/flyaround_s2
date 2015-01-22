@@ -1,0 +1,83 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Vue détaillée des terrains{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/flyaroundmap/css/flyaround.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/flyaroundcore/css/bootstrap.css') }}">
+{% endblock %}
+
+{% block body -%}
+    <div id="page">
+      <header>
+        <div id="care1" class="care">
+          <div id="gps" class="ico">
+            <p class="geo">13.45.324</p>
+          </div>
+          <div id="tel" class="ico">
+            <p class="geo">02.37.34.43.48</p>
+          </div>
+          <div id="adresse" class="ico">
+            <p class="geo">Route de Coltainville</p>
+            <p class="geo">28000 Chartres</p>
+          </div>
+        </div>
+        <div id="care2" class="care">
+          <h5 id="spotname">Aérodrôme de Chartres</h5>
+          <div id="line"></div>
+        </div>
+        <div class="care">
+          <input type="button" name="terrain" value="Alentours de ce terrain" id="bouton">
+          <a href="#"><div id="croix"></div></a>
+        </div>
+      </header>
+      <div id="box">
+        <p id="desc">Les plus beaux sites aux alentours de ce terrain</p>
+        <div id="line2"></div>
+        <div class="vue">
+          <div class="profil">
+            <div class="photo"></div>
+            <p class="name">Port</p>
+            <div id="line3"></div>
+            <p class="name">Robert Downey JR.</p>
+            <div class="build"></div>
+          </div>
+          <div class="img"></div>
+        </div>
+        <div class="vue">
+          <div class="profil">
+            <div class="photo"></div>
+            <p class="name">Port</p>
+            <div id="line3"></div>
+            <p class="name">Robert Downey JR.</p>
+            <div class="build"></div>
+          </div>
+          <div class="img"></div>
+        </div>
+        <div class="vue">
+          <div class="profil">
+            <div class="photo"></div>
+            <p class="name">Port</p>
+            <div id="line3"></div>
+            <p class="name">Robert Downey JR.</p>
+            <div class="build"></div>
+          </div>
+          <div class="img"></div>
+        </div>
+        <div class="vue">
+          <div class="profil">
+            <div class="photo"></div>
+            <p class="name">Port</p>
+            <div id="line3"></div>
+            <p class="name">Robert Downey JR.</p>
+          </div>
+          <div class="img"></div>
+        </div>
+      </div><!--box-->
+    </div><!--page-->
+{% endblock %}
+
+{% block javascripts %}
+    <script charset="utf-8" type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/jquery.js') }}"></script>
+    <script charset="utf-8" type="text/javascript" src="{{ asset('bundles/flyaroundmap/js/flyaround.js') }}"></script>
+{% endblock %}
