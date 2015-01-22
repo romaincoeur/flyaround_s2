@@ -1,0 +1,31 @@
+Flyaround\MapBundle\Entity\Terrain:
+    type: entity
+    table: null
+    repositoryClass: Flyaround\MapBundle\Entity\TerrainRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        latitude:
+            type: float
+        longitude:
+            type: float
+        iCAO:
+            type: string
+            length: '4'
+            column: ICAO
+        iATA:
+            type: string
+            length: '3'
+            column: IATA
+        description:
+            type: text
+        altitude:
+            type: float
+    lifecycleCallbacks: {  }
