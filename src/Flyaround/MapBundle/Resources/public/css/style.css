@@ -1,0 +1,86 @@
+/*
+*Pannaux TOP
+*/
+#flylist-panel{
+    padding-top: 45px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#flylisttop{
+    padding-left: 40px;
+}
+.flylistgauche img {
+    height:  35px;
+    width:  35px;
+}
+.flylistmid{
+    text-align: center;
+}
+.flylistmid img {
+    height: 50px;
+    width: 50px;
+}
+.flylistdroit{
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    width: 20%;
+    box-shadow: 0px 3px 1px #808080;
+}
+.flylistdroit:hover {
+    border: 1px solid #444;
+    color: #000;
+    box-shadow: none;
+}
+
+
+#fontgris{
+    background-color: #f5f7f6;
+    padding-top: 30px;
+}
+.flylistbody {
+    margin-left: 70px;
+}
+/*
+* IMG PROFILE AND COMMENTARY
+*/
+.circular {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+
+}
+/*
+*Carousel
+*/
+#carouselflylist {
+    padding-top: 20px;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 20px;
+}
+#this-carousel-id{
+    position: relative;
+    margin-left: auto;
+}
+/*
+*Comment
+*/
+#flylistcom{
+    margin-left: 70px;
+}
+
+.xyz {
+
+}
+.flylistname{
+    padding-bottom: 10px;
+}
+.flylistcomtxt {
+    border-radius: 1px;
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 5px 5px 5px 5px;
+}

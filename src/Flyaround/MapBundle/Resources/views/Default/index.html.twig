@@ -10,7 +10,9 @@
 
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/bootstrap.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/style.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/global.css') }}" type="text/css"/>
+
     {% endblock %}
 
     <!-- FONTS -->
@@ -81,7 +83,87 @@
     Actualités
 </div>
 <div id="flylist-panel" class="panel col-md-5">
-    Ma flylist
+    <div id="flylisttop">
+        <div class="row">
+            <div class="flylistgauche col-md-4">
+                <img src="{{ asset('bundles/flyaroundmap/img/icones-27.png') }}"/> 48,3615
+                <br>
+                <img src="{{ asset('bundles/flyaroundmap/img/icones-26.png') }}"/> Esbly 23KM
+            </div>
+
+            <div class="flylistmid col-md-4">
+                <img src="{{ asset('bundles/flyaroundmap/img/geotheme-26.png') }}"/>
+                <p>ZONE TEXT 1</p>
+                <p>Ajouté par Marc Degranjean</p>
+
+            </div>
+
+            <div class="flylistdroit col-md-4">
+                <div class="col-md-1">
+                    <a href="#retenir" role="button" class="" data-toggle="modal">
+                        <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-25.png') }}"><p>Btn1</p>
+                    </a>
+                </div>
+
+                <div class="col-md-2">
+                    <a href="#retenir" role="button" class="" data-toggle="modal">
+                        <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-25.png') }}"><p>Btn2</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fontgris">
+        <div class="flylistbody">
+            <div class="row">
+                    <div style="background: url('{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}') no-repeat; background-position: 50% center;"class="col-md-1 circular">
+                    </div>
+                    <div class="col-md-4 class="text-center"">
+                        <p>"Primi igitur omnium statuuntur Epigonus "</p>
+                    </div>
+            </div>
+        </div>
+        <div id="carouselflylist">
+
+            <div class="row">
+                <div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+                    <div class="carousel-inner">
+                        <div class="item active"><!-- class of active since it's the first item -->
+                            <img src="{{ asset('bundles/flyaroundcore/images/chateau.jpg') }}" alt="" />
+
+                        </div>
+                        <div class="item">
+                            <img src="{{ asset('bundles/flyaroundcore/images/corse4.jpg') }}" alt="" />
+
+                        </div>
+
+                    </div><!-- /.carousel-inner -->
+                    <!--  Next and Previous controls below
+                          href values must reference the id for this carousel -->
+                    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+                </div><!-- /.carousel -->
+            </div>
+        </div>
+
+        <div id="flylistcom">
+            <div class="xyz">
+                <div class="row">
+                    <div style="background: url('{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}') no-repeat; background-position: 50% center;"class="col-md-1 circular">
+                            <p>Jean dupont</p>
+
+
+                            <div class="col-md-5">
+                                <div class="flylistcomtxt">
+                                    <p class="text-center">"Primi igitur omnium statuuntur Epigonus "</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 <div id="myadds-panel" class="panel col-md-5">
     Mes ajouts

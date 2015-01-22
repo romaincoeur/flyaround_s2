@@ -975,12 +975,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "52a26a522b75ad2adbf7d345903438edbf5b2947"
+                "reference": "4696fc4bd394761d5f2c2bcc6b20d45a78af6456"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/52a26a522b75ad2adbf7d345903438edbf5b2947",
-                "reference": "52a26a522b75ad2adbf7d345903438edbf5b2947",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/4696fc4bd394761d5f2c2bcc6b20d45a78af6456",
+                "reference": "4696fc4bd394761d5f2c2bcc6b20d45a78af6456",
                 "shasum": ""
             },
             "require": {
@@ -1033,7 +1033,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-01-19 13:40:40"
+            "time": "2015-01-20 09:34:44"
         },
         {
             "name": "fzaninotto/faker",
@@ -2094,12 +2094,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "26ee9fc4a559e69e29f515cd789d19d95a878acd"
+                "reference": "b1b7493fd9d8112d0f7780bcb9ec2de4f7b57867"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/26ee9fc4a559e69e29f515cd789d19d95a878acd",
-                "reference": "26ee9fc4a559e69e29f515cd789d19d95a878acd",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/b1b7493fd9d8112d0f7780bcb9ec2de4f7b57867",
+                "reference": "b1b7493fd9d8112d0f7780bcb9ec2de4f7b57867",
                 "shasum": ""
             },
             "require": {
@@ -2166,7 +2166,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2015-01-20 03:52:47"
+            "time": "2015-01-20 10:19:42"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -2751,12 +2751,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataUserBundle.git",
-                "reference": "1e374aed9e8304b309cc44ea2e8cb5127b147a26"
+                "reference": "77c205153aa84e2ad7a9eb0efd1477136d91d301"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/1e374aed9e8304b309cc44ea2e8cb5127b147a26",
-                "reference": "1e374aed9e8304b309cc44ea2e8cb5127b147a26",
+                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/77c205153aa84e2ad7a9eb0efd1477136d91d301",
+                "reference": "77c205153aa84e2ad7a9eb0efd1477136d91d301",
                 "shasum": ""
             },
             "require": {
@@ -2816,7 +2816,7 @@
                 "sonata",
                 "user"
             ],
-            "time": "2015-01-19 14:06:10"
+            "time": "2015-01-20 11:14:48"
         },
         {
             "name": "swiftmailer/swiftmailer",
