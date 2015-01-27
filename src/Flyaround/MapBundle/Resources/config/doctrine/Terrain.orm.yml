@@ -28,4 +28,65 @@ Flyaround\MapBundle\Entity\Terrain:
             type: text
         altitude:
             type: float
+        city:
+            type: string
+            length: 255
+        country:
+            type: string
+            length: 255
+        timezone:
+            type: string
+            length: 255
+        dac:
+            type: string
+            length: 255
+        departement:
+            type: string
+            length: 255
+        restreint:
+            type: boolean
+        ulm:
+            type: boolean
+        heliStation:
+            type: boolean
+        vac:
+            type: string
+            length: 255
+        touchAndGoPrice:
+            type: string
+            length: 255
+        landingPrice:
+            type: string
+            length: 255
+        dayLawnPrice:
+            type: string
+            length: 255
+        hangarPrice:
+            type: string
+            length: 255
+        altiport:
+            type: boolean
+        region:
+            type: string
+            length: 255
+        phone:
+            type: string
+            length: 255
+        published:
+            type: boolean
+        virtualName:
+            type: string
+            length: 255
+        context:
+            type: string
+            length: 255
+        contextId:
+            type: string
+            length: 255
+        isMainContext:
+            type: boolean
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
     lifecycleCallbacks: {  }
