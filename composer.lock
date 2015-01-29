@@ -2094,12 +2094,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "b1b7493fd9d8112d0f7780bcb9ec2de4f7b57867"
+                "reference": "4cd443ea68e59453f4b0687b1d8334f6876eabcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/b1b7493fd9d8112d0f7780bcb9ec2de4f7b57867",
-                "reference": "b1b7493fd9d8112d0f7780bcb9ec2de4f7b57867",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/4cd443ea68e59453f4b0687b1d8334f6876eabcd",
+                "reference": "4cd443ea68e59453f4b0687b1d8334f6876eabcd",
                 "shasum": ""
             },
             "require": {
@@ -2166,7 +2166,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2015-01-20 10:19:42"
+            "time": "2015-01-23 17:04:17"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -2299,12 +2299,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCoreBundle.git",
-                "reference": "21977f75193f012de3e31307c678b9c854b0248a"
+                "reference": "938dbeaca63caa60a5edaaaffb4a711da3a00d14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/21977f75193f012de3e31307c678b9c854b0248a",
-                "reference": "21977f75193f012de3e31307c678b9c854b0248a",
+                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/938dbeaca63caa60a5edaaaffb4a711da3a00d14",
+                "reference": "938dbeaca63caa60a5edaaaffb4a711da3a00d14",
                 "shasum": ""
             },
             "require": {
@@ -2356,7 +2356,7 @@
             "keywords": [
                 "sonata"
             ],
-            "time": "2015-01-06 10:16:04"
+            "time": "2015-01-23 16:29:54"
         },
         {
             "name": "sonata-project/datagrid-bundle",
@@ -2742,7 +2742,6 @@
                 "jquery",
                 "sonata"
             ],
-            "abandoned": true,
             "time": "2013-03-01 17:24:02"
         },
         {
@@ -2751,12 +2750,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataUserBundle.git",
-                "reference": "77c205153aa84e2ad7a9eb0efd1477136d91d301"
+                "reference": "e3710f8f249e64ef59a464fce76b6f8110fab34c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/77c205153aa84e2ad7a9eb0efd1477136d91d301",
-                "reference": "77c205153aa84e2ad7a9eb0efd1477136d91d301",
+                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/e3710f8f249e64ef59a464fce76b6f8110fab34c",
+                "reference": "e3710f8f249e64ef59a464fce76b6f8110fab34c",
                 "shasum": ""
             },
             "require": {
@@ -2816,7 +2815,7 @@
                 "sonata",
                 "user"
             ],
-            "time": "2015-01-20 11:14:48"
+            "time": "2015-01-23 16:30:53"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2872,16 +2871,16 @@
         },
         {
             "name": "symfony/assetic-bundle",
-            "version": "v2.5.0",
+            "version": "v2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle.git",
-                "reference": "90ea7fb66d6d5245fd4afc16e4c8070214254fec"
+                "reference": "39d0e15b63936464a9929c00f8e28a30f2331419"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/90ea7fb66d6d5245fd4afc16e4c8070214254fec",
-                "reference": "90ea7fb66d6d5245fd4afc16e4c8070214254fec",
+                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/39d0e15b63936464a9929c00f8e28a30f2331419",
+                "reference": "39d0e15b63936464a9929c00f8e28a30f2331419",
                 "shasum": ""
             },
             "require": {
@@ -2932,7 +2931,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2014-10-15 12:03:38"
+            "time": "2015-01-26 13:00:20"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -3220,16 +3219,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.17.0",
+            "version": "v1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "2493970fa4d587eca73f77e6d8bd48a8bdd4c608"
+                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/2493970fa4d587eca73f77e6d8bd48a8bdd4c608",
-                "reference": "2493970fa4d587eca73f77e6d8bd48a8bdd4c608",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/4cf7464348e7f9893a93f7096a90b73722be99cf",
+                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf",
                 "shasum": ""
             },
             "require": {
@@ -3238,7 +3237,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.17-dev"
+                    "dev-master": "1.18-dev"
                 }
             },
             "autoload": {
@@ -3273,7 +3272,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-01-14 10:15:49"
+            "time": "2015-01-25 17:32:08"
         },
         {
             "name": "willdurand/faker-bundle",
