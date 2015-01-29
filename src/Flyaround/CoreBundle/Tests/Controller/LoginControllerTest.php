@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class CoreControllerTest extends WebTestCase
 {
     
-    public function testCompleteScenario()
+    public function testLogin()
     {
         // Create a new client to browse the application
         $client = static::createClient();
