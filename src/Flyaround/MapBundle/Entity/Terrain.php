@@ -10,6 +10,37 @@ use Doctrine\ORM\Mapping as ORM;
 class Terrain
 {
     /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        if(!$this->getCreatedAt())
+        {
+            $this->created_at = new \DateTime();
+        }
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function setUpdatedAtValue()
+    {
+        $this->updated_at = new \DateTime();
+    }
+
+
+
+
+
+
+
+
+
+
+
+    // YAML GENERATED CODE
+    
+    /**
      * @var integer
      */
     private $id;
@@ -48,6 +79,121 @@ class Terrain
      * @var float
      */
     private $altitude;
+
+    /**
+     * @var string
+     */
+    private $city;
+
+    /**
+     * @var string
+     */
+    private $country;
+
+    /**
+     * @var string
+     */
+    private $timezone;
+
+    /**
+     * @var string
+     */
+    private $dac;
+
+    /**
+     * @var string
+     */
+    private $departement;
+
+    /**
+     * @var boolean
+     */
+    private $restreint;
+
+    /**
+     * @var boolean
+     */
+    private $ulm;
+
+    /**
+     * @var boolean
+     */
+    private $heliStation;
+
+    /**
+     * @var string
+     */
+    private $vac;
+
+    /**
+     * @var string
+     */
+    private $touchAndGoPrice;
+
+    /**
+     * @var string
+     */
+    private $landingPrice;
+
+    /**
+     * @var string
+     */
+    private $dayLawnPrice;
+
+    /**
+     * @var string
+     */
+    private $hangarPrice;
+
+    /**
+     * @var boolean
+     */
+    private $altiport;
+
+    /**
+     * @var string
+     */
+    private $region;
+
+    /**
+     * @var string
+     */
+    private $phone;
+
+    /**
+     * @var boolean
+     */
+    private $published;
+
+    /**
+     * @var string
+     */
+    private $virtualName;
+
+    /**
+     * @var string
+     */
+    private $context;
+
+    /**
+     * @var string
+     */
+    private $contextId;
+
+    /**
+     * @var boolean
+     */
+    private $isMainContext;
+
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
 
 
     /**
@@ -220,121 +366,6 @@ class Terrain
     {
         return $this->altitude;
     }
-    /**
-     * @var string
-     */
-    private $city;
-
-    /**
-     * @var string
-     */
-    private $country;
-
-    /**
-     * @var string
-     */
-    private $timezone;
-
-    /**
-     * @var string
-     */
-    private $dac;
-
-    /**
-     * @var string
-     */
-    private $departement;
-
-    /**
-     * @var boolean
-     */
-    private $restreint;
-
-    /**
-     * @var boolean
-     */
-    private $ulm;
-
-    /**
-     * @var boolean
-     */
-    private $heliStation;
-
-    /**
-     * @var string
-     */
-    private $vac;
-
-    /**
-     * @var string
-     */
-    private $touchAndGoPrice;
-
-    /**
-     * @var string
-     */
-    private $landingPrice;
-
-    /**
-     * @var string
-     */
-    private $dayLawnPrice;
-
-    /**
-     * @var string
-     */
-    private $hangarPrice;
-
-    /**
-     * @var boolean
-     */
-    private $altiport;
-
-    /**
-     * @var string
-     */
-    private $region;
-
-    /**
-     * @var string
-     */
-    private $phone;
-
-    /**
-     * @var boolean
-     */
-    private $published;
-
-    /**
-     * @var string
-     */
-    private $virtualName;
-
-    /**
-     * @var string
-     */
-    private $context;
-
-    /**
-     * @var string
-     */
-    private $contextId;
-
-    /**
-     * @var boolean
-     */
-    private $isMainContext;
-
-    /**
-     * @var \DateTime
-     */
-    private $createdAt;
-
-    /**
-     * @var \DateTime
-     */
-    private $updatedAt;
-
 
     /**
      * Set city

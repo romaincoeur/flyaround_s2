@@ -26,6 +26,7 @@ Flyaround\MapBundle\Entity\Terrain:
             column: IATA
         description:
             type: text
+            nullable: true
         altitude:
             type: float
         city:
@@ -77,16 +78,23 @@ Flyaround\MapBundle\Entity\Terrain:
         virtualName:
             type: string
             length: 255
+            nullable: true
         context:
             type: string
             length: 255
+            nullable: true
         contextId:
             type: string
             length: 255
+            nullable: true
         isMainContext:
             type: boolean
+            nullable: true
         createdAt:
             type: datetime
         updatedAt:
             type: datetime
-    lifecycleCallbacks: {  }
+            nullable: true
+    lifecycleCallbacks:
+        prePersist: [ setCreatedAtValue ]
+        preUpdate: [ setUpdatedAtValue ]

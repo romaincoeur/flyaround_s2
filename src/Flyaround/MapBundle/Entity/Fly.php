@@ -15,9 +15,7 @@ class Fly
 
 
 
-    /**
-     * Genrate by console
-     */
+    // YAML GENERATED CODE
 
     /**
      * @var integer

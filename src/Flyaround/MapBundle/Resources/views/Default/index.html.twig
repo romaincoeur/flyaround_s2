@@ -49,10 +49,6 @@
         <h2>survoler, découvrir, admirer</h2>
     </div>
     <div class="right">
-        {% block userBlock %}
-            {{ render(controller("ApplicationSonataUserBundle:Default:viewModule")) }}
-        {% endblock %}
-
     </div>
     <div class="clearfix"></div>
 </header>
@@ -214,6 +210,10 @@
     //constructeur de la carte qui prend en paramêtre le conteneur HTML
     //dans lequel la carte doit s'afficher et les options
     var map = new google.maps.Map(document.getElementById("map"), options);
+
+    //Chargement des icones
+    var icon_airport = "{{ asset('bundles/flyaroundmap/img/geotheme-29.png') }}";
+
     {% for entity in flies %}
     {% if entity.latitude and entity.longitude %}
     var fly_position{{ loop.index }} = new google.maps.LatLng({{ entity.latitude }},{{ entity.longitude }});
@@ -221,9 +221,17 @@
         position: fly_position{{ loop.index }},
         map: map
     });
-    /* google.maps.event.addListener(job_m{{ loop.index }}, 'click', function() {
-        job_info{{ loop.index }}.open(map,job_m{{ loop.index }});
-    }); */
+    {% endif %}
+    {% endfor %}
+
+    {% for terr in terrains %}
+    {% if terr.latitude and terr.longitude %}
+    var terr_position{{ loop.index }} = new google.maps.LatLng({{ terr.latitude }},{{ terr.longitude }});
+    var terr_m{{ loop.index }} = new google.maps.Marker({
+        position: terr_position{{ loop.index }},
+        map: map,
+        icon: icon_airport
+    });
     {% endif %}
     {% endfor %}
 
