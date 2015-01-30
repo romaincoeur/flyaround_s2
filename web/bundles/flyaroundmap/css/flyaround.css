@@ -9,15 +9,6 @@ header{
   margin-bottom: 10px;
   text-align: center;
 }
-
-.ico{
-  width: 200px;
-  height: 35px;
-  background-size: 20%;
-  background-repeat: no-repeat;
-  background-position: 0% 100%;
-  text-align: center;
-}
 .care{
   width: 197px;
   height: 110px;
@@ -29,25 +20,33 @@ header{
 #care1{
   padding-top: 10px;
 }
-#gps{
-  background-image: url("/home/apprenti/WildCodeSchool/flyaround/img/icones-27.png");
+.icone{
+  width: 200px;
+  height: 35px;
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  text-align: center;
 }
-#tel{
-  background-image: url("/home/apprenti/WildCodeSchool/flyaround/img/icones-32.png");  
+.ico{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 0px;
 }
-#adresse{
-  background-image: url("/home/apprenti/WildCodeSchool/flyaround/img/icones-33.png");
+#ico1{
+  top: -3px;
+}
+#ico2{
+  top: 35px;
+}
+#ico3{
+  top: 73px;
 }
 .geo{
   text-align: left;
   margin: 0px 0px 0px 40px;
   font-size: 11px;
-}
-#care2{
-  background-image: url("/home/apprenti/WildCodeSchool/flyaround/img/geotheme-29.png");
-  background-repeat: no-repeat;
-  background-size: 30%;
-  background-position: top center;
 }
 #line{
   width: 40px;
@@ -58,25 +57,25 @@ header{
 }
 #bouton{
   width: 170px;
+  height: 25px;
   color: blue;
   font-size: 13px;
-  background-image: url("/home/apprenti/WildCodeSchool/flyaround/img/icones-28.png");
-  background-repeat: no-repeat;
-  background-size: 13%;
-  background-position: 5% 95%;
   border-radius: 7px;
   box-shadow: 0px 4px 0px #B2B2B2;
   text-align: right;
   margin-top: 30px;
 }
-#pbtn{
-  text-align: right;
+#flag{
+  height: 20px;
+  width: 20px;
 }
 p{
   margin: 0;
 }
-#spotname{
-  margin-top: 60px;
+#logo{
+  height: 60px;
+  width: 60px;
+  margin: 0 auto;
 }
 #line2{
   width: 40px;
@@ -88,21 +87,19 @@ p{
 #croix{
   width: 25px;
   height: 25px;
-  background-image: url("/home/apprenti/WildCodeSchool/flyaround/img/icones-23.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  float: right;
+  position: absolute;
+  left: 580px;
 }
 #box{
   width: 600px;
   height: auto;
   text-align: center;
   background-color: #F2F2F2;
-  padding-top: 70px;
+  padding-top: 100px; /*Marge pour le slider*/
 }
 .vue{
-  width: 220px;
-  height: 220px;
+  width: 230px;
+  height: 235px;
   display: inline-block;
   margin: 0px 20px 40px 20px;
 }
@@ -110,51 +107,47 @@ p{
   width: auto;
   height: 55px;
   background-color: white;
-  background-image: url("/home/apprenti/WildCodeSchool/flyaround/img/geotheme-26.png");
-  background-size: 20%;
-  background-repeat: no-repeat;
-  background-position: 100% 0%;
+  text-align: center;
 }
-.photo{
+.avatar{
+  border-radius: 100%;
   width: 40px;
   height: 40px;
-  border-radius: 100%;
-  margin: 7px 0px 0px 10px;
-  background-image: url("/home/apprenti/WildCodeSchool/flyaround/img/avatar.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  display: inline-block;
   float: left;
-  clear: right;
+  margin: 8px 0px 0px 8px;
 }
-.img{
-  width:auto;
-  height: 165px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url("/home/apprenti/WildCodeSchool/flyaround/img/vue3.png");
+.embleme{
+  width: 40px;
+  height: 40px;
+  margin: 8px 8px 0px 0px;
+  float: right;
 }
 #desc{
   font-size: 16px;
 }
 .build{
-  width: 40px;
-  height: 40px;
-  float: right;
-  margin: 8px 8px 0px 0px;
+  width: 200px;
+  height: 200px;
+}
+.decor{
+  width: 100%;
+  height: 180px;
+  max-width: 100%;
 }
 #line3{
   width: 45px;
   height: 1px;
   background-color: #C0C0C0;
   margin: 0 auto;
-  margin-bottom: 10px;
 }
 .name{
-  font-size: 12px;
-  margin: 0 auto;
-  margin-right: 45px;
+  margin: 0px;
+}
+.dynamicText{
+  padding-top: 5px;
+  width:110px;
+  display: inline-block;
+  text-align: center;
 }
 .effet{
   box-shadow: 3px 3px 3px #888888;
