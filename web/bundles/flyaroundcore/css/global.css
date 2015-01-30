@@ -1,0 +1,403 @@
+/*************************************************/
+/*                  GENERAL                      */
+/*************************************************/
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'ITCAvantGardeW04-Book';
+    background-color: #FFFFFF;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    display: inline-block;
+    max-width: 40px;
+    max-height: 40px;
+    padding: 0;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.left {
+
+    display: inline-block;
+    float: left;
+}
+
+.right {
+    display: inline-block;
+    float: right;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+b {
+    font-family: 'ITCAvantGardeW04-Bold';
+    font-weight: normal;
+}
+
+.wrap {
+    min-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.w33 {
+    width: 33%;
+    min-width: 200px;
+    display: inline-block;
+}
+
+h3 {
+    color: #002ADF;
+}
+
+hr {
+    border-color: #999;
+    border-top: none;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    display: inline;
+}
+
+/*************************************************/
+/*                  HEADER                       */
+/*************************************************/
+
+header {
+
+    margin: 0;
+    color: #000000;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+}
+
+header .right {
+    width: 400px;
+    margin-top: 20px;
+    float: right;
+}
+
+header .left .icon {
+    margin-left: 10px;
+    width: 32px;
+    margin-top: 15px;
+}
+
+header .right .icon {
+    margin-left: 0px;
+    width: 32px;
+    height: 32px;
+    margin-top: 5px;
+}
+
+header img.logo {
+    margin: 5px 20px;
+}
+
+header h1 {
+    display: inline-block;
+    color: #002ADF;
+    font-size: 20px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+header img.point {
+    display: inline-block;
+    margin: 5px 40px;
+    width: 10px;
+}
+
+header h2 {
+    display: inline-block;
+    color: #002ADF;
+    line-height: normal;
+    font-size: 12px;
+    margin-top: auto;
+}
+
+.user-btn {
+
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    width: 35%;
+    margin-left: 30px;
+    box-shadow: #808080 0px 3px 1px;
+
+}
+
+.user-btn:hover {
+    border: solid #444444 1px;
+    color: #000000;
+    box-shadow: none;
+}
+
+/*************************************************/
+/*               Page d'accueil                  */
+/*************************************************/
+.logo_centre{
+    position: absolute;
+    top: 165px;
+    left: 50%;
+    color: #FFFFFF;
+    text-align: center;
+    width:440px;
+    font-size: 18px;
+    margin-left:-220px;
+}
+
+.instructions {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+}
+
+.instructions #ou {
+    margin: 20px 0px;
+}
+
+.instructions .button {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    line-height: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.instructions .button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.instructions a:hover {
+    color: inherit;
+}
+
+#suggestions {
+    overflow: hidden;
+    height: 506px;
+}
+
+#suggestions #controls {
+    padding: 40px 60px 20px 60px;
+}
+
+#suggestions #controls div {
+    display: inline-block;
+}
+
+#suggestions #controls a {
+    color: #002ADF;
+}
+
+.carousel {
+    margin-left: 40px;
+}
+
+.carousel .thumbnail {
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: inline-block;
+    text-align: center;
+    font-size: 10px;
+    padding: 0;
+    margin: 20px 20px 60px 20px;
+}
+
+.carousel .thumbnail:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.carousel .thumbnail .miniature {
+    margin: 0 0 20px 0;
+}
+
+.carousel .thumbnail .icon {
+    max-height: 100px;
+    max-width: 100px;
+    margin: 20px auto 30px auto;
+}
+
+#secret_sauce {
+    padding-top: 30px;
+}
+
+#secret_sauce .icon {
+    margin-left: 60px;
+}
+
+#secret_sauce .big-icon {
+    max-height: 100px;
+    max-width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#secret_sauce .chapter {
+    text-align: center;
+    margin: 50px;
+    display: inline-block;
+    width: 250px;
+}
+
+#secret_sauce h2 {
+    display: inline;
+    font-size: 18px;
+}
+
+#secret_sauce h3 {
+    font-size: 19px;
+}
+
+/*************************************************/
+/*               Page d'accueil                  */
+/*************************************************/
+
+.leftPanel {
+    background-color: #323A45;
+    float: left;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    color: #FFFFFF;
+    padding: 0;
+    z-index: 2;
+}
+
+.leftPanel .header {
+    text-align: center;
+    padding: 30px;
+}
+.leftPanel .menu button {
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid #555555 2px;
+    color: #555555;
+}
+
+.leftPanel .menu button:hover {
+    color: #FFFFFF;
+    background-color: #555555;
+}
+
+.leftPanel .menu button:first-child {
+    border-top: solid #555555 2px;
+}
+
+.panel {
+    position: absolute;
+    top: 0;
+    left: 16.7%;
+    height: 100%;
+    z-index: 1;
+    margin-left: -45%;
+}
+
+/*************************************************/
+/*                   FOOTER                      */
+/*************************************************/
+
+footer {
+    background-color: #5B6C7C;
+    color: #FFFFFF;
+}
+
+footer .w33 {
+    vertical-align: middle;
+}
+
+footer h2 {
+    vertical-align: middle;
+}
+
+footer .logo {
+    margin: 25px 20px;
+}
+
+footer p {
+    vertical-align: middle;
+    width: 100%;
+    min-width: 300px;
+    display: inline-block;
+    font-size: 10px;
+    margin: 0;
+}
+
+footer .borders {
+    border-left: #ffffff solid 2px;
+    border-right: #ffffff solid 2px;
+}
+
+footer .big-icon {
+    display: inline-block;
+    width: 40px;
+    opacity: .5;
+}
+
+footer .big-icon:hover {
+    opacity: 1;
+}
+
+/* COLORS */
+
+/* blanc */
+
+{
+    color: #FFF
+;
+}
+{
+    background-color: #F4E8D9
+;
+}
+{
+    background-color: #EDDCCC
+;
+}
+
+/* bleu du texte tout ça tout ça */
+
+{
+    color: #002ADF
+;
+}
+
+/* grey */
+
+{
+    color: #999
+;
+}
+.bg-grey {
+    background-color: #E8E8E9;
+}
+

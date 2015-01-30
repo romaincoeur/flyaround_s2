@@ -1,0 +1,199 @@
+#first
+{
+    height:400px;
+    background-color:#ecf0ef;
+}
+
+#firstbis
+{
+    width:300px;
+    padding-top:50px;
+    margin:auto;
+}
+
+#logo1
+{
+    width:250px;
+    height:auto;
+    position:absolute;
+    margin-top:50px;
+    margin-left:100px;
+}
+
+.buttonlog
+{
+    height:30px;
+    width:200px;
+    background-color:#FFFFFF;
+    border-radius:10px;
+    font-size:12px;
+}
+
+.buttonlog img
+{
+    height:30px;
+    width:30px;
+}
+
+.buttonlog p
+{
+    position:absolute;
+    display:inline;
+    margin-top:5px;
+    margin-left:5px;
+}
+
+#desc1
+{
+    position:absolute;
+    margin-top:-300px;
+    height:auto;
+    width:400px;
+    margin-left:350px;
+}
+
+#second, #four, #seven
+{
+    height:450px;
+}
+
+#back1
+{
+    width:100%;
+    height:100%;
+}
+
+#third
+{
+    height:400px;
+    background-color:#ecf0ef;
+}
+
+#thirdbis
+{
+    width:300px;
+    padding-top:50px;
+    margin:auto;
+    padding-left:50px;
+}
+
+#desc2
+{
+    width:400px;
+    height:auto;
+    position:absolute;
+    margin-top:100px;
+    margin-left:100px;
+}
+
+#plane2
+{
+    width:250px;
+    height:auto;
+    position:absolute;
+    margin-top:-300px;
+    margin-left:400px;
+}
+
+#second
+{
+    height:450px;
+}
+
+#back2
+{
+    width:100%;
+    height:100%;
+}
+
+#fifth
+{
+    height:400px;
+    background-color:#ecf0ef;
+}
+
+#plane3
+{
+    width:250px;
+    height:auto;
+    position:absolute;
+    margin-top:50px;
+    margin-left:100px;
+}
+
+#fifthbis
+{
+    width:300px;
+    padding-top:50px;
+    margin:auto;
+}
+
+#desc3
+{
+    width:400px;
+    height:auto;
+    position:absolute;
+    margin-top:-225px;
+    margin-left:66%;
+}
+
+#six
+{
+    height:450px;
+    background-color:#ecf0ef;
+}
+
+#desc4
+{
+    width:400px;
+    height:auto;
+    position:absolute;
+    margin-top:100px;
+    margin-left:100px;
+}
+
+#sixbis
+{
+    width:300px;
+    padding-top:50px;
+    margin:auto;
+    padding-left:50px;
+}
+
+.buttonlogbis
+{
+    height:30px;
+    width:100px;
+    background-color:#FFFFFF;
+    border-radius:10px;
+    font-size:12px;
+}
+
+.buttonlogbis img
+{
+    height:30px;
+    width:30px;
+}
+
+.buttonlogbis p
+{
+    position:absolute;
+    display:inline;
+    margin-top:5px;
+    margin-left:5px;
+}
+
+#plane4
+{
+    width:250px;
+    height:auto;
+    position:absolute;
+    margin-top:-250px;
+    margin-left:350px;
+}
+
+#back3
+{
+    width:100%;
+    height:100%;
+}
