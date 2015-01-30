@@ -32,6 +32,10 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/css/global.css"), "html", null, true);
         echo "\" type=\"text/css\"/>
+    <link rel=\"stylesheet\" href=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/css/custom.css"), "html", null, true);
+        echo "\" type=\"text/css\"/>
 
     <!-- FONTS -->
     <style type=\"text/css\">
@@ -40,11 +44,11 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         @font-face {
             font-family: \"ITCAvantGardeW04-Book\";
             src: url(\"";
-        // line 19
+        // line 20
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/fonts/1122878/daa5c000-4e87-40e9-9689-eec7fd2a19e1.eot?#iefix"), "html", null, true);
         echo "\");
             src: url(\"";
-        // line 20
+        // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/fonts/1122878/daa5c000-4e87-40e9-9689-eec7fd2a19e1.eot?#iefix"), "html", null, true);
         echo "\") format(\"eot\"), url(\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/fonts/1122878/e58aa4f4-3fa9-4138-9cc9-712e1955902c.woff"), "html", null, true);
@@ -58,11 +62,11 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         @font-face {
             font-family: \"ITCAvantGardeW04-Bold\";
             src: url(\"";
-        // line 25
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/fonts/1122872/4440e247-5f11-4b81-81fc-4f2e5a9573ff.eot?#iefix"), "html", null, true);
         echo "\");
             src: url(\"";
-        // line 26
+        // line 27
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/fonts/fonts/1122872/4440e247-5f11-4b81-81fc-4f2e5a9573ff.eot?#iefix"), "html", null, true);
         echo "\") format(\"eot\"), url(\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/fonts/1122872/b4cf0471-a031-48a8-a02a-0000def6fd87.woff"), "html", null, true);
@@ -77,7 +81,7 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
 
     <!-- favicon-->
     <link rel=\"icon\" type=\"image/png\" href=\"";
-        // line 32
+        // line 33
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\">
 
@@ -89,32 +93,32 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
 
         <a href=\"https://www.facebook.com/pages/Flyaround/541389942601829\" target=\"_blank\">
             <img class=\"icon\" src=\"";
-        // line 41
+        // line 42
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/icon-fb.png"), "html", null, true);
         echo "\" alt=\"facebook\" ></a>
 
         <a href=\"#\"><img class=\"icon\" src=\"";
-        // line 43
+        // line 44
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/reseau-social-96.png"), "html", null, true);
         echo "\" alt=\"email\"></a>
 
         <a href=\"https://twitter.com/FlyaroundFR\" target=\"_blank\">
             <img class=\"icon\" src=\"";
-        // line 46
+        // line 47
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/icon-twitter.png"), "html", null, true);
         echo "\" alt=\"twitter\"></a>
 
         <a href=\"#\" target=\"_blank\"><img class=\"icon\" src=\"";
-        // line 48
+        // line 49
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/reseau-social-94.png"), "html", null, true);
         echo "\" alt=\"\"></a>
 
     </div>
     <div class=\"right\">
         ";
-        // line 52
+        // line 53
         if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-            // line 53
+            // line 54
             echo "            <div class=\"span2\"><p>Bonjour ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo "</p></div>
@@ -122,11 +126,11 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
             <a class=\"btn btn-danger span2\" href=\"logout\">Logout</a>
         ";
         } else {
-            // line 57
+            // line 58
             echo "            <a href=\"#register\" role=\"button\" class=\"\" data-toggle=\"modal\">
                 <div class=\"col-md-6 user-btn\">
                     <img class=\"icon\" src=\"";
-            // line 59
+            // line 60
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/connexion.png"), "html", null, true);
             echo "\" alt=\"logo de Flyaround\">
                     inscription
@@ -136,7 +140,7 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
             <a href=\"#connexion\" role=\"button\" class=\"\" data-toggle=\"modal\">
                 <div class=\"col-md-6 user-btn\">
                     <img class=\"icon\" src=\"";
-            // line 66
+            // line 67
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/cadenas.png"), "html", null, true);
             echo "\" alt=\"separateur\">
                     connexion
@@ -144,29 +148,29 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
             </a>
         ";
         }
-        // line 71
+        // line 72
         echo "    </div>
     <div class=\"clearfix\"></div>
 </header>
 
 <div id=\"bg\">
     <img style=\"width:100%;height:auto;\" src=\"";
-        // line 76
+        // line 77
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/calvi.png"), "html", null, true);
         echo "\">
 </div>
 <div class=\"logo_centre\">
     <a href=\"";
-        // line 79
+        // line 80
         echo $this->env->getExtension('routing')->getPath("homepage");
         echo "\">
         <img class=\"logo\" src=\"";
-        // line 80
+        // line 81
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/logo-white.png"), "html", null, true);
         echo "\" alt=\"logo de Flyaround\"
              width=\"230px\">
         <img class=\"logo\" src=\"";
-        // line 82
+        // line 83
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/logo-white-32.png"), "html", null, true);
         echo "\" alt=\"logo de Flyaround\"
              width=\"auto\">
@@ -181,7 +185,7 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <div class=\"left\">
             <div>
                 <img class=\"icon\" src=\"";
-        // line 94
+        // line 95
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/sites-ajoutes.png"), "html", null, true);
         echo "\"
                      alt=\"sites-ajoutes\">
@@ -190,7 +194,7 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
             <a href=\"#\">
                 <div>
                     <img class=\"icon\" src=\"";
-        // line 100
+        // line 101
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/ajouter-site.png"), "html", null, true);
         echo "\"
                          alt=\"ajouter-site\" style=\"margin-left: 10px;\">
@@ -200,12 +204,12 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         </div>
         <div class=\"right\">
             <img class=\"btn icon\" id=\"left-arrow\" src=\"";
-        // line 107
+        // line 108
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/left-arrow.png"), "html", null, true);
         echo "\"
                  alt=\"left-arrow\">
             <img class=\"btn icon\" id=\"right-arrow\" src=\"";
-        // line 109
+        // line 110
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/right-arrow.png"), "html", null, true);
         echo "\"
                  alt=\"right-arrow\" style=\"margin-left: 20px;\">
@@ -217,13 +221,13 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <a href=\"#\">
             <div class=\"thumbnail\">
                 <img class=\"miniature\" src=\"";
-        // line 118
+        // line 119
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/corse4.jpg"), "html", null, true);
         echo "\" alt=\"corse\">
                 Calanques corses
                 <hr>
                 <img class=\"icon\" src=\"";
-        // line 121
+        // line 122
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/geotheme-nature.png"), "html", null, true);
         echo "\"
                      alt=\"icon nature\">
@@ -232,13 +236,13 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <a href=\"#\">
             <div class=\"thumbnail\">
                 <img class=\"miniature\" src=\"";
-        // line 127
+        // line 128
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/millau.jpg"), "html", null, true);
         echo "\" alt=\"corse\">
                 Viaduc de Millau
                 <hr>
                 <img class=\"icon\" src=\"";
-        // line 130
+        // line 131
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/geotheme-infrastructure.png"), "html", null, true);
         echo "\"
                      alt=\"icon nature\">
@@ -247,13 +251,13 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <a href=\"#\">
             <div class=\"thumbnail\">
                 <img class=\"miniature\" src=\"";
-        // line 136
+        // line 137
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/chateau.jpg"), "html", null, true);
         echo "\" alt=\"corse\">
                 Chateau de Chambord
                 <hr>
                 <img class=\"icon\" src=\"";
-        // line 139
+        // line 140
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/geotheme-site-classe.png"), "html", null, true);
         echo "\"
                      alt=\"icon nature\">
@@ -262,13 +266,13 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <a href=\"#\">
             <div class=\"thumbnail\">
                 <img class=\"miniature\" src=\"";
-        // line 145
+        // line 146
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/fribourg.jpg"), "html", null, true);
         echo "\" alt=\"corse\">
                 Fribourg
                 <hr>
                 <img class=\"icon\" src=\"";
-        // line 148
+        // line 149
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/geotheme-site-classe.png"), "html", null, true);
         echo "\"
                      alt=\"icon nature\">
@@ -277,13 +281,13 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <a href=\"#\">
             <div class=\"thumbnail\">
                 <img class=\"miniature\" src=\"";
-        // line 154
+        // line 155
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/corse4.jpg"), "html", null, true);
         echo "\" alt=\"corse\">
                 Calanques corses
                 <hr>
                 <img class=\"icon\" src=\"";
-        // line 157
+        // line 158
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/geotheme-nature.png"), "html", null, true);
         echo "\"
                      alt=\"icon nature\">
@@ -292,13 +296,13 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <a href=\"#\">
             <div class=\"thumbnail\">
                 <img class=\"miniature\" src=\"";
-        // line 163
+        // line 164
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/millau.jpg"), "html", null, true);
         echo "\" alt=\"corse\">
                 Viaduc de Millau
                 <hr>
                 <img class=\"icon\" src=\"";
-        // line 166
+        // line 167
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/geotheme-infrastructure.png"), "html", null, true);
         echo "\"
                      alt=\"icon nature\">
@@ -307,13 +311,13 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <a href=\"#\">
             <div class=\"thumbnail\">
                 <img class=\"miniature\" src=\"";
-        // line 172
+        // line 173
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/chateau.jpg"), "html", null, true);
         echo "\" alt=\"corse\">
                 Chateau de Chambord
                 <hr>
                 <img class=\"icon\" src=\"";
-        // line 175
+        // line 176
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/geotheme-site-classe.png"), "html", null, true);
         echo "\"
                      alt=\"icon nature\">
@@ -322,13 +326,13 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <a href=\"#\">
             <div class=\"thumbnail\">
                 <img class=\"miniature\" src=\"";
-        // line 181
+        // line 182
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/fribourg.jpg"), "html", null, true);
         echo "\" alt=\"corse\">
                 Fribourg
                 <hr>
                 <img class=\"icon\" src=\"";
-        // line 184
+        // line 185
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/geotheme-site-classe.png"), "html", null, true);
         echo "\"
                      alt=\"icon nature\">
@@ -339,7 +343,7 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
 
 <div id=\"secret_sauce\">
     <img class=\"icon\" src=\"";
-        // line 192
+        // line 193
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/boussole.png"), "html", null, true);
         echo "\" alt=\"boussole\">
 
@@ -348,7 +352,7 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
     <div class=\"center\" style=\"max-width: 1060px;\">
         <div class=\"chapter\">
             <img class=\"big-icon\" src=\"";
-        // line 198
+        // line 199
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/boussole.png"), "html", null, true);
         echo "\" alt=\"boussole\">
 
@@ -361,7 +365,7 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         </div>
         <div class=\"chapter\">
             <img class=\"big-icon\" src=\"";
-        // line 208
+        // line 209
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/ajouter-site.png"), "html", null, true);
         echo "\" alt=\"marker\">
 
@@ -374,7 +378,7 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         </div>
         <div class=\"chapter\">
             <img class=\"big-icon\" src=\"";
-        // line 218
+        // line 219
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/pilote.png"), "html", null, true);
         echo "\" alt=\"pilote\">
 
@@ -393,7 +397,7 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <div class=\"w33\">
             <div class=\"left\" style=\"width: 350px; margin-left: 30px;\">
                 <img class=\"logo\" src=\"";
-        // line 234
+        // line 235
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/logo-white.png"), "html", null, true);
         echo "\"
                      alt=\"logo de Flyaround\" width=\"100px\">
@@ -413,20 +417,20 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
         <div class=\"w33\">
             <div class=\"right\" style=\"width: 300px; margin-right: 70px;\">
                 <a href=\"#\"><img class=\"big-icon\" src=\"";
-        // line 251
+        // line 252
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/icon-email.png"), "html", null, true);
         echo "\"
                                  alt=\"email\"></a>
                 <a href=\"https://www.facebook.com/pages/Flyaround/541389942601829\" target=\"_blank\"><img class=\"big-icon\"
                                                                                                         src=\"";
-        // line 254
+        // line 255
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/icon-fb.png"), "html", null, true);
         echo "\"
                                                                                                         alt=\"facebook\"
                                                                                                         style=\"margin: 0 70px;\"></a>
                 <a href=\"https://twitter.com/FlyaroundFR\" target=\"_blank\"><img class=\"big-icon\"
                                                                                src=\"";
-        // line 258
+        // line 259
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/images/icon-twitter.png"), "html", null, true);
         echo "\"
                                                                                alt=\"twitter\"></a>
@@ -436,47 +440,47 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
 </footer>
 
 ";
-        // line 266
+        // line 267
         if (($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "environment", array()) == "dev")) {
-            // line 267
+            // line 268
             echo "    <script type=\"text/javascript\" src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/js/jquery.js"), "html", null, true);
             echo "\"></script>
 ";
         } else {
-            // line 269
+            // line 270
             echo "    <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\"></script>
 ";
         }
-        // line 271
+        // line 272
         echo "<script type=\"text/javascript\" src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
 <script type=\"text/javascript\" src=\"";
-        // line 272
+        // line 273
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/flyaroundcore/js/carousel.js"), "html", null, true);
         echo "\"></script>
 
 ";
-        // line 274
+        // line 275
         if ( !$this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
-            // line 275
+            // line 276
             echo "    <div class=\"modal fade\" id=\"register\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
         <div class=\"modal-dialog\">
             <div class=\"modal-content\">
                 <form action=\"";
-            // line 278
+            // line 279
             echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
             echo "\" ";
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), 'enctype');
             echo " method=\"POST\" class=\"fos_user_registration_register\">
                     ";
-            // line 279
+            // line 280
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), 'widget');
             echo "
                     <div>
                         <input type=\"submit\" value=\"";
-            // line 281
+            // line 282
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.submit", array(), "FOSUserBundle"), "html", null, true);
             echo "\" />
                     </div>
@@ -496,37 +500,37 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
                 </div>
                 <div class=\"modal-body\">
                     <form action=\"";
-            // line 298
+            // line 299
             echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
             echo "\" method=\"post\">
                         <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-            // line 299
+            // line 300
             echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
             echo "\" />
 
                         <label for=\"username\">";
-            // line 301
+            // line 302
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.username", array(), "FOSUserBundle"), "html", null, true);
             echo "</label>
                         <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-            // line 302
+            // line 303
             echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
             echo "\" required=\"required\" />
 
                         <label for=\"password\">";
-            // line 304
+            // line 305
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.password", array(), "FOSUserBundle"), "html", null, true);
             echo "</label>
                         <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
 
                         <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
                         <label for=\"remember_me\">";
-            // line 308
+            // line 309
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
             echo "</label>
 
                         <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
-            // line 310
+            // line 311
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
             echo "\" />
                     </form>
@@ -540,7 +544,7 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
     </div>
 ";
         }
-        // line 321
+        // line 322
         echo "
 </body>
 </html>";
@@ -558,6 +562,6 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
 
     public function getDebugInfo()
     {
-        return array (  544 => 321,  530 => 310,  525 => 308,  518 => 304,  513 => 302,  509 => 301,  504 => 299,  500 => 298,  480 => 281,  475 => 279,  469 => 278,  464 => 275,  462 => 274,  457 => 272,  452 => 271,  448 => 269,  442 => 267,  440 => 266,  430 => 258,  423 => 254,  417 => 251,  397 => 234,  378 => 218,  365 => 208,  352 => 198,  343 => 192,  332 => 184,  326 => 181,  317 => 175,  311 => 172,  302 => 166,  296 => 163,  287 => 157,  281 => 154,  272 => 148,  266 => 145,  257 => 139,  251 => 136,  242 => 130,  236 => 127,  227 => 121,  221 => 118,  209 => 109,  204 => 107,  194 => 100,  185 => 94,  170 => 82,  165 => 80,  161 => 79,  155 => 76,  148 => 71,  140 => 66,  130 => 59,  126 => 57,  118 => 53,  116 => 52,  109 => 48,  104 => 46,  98 => 43,  93 => 41,  81 => 32,  66 => 26,  62 => 25,  48 => 20,  44 => 19,  33 => 11,  29 => 10,  19 => 2,);
+        return array (  548 => 322,  534 => 311,  529 => 309,  522 => 305,  517 => 303,  513 => 302,  508 => 300,  504 => 299,  484 => 282,  479 => 280,  473 => 279,  468 => 276,  466 => 275,  461 => 273,  456 => 272,  452 => 270,  446 => 268,  444 => 267,  434 => 259,  427 => 255,  421 => 252,  401 => 235,  382 => 219,  369 => 209,  356 => 199,  347 => 193,  336 => 185,  330 => 182,  321 => 176,  315 => 173,  306 => 167,  300 => 164,  291 => 158,  285 => 155,  276 => 149,  270 => 146,  261 => 140,  255 => 137,  246 => 131,  240 => 128,  231 => 122,  225 => 119,  213 => 110,  208 => 108,  198 => 101,  189 => 95,  174 => 83,  169 => 81,  165 => 80,  159 => 77,  152 => 72,  144 => 67,  134 => 60,  130 => 58,  122 => 54,  120 => 53,  113 => 49,  108 => 47,  102 => 44,  97 => 42,  85 => 33,  70 => 27,  66 => 26,  52 => 21,  48 => 20,  37 => 12,  33 => 11,  29 => 10,  19 => 2,);
     }
 }
