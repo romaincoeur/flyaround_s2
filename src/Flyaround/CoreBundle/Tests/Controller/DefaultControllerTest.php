@@ -31,4 +31,21 @@ class DefaultControllerTest extends WebTestCase
         // TODO revoir la redirection après inscription
         $this->assertTrue(200 === $client->getResponse()->getStatusCode());
     }
+
+    public function testconnexion()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/');
+
+        $form = $crawler->selectButton('_submit')->form(array(
+            '_username'  => 'user',
+            '_password'  => 'pa$$word',
+        ));
+
+
+        $client->submit($form);
+        $crawler = $client->followRedirect();
+        // TODO revoir la redirection après inscription
+        $this->assertTrue(200 === $client->getResponse()->getStatusCode());
+    }
 }
