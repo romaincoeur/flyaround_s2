@@ -49,7 +49,7 @@ class __TwigTemplate_43a9070088534ac3a73451119556a00e197f18b83bc7f1e58c40b871e10
         // line 10
         echo $this->env->getExtension('routing')->getPath("fly");
         echo "\">
-            Back to the list
+            Retour
         </a>
     </li>
 </ul>

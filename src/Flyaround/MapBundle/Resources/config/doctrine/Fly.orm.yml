@@ -18,4 +18,10 @@ Flyaround\MapBundle\Entity\Fly:
             type: float
         description:
             type: text
+        category:
+            type: string
+            length: 255
     lifecycleCallbacks: {  }
+
+
+
