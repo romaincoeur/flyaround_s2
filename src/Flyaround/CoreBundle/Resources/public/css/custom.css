@@ -197,3 +197,42 @@
     width:100%;
     height:100%;
 }
+
+#password
+{
+	width:50%;;
+}
+
+#username
+{
+	width:50%;;
+}
+
+#passtext
+{
+	color:#002ADF;
+}
+
+#usertext
+{
+	color:#002ADF;
+}
+
+.regist
+{
+	height:100%;
+	width:100%;
+	text-align:center;
+}
+
+.registsub
+{
+	height:100%;
+	width:100%;
+	text-align:center;
+}
+
+.setcol
+{
+	color:#002ADF;
+}

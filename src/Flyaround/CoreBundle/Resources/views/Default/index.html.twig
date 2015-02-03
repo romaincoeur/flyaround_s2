@@ -352,10 +352,47 @@
     <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+								<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Inscription</h3>
+                </div>
                 <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(registration_form) }} method="POST" class="fos_user_registration_register">
-                    {{ form_widget(registration_form) }}
-                    <div>
+										<div class="regist">
+											<br></br>
+											<h5 class="setcol">
+                    		{{ form_label(registration_form.username) }} :
+											</h5>
+                    	{{ form_errors(registration_form.username) }}
+                   	 	{{ form_widget(registration_form.username) }}
+											
+											<br></br>
+											
+											<h5 class="setcol">
+                    		{{ form_label(registration_form.email) }} :
+											</h5>
+                    	{{ form_errors(registration_form.email) }}
+                    	{{ form_widget(registration_form.email) }}
+											<br></br>
+											
+											<h5 class="setcol">
+                    		{{ form_label(registration_form.plainPassword.first) }} :
+											</h5>
+                    	{{ form_errors(registration_form.plainPassword.first) }}
+                    	{{ form_widget(registration_form.plainPassword.first) }}
+											<br></br>
+											
+											<h5 class="setcol">
+                    		{{ form_label(registration_form.plainPassword.second) }} :
+											</h5>
+                    	{{ form_errors(registration_form.plainPassword.second) }}
+                    	{{ form_widget(registration_form.plainPassword.second) }}
+
+                    	{{ form_rest(registration_form) }}
+										</div>
+                    <div class="registsub">
+												<br></br>
                         <input type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+												<br></br>
                     </div>
                 </form>
             </div>
@@ -371,25 +408,24 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h3 id="myModalLabel">Connexion</h3>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="text-align:center">
                     <form action="{{ path("fos_user_security_check") }}" method="post">
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-
-                        <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                        <label for="username" id="usertext">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+												<br></br>
                         <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+												<br></br>
 
-                        <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                        <label for="password" id="passtext">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+												<br></br>
                         <input type="password" id="password" name="_password" required="required" />
+												<br></br>
 
                         <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
                         <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
-
+												<br></br>
                         <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Fermer</button>
-                    <button class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>

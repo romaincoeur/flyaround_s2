@@ -589,21 +589,94 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
             echo "    <div class=\"modal fade\" id=\"register\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
         <div class=\"modal-dialog\">
             <div class=\"modal-content\">
+\t\t\t\t\t\t\t\t<div class=\"modal-header\">
+                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>
+                    <h3 id=\"myModalLabel\">Inscription</h3>
+                </div>
                 <form action=\"";
-            // line 355
+            // line 359
             echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
             echo "\" ";
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), 'enctype');
             echo " method=\"POST\" class=\"fos_user_registration_register\">
-                    ";
-            // line 356
-            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), 'widget');
+\t\t\t\t\t\t\t\t\t\t<div class=\"regist\">
+\t\t\t\t\t\t\t\t\t\t\t<br></br>
+\t\t\t\t\t\t\t\t\t\t\t<h5 class=\"setcol\">
+                    \t\t";
+            // line 363
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "username", array()), 'label');
+            echo " :
+\t\t\t\t\t\t\t\t\t\t\t</h5>
+                    \t";
+            // line 365
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "username", array()), 'errors');
             echo "
-                    <div>
+                   \t \t";
+            // line 366
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "username", array()), 'widget');
+            echo "
+\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t<br></br>
+\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t<h5 class=\"setcol\">
+                    \t\t";
+            // line 371
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "email", array()), 'label');
+            echo " :
+\t\t\t\t\t\t\t\t\t\t\t</h5>
+                    \t";
+            // line 373
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "email", array()), 'errors');
+            echo "
+                    \t";
+            // line 374
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "email", array()), 'widget');
+            echo "
+\t\t\t\t\t\t\t\t\t\t\t<br></br>
+\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t<h5 class=\"setcol\">
+                    \t\t";
+            // line 378
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "plainPassword", array()), "first", array()), 'label');
+            echo " :
+\t\t\t\t\t\t\t\t\t\t\t</h5>
+                    \t";
+            // line 380
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "plainPassword", array()), "first", array()), 'errors');
+            echo "
+                    \t";
+            // line 381
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "plainPassword", array()), "first", array()), 'widget');
+            echo "
+\t\t\t\t\t\t\t\t\t\t\t<br></br>
+\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t<h5 class=\"setcol\">
+                    \t\t";
+            // line 385
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "plainPassword", array()), "second", array()), 'label');
+            echo " :
+\t\t\t\t\t\t\t\t\t\t\t</h5>
+                    \t";
+            // line 387
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "plainPassword", array()), "second", array()), 'errors');
+            echo "
+                    \t";
+            // line 388
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), "plainPassword", array()), "second", array()), 'widget');
+            echo "
+
+                    \t";
+            // line 390
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["registration_form"]) ? $context["registration_form"] : $this->getContext($context, "registration_form")), 'rest');
+            echo "
+\t\t\t\t\t\t\t\t\t\t</div>
+                    <div class=\"registsub\">
+\t\t\t\t\t\t\t\t\t\t\t\t<br></br>
                         <input type=\"submit\" value=\"";
-            // line 358
+            // line 394
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.submit", array(), "FOSUserBundle"), "html", null, true);
             echo "\" />
+\t\t\t\t\t\t\t\t\t\t\t\t<br></br>
                     </div>
                 </form>
             </div>
@@ -619,56 +692,56 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
                     <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>
                     <h3 id=\"myModalLabel\">Connexion</h3>
                 </div>
-                <div class=\"modal-body\">
+                <div class=\"modal-body\" style=\"text-align:center\">
                     <form action=\"";
-            // line 375
+            // line 412
             echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
             echo "\" method=\"post\">
                         <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-            // line 376
+            // line 413
             echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
             echo "\" />
-
-                        <label for=\"username\">";
-            // line 378
+                        <label for=\"username\" id=\"usertext\">";
+            // line 414
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.username", array(), "FOSUserBundle"), "html", null, true);
             echo "</label>
+\t\t\t\t\t\t\t\t\t\t\t\t<br></br>
                         <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-            // line 379
+            // line 416
             echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
             echo "\" required=\"required\" />
+\t\t\t\t\t\t\t\t\t\t\t\t<br></br>
 
-                        <label for=\"password\">";
-            // line 381
+                        <label for=\"password\" id=\"passtext\">";
+            // line 419
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.password", array(), "FOSUserBundle"), "html", null, true);
             echo "</label>
+\t\t\t\t\t\t\t\t\t\t\t\t<br></br>
                         <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
+\t\t\t\t\t\t\t\t\t\t\t\t<br></br>
 
                         <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
                         <label for=\"remember_me\">";
-            // line 385
+            // line 425
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
             echo "</label>
-
+\t\t\t\t\t\t\t\t\t\t\t\t<br></br>
                         <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
-            // line 387
+            // line 427
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
             echo "\" />
                     </form>
-                </div>
-                <div class=\"modal-footer\">
-                    <button class=\"btn btn-default\" data-dismiss=\"modal\" aria-hidden=\"true\">Fermer</button>
-                    <button class=\"btn btn-primary\">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
 ";
         }
-        // line 398
+        // line 434
         echo "
 </body>
-</html>";
+</html>
+";
     }
 
     public function getTemplateName()
@@ -683,6 +756,6 @@ class __TwigTemplate_b08c10ca4c64cc2f6937409fcf355c02f99c3c443272489d07a90bf5c95
 
     public function getDebugInfo()
     {
-        return array (  669 => 398,  655 => 387,  650 => 385,  643 => 381,  638 => 379,  634 => 378,  629 => 376,  625 => 375,  605 => 358,  600 => 356,  594 => 355,  589 => 352,  587 => 351,  582 => 349,  577 => 348,  573 => 346,  567 => 344,  565 => 343,  555 => 335,  548 => 331,  542 => 328,  522 => 311,  503 => 295,  490 => 285,  477 => 275,  468 => 269,  457 => 261,  451 => 258,  442 => 252,  436 => 249,  427 => 243,  421 => 240,  412 => 234,  406 => 231,  397 => 225,  391 => 222,  382 => 216,  376 => 213,  367 => 207,  361 => 204,  352 => 198,  346 => 195,  334 => 186,  329 => 184,  319 => 177,  310 => 171,  300 => 164,  291 => 158,  286 => 156,  275 => 148,  268 => 144,  261 => 140,  250 => 132,  243 => 128,  235 => 123,  229 => 120,  218 => 112,  211 => 108,  203 => 103,  197 => 100,  186 => 92,  174 => 83,  169 => 81,  165 => 80,  159 => 77,  152 => 72,  144 => 67,  134 => 60,  130 => 58,  122 => 54,  120 => 53,  113 => 49,  108 => 47,  102 => 44,  97 => 42,  85 => 33,  70 => 27,  66 => 26,  52 => 21,  48 => 20,  37 => 12,  33 => 11,  29 => 10,  19 => 2,);
+        return array (  741 => 434,  731 => 427,  726 => 425,  717 => 419,  711 => 416,  706 => 414,  702 => 413,  698 => 412,  677 => 394,  670 => 390,  665 => 388,  661 => 387,  656 => 385,  649 => 381,  645 => 380,  640 => 378,  633 => 374,  629 => 373,  624 => 371,  616 => 366,  612 => 365,  607 => 363,  598 => 359,  589 => 352,  587 => 351,  582 => 349,  577 => 348,  573 => 346,  567 => 344,  565 => 343,  555 => 335,  548 => 331,  542 => 328,  522 => 311,  503 => 295,  490 => 285,  477 => 275,  468 => 269,  457 => 261,  451 => 258,  442 => 252,  436 => 249,  427 => 243,  421 => 240,  412 => 234,  406 => 231,  397 => 225,  391 => 222,  382 => 216,  376 => 213,  367 => 207,  361 => 204,  352 => 198,  346 => 195,  334 => 186,  329 => 184,  319 => 177,  310 => 171,  300 => 164,  291 => 158,  286 => 156,  275 => 148,  268 => 144,  261 => 140,  250 => 132,  243 => 128,  235 => 123,  229 => 120,  218 => 112,  211 => 108,  203 => 103,  197 => 100,  186 => 92,  174 => 83,  169 => 81,  165 => 80,  159 => 77,  152 => 72,  144 => 67,  134 => 60,  130 => 58,  122 => 54,  120 => 53,  113 => 49,  108 => 47,  102 => 44,  97 => 42,  85 => 33,  70 => 27,  66 => 26,  52 => 21,  48 => 20,  37 => 12,  33 => 11,  29 => 10,  19 => 2,);
     }
 }
