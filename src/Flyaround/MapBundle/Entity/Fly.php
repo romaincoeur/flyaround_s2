@@ -9,6 +9,19 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Fly
 {
+    public static function getCategories()
+    {
+        return array(
+            'bridge' => 'Ouvrage d\'art',
+            'monument' => 'Monument historique',
+            'panorama' => 'Paysage'
+        );
+    }
+
+    public static function getCategoryValues()
+    {
+        return array_keys(self::getCategories());
+    }
 
 
 
@@ -48,6 +61,8 @@ class Fly
      *
      * @return integer 
      */
+
+
     public function getId()
     {
         return $this->id;
@@ -143,5 +158,33 @@ class Fly
     public function getDescription()
     {
         return $this->description;
+    }
+    /**
+     * @var string
+     */
+    private $category;
+
+
+    /**
+     * Set category
+     *
+     * @param string $category
+     * @return Fly
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string 
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

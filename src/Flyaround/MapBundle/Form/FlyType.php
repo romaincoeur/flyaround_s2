@@ -2,6 +2,7 @@
 
 namespace Flyaround\MapBundle\Form;
 
+use Flyaround\MapBundle\Entity\Fly;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -19,6 +20,12 @@ class FlyType extends AbstractType
             ->add('latitude')
             ->add('longitude')
             ->add('description')
+            ->add('category', 'choice', array(
+                'choices' => Fly::getCategories(),
+                'expanded' => false,
+                'multiple' => false,
+                'required' => true
+            ))
         ;
     }
     

@@ -5,6 +5,7 @@
 7a4365,127.0.0.1,GET,http://localhost/flyaroundreal/web/app_dev.php/,1422624127,
 287cf2,127.0.0.1,GET,http://localhost/flyaroundreal/web/app_dev.php/,1422624302,
 307765,127.0.0.1,GET,http://localhost/flyaroundreal/web/app_dev.php/,1422624377,
+<<<<<<< HEAD
 452fd5,127.0.0.1,GET,http://localhost/flyaroundreal/web/app_dev.php/,1422624538,
 45c29f,127.0.0.1,GET,http://localhost/flyaroundreal/web/app_dev.php/,1422624545,
 c98fd8,127.0.0.1,GET,http://localhost/flyaroundreal/web/app_dev.php/terrain,1422624549,
@@ -141,3 +142,12 @@ e452b9,127.0.0.1,GET,http://localhost/flyaroundreal/web/app_dev.php/,1422879227,
 c36edc,127.0.0.1,GET,http://localhost/flyaroundreal/web/app_dev.php/,1422893562,
 f9154b,127.0.0.1,GET,http://localhost/flyaroundreal/web/app_dev.php/,1422893752,
 97b782,127.0.0.1,GET,http://localhost/flyaroundreal/web/app_dev.php/app,1422895069,
+=======
+034979,127.0.0.1,GET,http://localhost/flyaround_s2/web/app_dev.php/,1422875986,
+476d40,127.0.0.1,GET,http://localhost/flyaround_s2/web/app_dev.php/fly,1422875993,
+76150d,127.0.0.1,GET,http://localhost/flyaround_s2/web/app_dev.php/fly/,1422875993,
+20f676,127.0.0.1,GET,http://localhost/flyaround_s2/web/app_dev.php/fly/new,1422875995,
+37302e,127.0.0.1,GET,http://localhost/flyaround_s2/web/app_dev.php/fly/,1422876246,
+fa9cad,127.0.0.1,GET,http://localhost/flyaround_s2/web/app_dev.php/fly/new,1422876248,
+95e54f,127.0.0.1,GET,http://localhost/flyaround_s2/web/app_dev.php/fly/new,1422876267,
+>>>>>>> c00160bf46f25f95081971aa08d62938a8a0b874
