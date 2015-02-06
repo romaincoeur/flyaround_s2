@@ -50,6 +50,7 @@ Flyaround\MapBundle\Entity\Terrain:
             type: boolean
         heliStation:
             type: boolean
+            nullable: tru
         vac:
             type: string
             length: 255
