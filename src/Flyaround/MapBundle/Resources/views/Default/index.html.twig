@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/bootstrap.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/style.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/global.css') }}" type="text/css"/>
-
+        <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/fav.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/profile.css') }}" type="text/css"/>
     {% endblock %}
 
     <!-- FONTS -->
@@ -112,11 +113,11 @@
     <div id="fontgris">
         <div class="flylistbody">
             <div class="row">
-                    <div style="background: url('{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}') no-repeat; background-position: 50% center;"class="col-md-1 circular">
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <p>"Primi igitur omnium statuuntur Epigonus "</p>
-                    </div>
+                <div style="background: url('{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}') no-repeat; background-position: 50% center;"class="col-md-1 circular">
+                </div>
+                <div class="col-md-4 text-center">
+                    <p>"Primi igitur omnium statuuntur Epigonus "</p>
+                </div>
             </div>
         </div>
         <div id="carouselflylist">
@@ -146,14 +147,14 @@
             <div class="xyz">
                 <div class="row">
                     <div style="background: url('{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}') no-repeat; background-position: 50% center;"class="col-md-1 circular">
-                            <p>Jean dupont</p>
+                        <p>Jean dupont</p>
 
 
-                            <div class="col-md-5">
-                                <div class="flylistcomtxt">
-                                    <p class="text-center">"Primi igitur omnium statuuntur Epigonus "</p>
-                                </div>
+                        <div class="col-md-5">
+                            <div class="flylistcomtxt">
+                                <p class="text-center">"Primi igitur omnium statuuntur Epigonus "</p>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -165,10 +166,74 @@
     Mes ajouts
 </div>
 <div id="favorites-panel" class="panel col-md-5">
-    Mes favoris
+
+    {########################################################}
+    {#<img src="{{ asset('bundles/flyaroundmap/img/...') }}">#}
+
+    <h1 id="fav">Mes favoris</h1>
+
+    {########################################################}
+
 </div>
+
 <div id="profile-panel" class="panel col-md-5">
+    {#<img src="{{ asset('bundles/flyaroundmap/img/...') }}">#}
     Mon profil
+    <div class='profile top'>
+        <p>Prenom</p>
+        <p>pilote chez Air France </p>
+        <img src="{{ asset('bundles/flyaroundmap/img/icones-89.png') }}">
+        <p>Paris</p>
+    </div>
+
+    <div id='inter-connexions'>
+        <h3> inter-connexions </h3>
+        <img src="{{ asset('bundles/flyaroundmap/img/icones-65.png') }}">
+
+        <a class="" data-toggle="modal" role="button" href='#Parametres facebook'>
+            <div class='Parametres facebook'>
+                <img class="icon" alt='separateur' src="{{ asset('bundles/flyaroundmap/img/icones-66.png') }}">
+                Parametres facebook
+            </div>
+        </a>
+        <a class="" data-toggle="modal" role="button" href='#Connecter a google+'>
+            <div class='Connecter a google+'>
+                <img class="icon" alt='separateur' src="{{ asset('bundles/flyaroundmap/img/icones-69.png') }}">
+                Connecter a google+
+            </div>
+        </a>
+
+        <a class="" data-toggle="modal" role="button" href='#Connecter a Instagram'>
+            <div class='Connecter a Instagram'>
+                <img class="icon" alt='separateur' src="{{ asset('bundles/flyaroundmap/img/icones-67.png') }}">
+                Connecter a Instagram
+            </div>
+        </a>
+
+        <a class="" data-toggle="modal" role="button" href='#Connecter a Pinterest'>
+            <div class='Connecter a Pinterest'>
+                <img class="icon" alt='separateur' src="{{ asset('bundles/flyaroundmap/img/icones-74.png') }}">
+                Connecter a Pinterest
+            </div>
+        </a>
+
+        <a class="" data-toggle="modal" role="button" href='#Connecter a Twitter'>
+            <div class='Connecter a Twitter'>
+                <img class="icon" alt='separateur' src="{{ asset('bundles/flyaroundmap/img/icones-68.png') }}">
+                Connecter a Twitter
+            </div>
+        </a>
+
+        <a class="" data-toggle="modal" role="button" href='#Parametres messagerie'>
+            <div class='Parametres messagerie'>
+                <img class="icon" alt='separateur' src="{{ asset('bundles/flyaroundmap/img/icones-73.png') }}">
+                Parametres messagerie
+            </div>
+        </a>
+
+    </div>
+
+
 </div>
 
 {# jquery est chargé en local si l'environnement est dev #}
