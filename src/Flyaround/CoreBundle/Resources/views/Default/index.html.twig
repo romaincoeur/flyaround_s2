@@ -52,8 +52,8 @@
     <div class="right">
         {% if app.user %}
             <div class="span2"><p>Bonjour {{ app.user.username }}</p></div>
-            <a class="btn btn-primary span2" ref="#">Espace perso</a>
-            <a class="btn btn-danger span2" href="logout">Logout</a>
+            <a class="btn btn-primary span2" href="{{ path('flyaround_map_homepage') }}">Espace perso</a>
+            <a class="btn btn-danger span2" href="{{ path('fos_user_security_logout') }}">Logout</a>
         {% else %}
             <a href="#register" role="button" class="" data-toggle="modal">
                 <div class="col-md-6 user-btn">
@@ -98,7 +98,7 @@
         <br></br>
         <div class="buttonlog">
             <img src="{{ asset('bundles/flyaroundcore/images/icones-84.png') }}">
-        <p><strong>s'inscrire et s'envoler...</strong></p>  
+        <a href="#register" role="button" class="" data-toggle="modal"><p><strong>s'inscrire et s'envoler...</strong></p></a> 
         </div>
             <img id="desc1" src="{{ asset('bundles/flyaroundcore/images/desc1.png') }}">
         </div>
@@ -118,7 +118,7 @@
         <br></br>
         <div class="buttonlog">
             <img src="{{ asset('bundles/flyaroundcore/images/boussole.png') }}">
-        <p><strong>s'inscrire et découvrir...</strong></p>  
+        <a href="#register" role="button" class="" data-toggle="modal"><p><strong>s'inscrire et découvrir...</strong></p></a>  
         </div>
             <img id="plane2" src="{{ asset('bundles/flyaroundcore/images/plane2.png') }}">
     </div>
@@ -138,7 +138,7 @@
         <br></br>
         <div class="buttonlog">
             <img src="{{ asset('bundles/flyaroundcore/images/ajouter-site.png') }}">
-        <p><strong>s'inscrire et enrichir...</strong></p>   
+        <a href="#register" role="button" class="" data-toggle="modal"><p><strong>s'inscrire et enrichir...</strong></p></a> 
         </div>
         </div>
         <img id="desc3" src="{{ asset('bundles/flyaroundcore/images/desc3.png') }}">
@@ -154,7 +154,7 @@
         <br></br>
         <div class="buttonlogbis">
             <img src="{{ asset('bundles/flyaroundcore/images/connexion.png') }}">
-        <p><strong>s'inscrire</strong></p>  
+        <a href="#register" role="button" class="" data-toggle="modal"><p><strong>s'inscrire</strong></p></a>  
             <img id="plane4" src="{{ asset('bundles/flyaroundcore/images/plane4.png') }}">
         </div>
         </div>
@@ -172,8 +172,8 @@
                      alt="sites-ajoutes">
                 Les derniers sites ajoutés
             </div>
-            <a href="#">
-                <div>
+        		<a href="#connexion" role="button" class="" data-toggle="modal">
+								<div>
                     <img class="icon" src="{{ asset('bundles/flyaroundcore/images/ajouter-site.png') }}"
                          alt="ajouter-site" style="margin-left: 10px;">
                     Ajouter un site
@@ -262,45 +262,6 @@
                      alt="icon nature">
             </div>
         </a>
-    </div>
-</div>
-
-<div id="secret_sauce">
-    <img class="icon" src="{{ asset('bundles/flyaroundcore/images/boussole.png') }}" alt="boussole">
-
-    <h2><b>fly</b>around <b>secret'sauce</b></h2>
-
-    <div class="center" style="max-width: 1060px;">
-        <div class="chapter">
-            <img class="big-icon" src="{{ asset('bundles/flyaroundcore/images/boussole.png') }}" alt="boussole">
-
-            <h3>Explorer les sites</h3>
-            <hr>
-            <p>ExplorerNatur majorer ionsed quares milia ipicimp orehentibus endenda
-                plab iur, oatur? Quiboaq uibuscima in rem et iugiatusape plabori vellam
-                iaceati umquae la di aut rem con enihil endltiume et accaborro consequo ma
-                voluptur?</p>
-        </div>
-        <div class="chapter">
-            <img class="big-icon" src="{{ asset('bundles/flyaroundcore/images/ajouter-site.png') }}" alt="marker">
-
-            <h3>Enrichir la carte</h3>
-            <hr>
-            <p>ExplorerNatur majorer ionsed quares milia ipicimp orehentibus endenda
-                plab iur, oatur? Quiboaq uibuscima in rem et iugiatusape plabori vellam
-                iaceati umquae la di aut rem con enihil endltiume et accaborro consequo ma
-                voluptur?</p>
-        </div>
-        <div class="chapter">
-            <img class="big-icon" src="{{ asset('bundles/flyaroundcore/images/pilote.png') }}" alt="pilote">
-
-            <h3>Intégrer une communauté</h3>
-            <hr>
-            <p>ExplorerNatur majorer ionsed quares milia ipicimp orehentibus endenda
-                plab iur, oatur? Quiboaq uibuscima in rem et iugiatusape plabori vellam
-                iaceati umquae la di aut rem con enihil endltiume et accaborro consequo ma
-                voluptur?</p>
-        </div>
     </div>
 </div>
 

@@ -46,7 +46,7 @@
         </a>
         <img class="point icon" src="{{ asset('bundles/flyaroundcore/images/point.png') }}" alt="separateur">
 
-        <h2>survoler, découvrir, admirer</h2>
+        <h2>survoler, découvrir, partager</h2>
     </div>
     <div class="right">
     </div>
@@ -58,13 +58,18 @@
 </div>
 
 <div class="leftPanel col-md-2">
+		<div class="addingfly">
+			<a href="{{ path('fly_new') }}"><strong>Ajouter un Fly</strong></a>
+		</div>
     <div class="header">
-        <img src="" alt="photo profil">
-
-        <div class="name">Marc Degranjean</div>
+        <img id="profilpic" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}" alt="photo profil">
+				<br></br>
+        <div class="name">{{ app.user.username }}</div>
         <hr>
         <div class="description">Pilote chez Air France</div>
-        <div class="city"><img src="" alt="marker">Paris</div>
+        <div class="city">
+				<strong>Paris</strong>
+				</div>
     </div>
     <div class="menu">
         <button id="news-button">ACTUALITE</button>
@@ -213,13 +218,15 @@
 
     //Chargement des icones
     var icon_airport = "{{ asset('bundles/flyaroundmap/img/geotheme-29.png') }}";
+    var icon_basicfly = "{{ asset('bundles/flyaroundmap/img/basicfly.png') }}";
 
     {% for entity in flies %}
     {% if entity.latitude and entity.longitude %}
     var fly_position{{ loop.index }} = new google.maps.LatLng({{ entity.latitude }},{{ entity.longitude }});
     var fly_m{{ loop.index }} = new google.maps.Marker({
         position: fly_position{{ loop.index }},
-        map: map
+        map: map,
+				icon: icon_basicfly
     });
     {% endif %}
     {% endfor %}

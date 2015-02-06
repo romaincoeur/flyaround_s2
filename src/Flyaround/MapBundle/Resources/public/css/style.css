@@ -84,3 +84,27 @@
     background-color: #FFFFFF;
     padding: 5px 5px 5px 5px;
 }
+
+.addingfly
+{
+	height:25px;
+	width:150px;
+	z-index:3;
+	background-color:#FFFFFF;
+	color:#000000;
+	position:absolute;
+	margin-left:500%;
+	display:inline;
+	border-radius:10px;
+	text-align:center;
+	margin-top:10px;
+	box-shadow: 0px 5px 0px #333331;
+	padding-top:2px;
+}
+
+#profilpic
+{
+	height:100%;
+	width:100%;
+	border-radius:100%;
+}
