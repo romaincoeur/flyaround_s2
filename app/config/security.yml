@@ -36,7 +36,7 @@ security:
                 login_path:     /login
                 use_forward:    false
                 check_path:     /login_check
-                failure_path:   null
+                failure_path:   /app
             logout:       true
             anonymous:    true
 

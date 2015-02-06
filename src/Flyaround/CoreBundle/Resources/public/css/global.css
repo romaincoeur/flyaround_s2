@@ -87,7 +87,7 @@ header {
 
     margin: 0;
     color: #000000;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     width: 100%;
     height: 40px;
@@ -243,37 +243,6 @@ header h2 {
     max-height: 100px;
     max-width: 100px;
     margin: 20px auto 30px auto;
-}
-
-#secret_sauce {
-    padding-top: 30px;
-}
-
-#secret_sauce .icon {
-    margin-left: 60px;
-}
-
-#secret_sauce .big-icon {
-    max-height: 100px;
-    max-width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#secret_sauce .chapter {
-    text-align: center;
-    margin: 50px;
-    display: inline-block;
-    width: 250px;
-}
-
-#secret_sauce h2 {
-    display: inline;
-    font-size: 18px;
-}
-
-#secret_sauce h3 {
-    font-size: 19px;
 }
 
 /*************************************************/

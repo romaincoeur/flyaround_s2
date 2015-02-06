@@ -1,5 +1,5 @@
 <?php
-// src/Acme/HelloBundle/DataFixtures/ORM/LoadTerrainData.php
+// src/Flyaround/MapBundle/DataFixtures/ORM/LoadTerrainData.php
 
 namespace Flyaround\MapBundle\DataFixtures\ORM;
 
@@ -62,7 +62,7 @@ class LoadTerrainData extends AbstractFixture implements FixtureInterface, Order
      */
     public function getOrder()
     {
-        return 2;
+        return 100;
     }
 
     /**
