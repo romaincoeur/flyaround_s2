@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/bootstrap.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/style.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/global.css') }}" type="text/css"/>
-        <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/fav.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/flyaround.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/profile.css') }}" type="text/css"/>
     {% endblock %}
 
@@ -34,43 +34,29 @@
 
     </style>
 
+    <!-- favicon-->
+    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+
 </head>
 <body>
-
-<header>
-    <div class="left">
-        <a href="{{ path('homepage') }}">
-            <img class="logo" src="{{ asset('bundles/flyaroundcore/images/logo.png') }}" alt="logo de Flyaround"
-                 width="40px">
-
-            <h1><b>fly</b>around</h1>
-        </a>
-        <img class="point icon" src="{{ asset('bundles/flyaroundcore/images/point.png') }}" alt="separateur">
-
-        <h2>survoler, découvrir, partager</h2>
-    </div>
-    <div class="right">
-    </div>
-    <div class="clearfix"></div>
-</header>
 
 <div id="map" style="width:100%; height:100%">
     Veuillez patienter pendant le chargement de la carte...
 </div>
 
 <div class="leftPanel col-md-2">
-		<div class="addingfly">
-			<a href="{{ path('fly_new') }}"><strong>Ajouter un Fly</strong></a>
-		</div>
+    <div class="addingfly">
+        <a href="{{ path('fly_new') }}"><strong>Ajouter un Fly</strong></a>
+    </div>
     <div class="header">
         <img id="profilpic" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}" alt="photo profil">
-				<br>
+        <br>
         <div class="name">{{ app.user.username }}</div>
         <hr>
         <div class="description">Pilote chez Air France</div>
         <div class="city">
-				<strong>Paris</strong>
-				</div>
+            <strong>Paris</strong>
+        </div>
     </div>
     <div class="menu">
         <button id="news-button">ACTUALITE</button>
@@ -241,6 +227,89 @@
 
 </div>
 
+<div id="terrain-panel" class="panel col-md-5">
+    <header>
+        <div id="care1" class="care">
+            <div class="icone">
+                <p class="geo">13.45.324</p>
+                <img id="ico1" class="ico" src="{{ asset('bundles/flyaroundmap/img/icones-27.png') }}">
+            </div>
+            <div class="icone">
+                <p class="geo">02.37.34.43.48</p>
+                <img id="ico2" class="ico" src="{{ asset('bundles/flyaroundmap/img/icones-32.png') }}">
+            </div>
+            <div class="icone">
+                <p class="geo">Route de Coltainville</p>
+                <p class="geo">28000 Chartres</p>
+                <img id="ico3" class="ico" src="{{ asset('bundles/flyaroundmap/img/icones-33.png') }}">
+            </div>
+        </div>
+        <div class="care">
+            <img id="logo" src="{{ asset('bundles/flyaroundmap/img/icones-29.png') }}">
+            <h5 id="spotname">Aérodrôme de Chartres</h5>
+            <div id="line"></div>
+        </div>
+        <div class="care">
+            <button type="button" id="bouton"><img id="flag" src="{{ asset('bundles/flyaroundmap/img/icones-28.png') }}">Alentours de ce terrain</button>
+            <a href="#"><img id="croix" src="{{ asset('bundles/flyaroundmap/img/icones-23.png') }}"></a>
+        </div>
+    </header>
+    <div id="box">
+        <p id="desc">Les plus beaux sites aux alentours de ce terrain</p>
+        <div id="line2"></div>
+        <div class="vue">
+            <div class="profil">
+                <div class="profil">
+                    <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
+                    <div class="dynamicText">
+                        <p class="name">Port</p>
+                        <div id="line3"></div>
+                        <p class="name">Robert Downey</p>
+                    </div>
+                    <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-28.png') }}">
+                </div>
+                <img class="decor" src="{{ asset('bundles/flyaroundmap/img/chateau.jpg') }}">
+            </div>
+        </div>
+        <div class="vue">
+            <div class="profil">
+                <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
+                <div class="dynamicText">
+                    <p class="name">Port</p>
+                    <div id="line3"></div>
+                    <p class="name">Robert Downey</p>
+                </div>
+                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-27.png') }}">
+            </div>
+            <img class="decor" src="{{ asset('bundles/flyaroundmap/img/fribourg.jpg') }}">
+        </div>
+        <div class="vue">
+            <div class="profil">
+                <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
+                <div class="dynamicText">
+                    <p class="name">Port</p>
+                    <div id="line3"></div>
+                    <p class="name">Robert Downey</p>
+                </div>
+                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-29.png') }}">
+            </div>
+            <img class="decor" src="{{ asset('bundles/flyaroundmap/img/corse4.jpg') }}">
+        </div>
+        <div class="vue">
+            <div class="profil">
+                <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
+                <div class="dynamicText">
+                    <p class="name">Port</p>
+                    <div id="line3"></div>
+                    <p class="name">Robert Downey</p>
+                </div>
+                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-28.png') }}">
+            </div>
+            <img class="decor" src="{{ asset('bundles/flyaroundmap/img/chateau.jpg') }}">
+        </div>
+    </div><!--box-->
+</div>
+
 {# jquery est chargé en local si l'environnement est dev #}
 {% if app.environment == 'dev' %}
     <script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/jquery.js') }}"></script>
@@ -265,14 +334,14 @@
     var options = {
         center: latlng,
         zoom: {{ zoom }},
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeId: google.maps.MapTypeId.HYBRID,
         disableDefaultUI: true
     };
     {% else %}
     var options = {
         center: latlng,
         zoom: 8,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeId: google.maps.MapTypeId.HYBRID,
         disableDefaultUI: true
     };
     {% endif %}
@@ -291,7 +360,7 @@
     var fly_m{{ loop.index }} = new google.maps.Marker({
         position: fly_position{{ loop.index }},
         map: map,
-				icon: icon_basicfly
+        icon: icon_basicfly
     });
     {% endif %}
     {% endfor %}
@@ -304,12 +373,23 @@
         map: map,
         icon: icon_airport
     });
+    google.maps.event.addListener(terr_m{{ loop.index }}, 'click', function() {
+        if ($('#terrain-panel').css('marginLeft') == '0px') {
+            $('#terrain-panel').animate({marginLeft: '-45%'});
+        }
+        else {
+            $(".panel").each(function (index) {
+                $(this).animate({marginLeft: '-45%'});
+            });
+            $('#terrain-panel').animate({marginLeft: '0'});
+        }
+    });
     {% endif %}
     {% endfor %}
 
 </script>
 
-<script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/map.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/flyaroundmap/js/map.js') }}"></script>
 
 </body>
 </html>

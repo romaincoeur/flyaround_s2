@@ -373,18 +373,18 @@
                     <form action="{{ path("fos_user_security_check") }}" method="post">
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                         <label for="username" id="usertext">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
-												<br></br>
+												<br>
                         <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-												<br></br>
+												<br>
 
                         <label for="password" id="passtext">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
-												<br></br>
+												<br>
                         <input type="password" id="password" name="_password" required="required" />
-												<br></br>
+												<br>
 
                         <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
                         <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
-												<br></br>
+												<br>
                         <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
                     </form>
                 </div>

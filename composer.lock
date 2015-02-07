@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "68a709356d71f1496651fe753ba75f4c",
+    "hash": "ff9c0fa638c73136da27116b95bb7fc3",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -2752,12 +2752,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataUserBundle.git",
-                "reference": "c13fb54943abf5e75655b76a90fa5762ef15baae"
+                "reference": "e3710f8f249e64ef59a464fce76b6f8110fab34c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/c13fb54943abf5e75655b76a90fa5762ef15baae",
-                "reference": "c13fb54943abf5e75655b76a90fa5762ef15baae",
+                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/e3710f8f249e64ef59a464fce76b6f8110fab34c",
+                "reference": "e3710f8f249e64ef59a464fce76b6f8110fab34c",
                 "shasum": ""
             },
             "require": {
@@ -2817,7 +2817,7 @@
                 "sonata",
                 "user"
             ],
-            "time": "2015-02-05 17:17:12"
+            "time": "2015-01-23 16:30:53"
         },
         {
             "name": "swiftmailer/swiftmailer",

@@ -2,22 +2,29 @@
 
 namespace Flyaround\MapBundle\Controller;
 
+use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use FOS\RestBundle\View\View;
 use Flyaround\MapBundle\Entity\Terrain;
 use Flyaround\MapBundle\Form\TerrainType;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 /**
  * Terrain controller.
  *
  */
-class TerrainController extends Controller
+class TerrainController extends FOSRestController
 {
 
     /**
      * Lists all Terrain entities.
      *
+     *  @ApiDoc(
+     *   resource = true,
+     *   statusCodes = {
+     *     200 = "Returned when successful"
+     *   }
+     * )
      */
     public function indexAction()
     {
@@ -91,7 +98,7 @@ class TerrainController extends Controller
      * Finds and displays a Terrain entity.
      *
      */
-    public function showAction($id)
+    public function showAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -101,12 +108,18 @@ class TerrainController extends Controller
             throw $this->createNotFoundException('Unable to find Terrain entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
+//        $deleteForm = $this->createDeleteForm($id);
+//
+//        return $this->render('FlyaroundMapBundle:Terrain:show.html.twig', array(
+//            'entity'      => $entity,
+//            'delete_form' => $deleteForm->createView(),
+//        ));
 
-        return $this->render('FlyaroundMapBundle:Terrain:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        ));
+
+        $view = new View($entity);
+        $group = $this->container->get('security.context')->isGranted('ROLE_API') ? 'restapi' : 'standard';
+        $view->getSerializationContext()->setGroups(array('Default', $group));
+        return $view;
     }
 
     /**

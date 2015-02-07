@@ -31,7 +31,10 @@
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "sonata-project/core-bundle": "dev-master",
         "sonata-project/jquery-bundle": "1.8.x-dev",
-        "willdurand/faker-bundle": "~1.0"
+        "willdurand/faker-bundle": "~1.0",
+        "friendsofsymfony/rest-bundle": "~1.5",
+        "jms/serializer-bundle": "0.13.*",
+        "nelmio/api-doc-bundle": "~2.7"
     },
     "scripts": {
         "post-install-cmd": [
