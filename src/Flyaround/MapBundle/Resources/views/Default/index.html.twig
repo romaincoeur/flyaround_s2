@@ -349,7 +349,7 @@
     var options = {
         center: latlng,
         zoom: 6,
-        mapTypeId: google.maps.MapTypeId.HYBRID,
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
         disableDefaultUI: true
     };
     {% endif %}
@@ -381,9 +381,9 @@
         {% else %}
         icon: icon_basicfly,
         {% endif %}
-        title: "{{ entity.category }}"
+        title: "{{ entity.category }}-{{ entity.id }}"
     });
-    markers.push(marker)
+    markers.push(marker);
     {% endif %}
     {% endfor %}
 
@@ -393,14 +393,30 @@
     marker = new google.maps.Marker({
         position: LatLng,
         map: map,
-        icon: icon_airport
+        icon: icon_airport,
+        title: "airport-{{ terr.id }}"
     });
-    markers.push(marker)
+    markers.push(marker);
     google.maps.event.addListener(marker, 'click', function() {
         if ($('#terrain-panel').css('marginLeft') == '0px') {
+            this.setIcon(icon_airport);
             $('#terrain-panel').animate({marginLeft: '-45%'});
         }
         else {
+            console.log(this.title);
+            var id = this.title.split('-')[1];
+            console.log(id);
+            this.setIcon(icon_basicfly);
+            $.ajax({
+                type        : "GET",
+                url         : "api/terrains/"+id+".json",
+                success     : function(response) {
+                    console.log(response)
+                },
+                error     : function(data) {
+                    console.log(data);
+                }
+            });
             $(".panel").each(function (index) {
                 $(this).animate({marginLeft: '-45%'});
             });
