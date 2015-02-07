@@ -46,7 +46,7 @@
 
 <div class="leftPanel col-md-2">
     <div class="addingfly">
-        <a href="{{ path('fly_new') }}"><strong>Ajouter un Fly</strong></a>
+        <a href=""><strong>Ajouter un Fly</strong></a>
     </div>
     <div class="header">
         <img id="profilpic" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}" alt="photo profil">
@@ -320,6 +320,14 @@
 
 <!-- Google map -->
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script>
+    var script = '<script type="text/javascript" src="{{ asset('bundles/flyaroundmap/js/markerclusterer.js') }}';
+    if (document.location.search.indexOf('compiled') !== -1) {
+        script += '_compiled';
+    }
+    script += '"><' + '/script>';
+    document.write(script);
+</script>
 <script type="text/javascript">
 
     {% if latitude and longitude %}
@@ -340,7 +348,7 @@
     {% else %}
     var options = {
         center: latlng,
-        zoom: 8,
+        zoom: 6,
         mapTypeId: google.maps.MapTypeId.HYBRID,
         disableDefaultUI: true
     };
@@ -351,29 +359,44 @@
     var map = new google.maps.Map(document.getElementById("map"), options);
 
     //Chargement des icones
+    var icon_bridge = "{{ asset('bundles/flyaroundmap/img/geotheme-26.png') }}";
+    var icon_monument = "{{ asset('bundles/flyaroundmap/img/geotheme-28.png') }}";
+    var icon_panorama = "{{ asset('bundles/flyaroundmap/img/geotheme-27.png') }}";
     var icon_airport = "{{ asset('bundles/flyaroundmap/img/geotheme-29.png') }}";
     var icon_basicfly = "{{ asset('bundles/flyaroundmap/img/basicfly.png') }}";
 
+    var markers = [];
     {% for entity in flies %}
     {% if entity.latitude and entity.longitude %}
-    var fly_position{{ loop.index }} = new google.maps.LatLng({{ entity.latitude }},{{ entity.longitude }});
-    var fly_m{{ loop.index }} = new google.maps.Marker({
-        position: fly_position{{ loop.index }},
+    var LatLng = new google.maps.LatLng({{ entity.latitude }},{{ entity.longitude }});
+    var marker = new google.maps.Marker({
+        position: LatLng,
         map: map,
-        icon: icon_basicfly
+        {% if entity.category=='bridge' %}
+        icon: icon_bridge,
+        {% elseif entity.category=='monument' %}
+        icon: icon_monument,
+        {% elseif entity.category=='panorama' %}
+        icon: icon_panorama,
+        {% else %}
+        icon: icon_basicfly,
+        {% endif %}
+        title: "{{ entity.category }}"
     });
+    markers.push(marker)
     {% endif %}
     {% endfor %}
 
     {% for terr in terrains %}
     {% if terr.latitude and terr.longitude %}
-    var terr_position{{ loop.index }} = new google.maps.LatLng({{ terr.latitude }},{{ terr.longitude }});
-    var terr_m{{ loop.index }} = new google.maps.Marker({
-        position: terr_position{{ loop.index }},
+    LatLng = new google.maps.LatLng({{ terr.latitude }},{{ terr.longitude }});
+    marker = new google.maps.Marker({
+        position: LatLng,
         map: map,
         icon: icon_airport
     });
-    google.maps.event.addListener(terr_m{{ loop.index }}, 'click', function() {
+    markers.push(marker)
+    google.maps.event.addListener(marker, 'click', function() {
         if ($('#terrain-panel').css('marginLeft') == '0px') {
             $('#terrain-panel').animate({marginLeft: '-45%'});
         }
@@ -386,6 +409,10 @@
     });
     {% endif %}
     {% endfor %}
+
+    // Add Marker Clusterer to map
+    var mcOptions = {gridSize: 50, maxZoom: 15};
+    var mc = new MarkerClusterer(map, markers, mcOptions);
 
 </script>
 

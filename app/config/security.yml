@@ -11,6 +11,10 @@ security:
     providers:
         fos_userbundle:
             id: fos_user.user_manager
+        in_memory:
+            memory:
+                users:
+                    restapi:  { password: secretpw, roles: [ 'ROLE_API' ] }
 
     firewalls:
 
@@ -27,6 +31,13 @@ security:
                 path:           /admin/logout
             anonymous:    true
         # -> end custom configuration
+
+        api:
+            pattern: /api(.*)
+            anonymous: ~
+            stateless:  true
+            http_basic:
+                realm: "Demo REST API (username: restapi, password: secretpw)"
 
         # defaut login area for standard users
         main:

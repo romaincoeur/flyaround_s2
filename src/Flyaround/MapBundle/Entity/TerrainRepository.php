@@ -12,4 +12,23 @@ use Doctrine\ORM\EntityRepository;
  */
 class TerrainRepository extends EntityRepository
 {
+    public function getZone($lat1, $lat2, $lng1, $lng2)
+    {
+        $minLat = min($lat1, $lat2);
+        $maxLat = max($lat1, $lat2);
+        $minLng = min($lng1, $lng2);
+        $maxLng = max($lng1, $lng2);
+        $qb = $this->createQueryBuilder('t')
+            ->select('t')
+            ->where('t.latitude > :lat1')
+            ->setParameter('lat1', $minLat)
+            ->andWhere('t.latitude < :lat2')
+            ->setParameter('lat2', $maxLat)
+            ->andWhere('t.longitude > :lng1')
+            ->setParameter('lng1', $minLng)
+            ->andWhere('t.longitude < :lng2')
+            ->setParameter('lng2', $maxLng);
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
 }

@@ -7,218 +7,263 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Flyaround\MapBundle\Entity\Fly;
 use Flyaround\MapBundle\Form\FlyType;
+use FOS\RestBundle\Util\Codes;
+use FOS\RestBundle\Controller\Annotations;
+use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Request\ParamFetcherInterface;
+use FOS\RestBundle\View\RouteRedirectView;
+use FOS\RestBundle\View\View;
+use Symfony\Component\Form\FormTypeInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Fly controller.
  *
  */
-class FlyController extends Controller
+class FlyController extends FOSRestController
 {
 
     /**
-     * Lists all Fly entities.
-     *
+     * return Flyaround\MapBundle\Entity\FlyRepository
      */
-    public function indexAction()
+    private function getFlyRepository()
+    {
+        return $this->getDoctrine()->getManager()->getRepository('FlyaroundMapBundle:Fly');
+    }
+
+    /**
+     * List all flies.
+     *
+     * @ApiDoc(
+     *   resource = true,
+     *   statusCodes = {
+     *     200 = "Returned when successful"
+     *   }
+     * )
+     *
+     * @Annotations\QueryParam(name="offset", requirements="\d+", nullable=true, description="Offset from which to start listing flies.")
+     * @Annotations\QueryParam(name="limit", requirements="\d+", default="5", description="How many flies to return.")
+     *
+     * @Annotations\View()
+     *
+     * @param Request               $request      the request object
+     * @param ParamFetcherInterface $paramFetcher param fetcher service
+     *
+     * @return array
+     */
+    public function getFliesAction(Request $request, ParamFetcherInterface $paramFetcher)
+    {
+        $flies = $this->getFlyRepository()->findAll();
+        return $flies;
+    }
+
+    /**
+     * Get a single fly.
+     *
+     * @ApiDoc(
+     *   output = "Flyaround\MapBundle\Entity\Fly",
+     *   statusCodes = {
+     *     200 = "Returned when successful",
+     *     404 = "Returned when the fly is not found"
+     *   }
+     * )
+     *
+     * @Annotations\View(templateVar="fly")
+     *
+     * @param Request $request the request object
+     * @param int     $id      the fly id
+     *
+     * @return array
+     *
+     * @throws NotFoundHttpException when fly not exist
+     */
+    public function getFlyAction(Request $request, $id)
+    {
+        $entity = $this->getFlyRepository()->find($id);
+        if (false === $entity) {
+            throw $this->createNotFoundException("Fly does not exist.");
+        }
+        $view = new View($entity);
+        $group = $this->container->get('security.context')->isGranted('ROLE_API') ? 'restapi' : 'standard';
+        $view->getSerializationContext()->setGroups(array('Default', $group));
+        return $view;
+    }
+
+    /**
+     * Presents the form to use to create a new fly.
+     *
+     * @ApiDoc(
+     *   resource = true,
+     *   statusCodes = {
+     *     200 = "Returned when successful"
+     *   }
+     * )
+     *
+     * @Annotations\View()
+     *
+     * @return FormTypeInterface
+     */
+    public function newFlyAction()
+    {
+        return $this->createForm(new FlyType());
+    }
+
+    /**
+     * Creates a new fly from the submitted data.
+     *
+     * @ApiDoc(
+     *   resource = true,
+     *   input = "Flyaround\MapBundle\Form\FlyType",
+     *   statusCodes = {
+     *     200 = "Returned when successful",
+     *     400 = "Returned when the form has errors"
+     *   }
+     * )
+     *
+     * @Annotations\View(
+     *   template = "FlyaroundMapBundle:Fly:newFly.html.twig",
+     *   statusCode = Codes::HTTP_BAD_REQUEST
+     * )
+     *
+     * @param Request $request the request object
+     *
+     * @return FormTypeInterface|RouteRedirectView
+     */
+    public function postFliesAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('FlyaroundMapBundle:Fly')->findAll();
-
-        return $this->render('FlyaroundMapBundle:Fly:index.html.twig', array(
-            'entities' => $entities,
-        ));
-    }
-    /**
-     * Creates a new Fly entity.
-     *
-     */
-    public function createAction(Request $request)
-    {
-        $entity = new Fly();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
-
+        $fly = new Fly();
+        $form = $this->createForm(new FlyType(), $fly);
+        $form->submit($request);
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
+            $em->persist($fly);
             $em->flush();
-
-            return $this->redirect($this->generateUrl('fly_show', array('id' => $entity->getId())));
+            return $this->routeRedirectView('get_fly', array('id' => $fly->getId()));
         }
-
-        return $this->render('FlyaroundMapBundle:Fly:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+        return array(
+            'form' => $form
+        );
     }
 
     /**
-     * Creates a form to create a Fly entity.
+     * Presents the form to use to update an existing fly.
      *
-     * @param Fly $entity The entity
+     * @ApiDoc(
+     *   resource = true,
+     *   statusCodes={
+     *     200 = "Returned when successful",
+     *     404 = "Returned when the fly is not found"
+     *   }
+     * )
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @Annotations\View()
+     *
+     * @param Request $request the request object
+     * @param int     $id      the fly id
+     *
+     * @return FormTypeInterface
+     *
+     * @throws NotFoundHttpException when fly not exist
      */
-    private function createCreateForm(Fly $entity)
+    public function editfliesAction(Request $request, $id)
     {
-        $form = $this->createForm(new FlyType(), $entity, array(
-            'action' => $this->generateUrl('fly_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Create'));
-
+        $fly = $this->getFlyRepository()->find($id);
+        if (false === $fly) {
+            throw $this->createNotFoundException("Fly does not exist.");
+        }
+        $form = $this->createForm(new FlyType(), $fly);
         return $form;
     }
 
     /**
-     * Displays a form to create a new Fly entity.
+     * Update existing fly from the submitted data or create a new fly at a specific location.
      *
-     */
-    public function newAction()
-    {
-        $entity = new Fly();
-        $form   = $this->createCreateForm($entity);
-
-        return $this->render('FlyaroundMapBundle:Fly:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a Fly entity.
+     * @ApiDoc(
+     *   resource = true,
+     *   input = "Flyaround\MapBundle\Form\FlyType",
+     *   statusCodes = {
+     *     201 = "Returned when a new resource is created",
+     *     204 = "Returned when successful",
+     *     400 = "Returned when the form has errors"
+     *   }
+     * )
      *
+     * @Annotations\View(
+     *   template="FlyaroundMapBundle:Fly:editFly.html.twig",
+     *   templateVar="form"
+     * )
+     *
+     * @param Request $request the request object
+     * @param int     $id      the fly id
+     *
+     * @return FormTypeInterface|RouteRedirectView
+     *
+     * @throws NotFoundHttpException when fly not exist
      */
-    public function showAction($id)
+    public function putFliesAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('FlyaroundMapBundle:Fly')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Fly entity.');
+        $fly = $this->getFlyRepository()->find($id);
+        if (false === $fly) {
+            $fly = new Fly();
+            $statusCode = Codes::HTTP_CREATED;
+        } else {
+            $statusCode = Codes::HTTP_NO_CONTENT;
         }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('FlyaroundMapBundle:Fly:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
-     * Displays a form to edit an existing Fly entity.
-     *
-     */
-    public function editAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('FlyaroundMapBundle:Fly')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Fly entity.');
+        $form = $this->createForm(new FlyType(), $fly);
+        $form->submit($request);
+        if ($form->isValid()) {
+            $em->persist($fly);
+            $em->flush();
+            return $this->routeRedirectView('get_fly', array('id' => $fly->getId()), $statusCode);
         }
-
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('FlyaroundMapBundle:Fly:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
-    * Creates a form to edit a Fly entity.
-    *
-    * @param Fly $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Fly $entity)
-    {
-        $form = $this->createForm(new FlyType(), $entity, array(
-            'action' => $this->generateUrl('fly_update', array('id' => $entity->getId())),
-            'method' => 'PUT',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Update'));
-
         return $form;
     }
+
     /**
-     * Edits an existing Fly entity.
+     * Removes a fly.
      *
+     * @ApiDoc(
+     *   resource = true,
+     *   statusCodes={
+     *     204="Returned when successful"
+     *   }
+     * )
+     *
+     * @param Request $request the request object
+     * @param int     $id      the fly id
+     *
+     * @return RouteRedirectView
      */
-    public function updateAction(Request $request, $id)
+    public function deleteFliesAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
-
         $entity = $em->getRepository('FlyaroundMapBundle:Fly')->find($id);
-
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Fly entity.');
         }
-
-        $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('fly_edit', array('id' => $id)));
-        }
-
-        return $this->render('FlyaroundMapBundle:Fly:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-    /**
-     * Deletes a Fly entity.
-     *
-     */
-    public function deleteAction(Request $request, $id)
-    {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('FlyaroundMapBundle:Fly')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Fly entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
-        }
-
-        return $this->redirect($this->generateUrl('fly'));
+        $em->remove($entity);
+        $em->flush();
+        return $this->routeRedirectView('get_flies', array(), Codes::HTTP_NO_CONTENT);
     }
 
     /**
-     * Creates a form to delete a Fly entity by id.
+     * Removes a fly.
      *
-     * @param mixed $id The entity id
+     * @ApiDoc(
+     *   resource = true,
+     *   statusCodes={
+     *     204="Returned when successful"
+     *   }
+     * )
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @param Request $request the request object
+     * @param int     $id      the fly id
+     *
+     * @return RouteRedirectView
      */
-    private function createDeleteForm($id)
+    public function removeFliesAction(Request $request, $id)
     {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('fly_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
+        return $this->deleteFliesAction($request, $id);
     }
 }

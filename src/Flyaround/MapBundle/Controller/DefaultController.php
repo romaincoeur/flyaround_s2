@@ -18,7 +18,7 @@ class DefaultController extends Controller
             $zoom = $this->get('request')->get('zoom');
             $em = $this->getDoctrine()->getManager();
             $flies = $em->getRepository('FlyaroundMapBundle:Fly')->findAll();
-            $terrains = $em->getRepository('FlyaroundMapBundle:Terrain')->findAll();
+            $terrains = $em->getRepository('FlyaroundMapBundle:Terrain')->getZone(40, 55, -5, 10);
             return $this->render('FlyaroundMapBundle:Default:index.html.twig', array(
                 'latitude' => $latitude,
                 'longitude' => $longitude,
