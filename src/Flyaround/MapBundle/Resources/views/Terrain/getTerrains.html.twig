@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Terrain list</h1>
+    <h1>Fly list</h1>
 
     <table class="records_list">
         <thead>
@@ -10,31 +10,22 @@
                 <th>Name</th>
                 <th>Latitude</th>
                 <th>Longitude</th>
-                <th>Icao</th>
-                <th>Iata</th>
                 <th>Description</th>
-                <th>Altitude</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for entity in entities %}
+        {% for id, entity in data %}
             <tr>
-                <td><a href="{{ path('terrain_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('get_fly', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.latitude }}</td>
                 <td>{{ entity.longitude }}</td>
-                <td>{{ entity.iCAO }}</td>
-                <td>{{ entity.iATA }}</td>
                 <td>{{ entity.description }}</td>
-                <td>{{ entity.altitude }}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('terrain_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('terrain_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('get_fly', { 'id': entity.id }) }}">show</a>
                     </li>
                 </ul>
                 </td>
@@ -45,7 +36,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('terrain_new') }}">
+            <a href="{{ path('new_fly') }}">
                 Create a new entry
             </a>
         </li>
