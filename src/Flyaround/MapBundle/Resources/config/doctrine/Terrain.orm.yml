@@ -111,6 +111,10 @@ Flyaround\MapBundle\Entity\Terrain:
             type: string
             length: 255
             nullable: true
+        town:
+            type: string
+            length: 255
+            nullable: true
     lifecycleCallbacks:
         prePersist: [ setCreatedAtValue ]
         preUpdate: [ setUpdatedAtValue ]

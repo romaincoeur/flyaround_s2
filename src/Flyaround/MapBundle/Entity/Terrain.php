@@ -979,4 +979,32 @@ class Terrain
     {
         return $this->postCode;
     }
+    /**
+     * @var string
+     */
+    private $town;
+
+
+    /**
+     * Set town
+     *
+     * @param string $town
+     * @return Terrain
+     */
+    public function setTown($town)
+    {
+        $this->town = $town;
+
+        return $this;
+    }
+
+    /**
+     * Get town
+     *
+     * @return string 
+     */
+    public function getTown()
+    {
+        return $this->town;
+    }
 }

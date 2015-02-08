@@ -895,4 +895,88 @@ class Terrain
     {
         return $this->updatedAt;
     }
+    /**
+     * @var string
+     */
+    private $slug;
+
+    /**
+     * @var string
+     */
+    private $address;
+
+    /**
+     * @var string
+     */
+    private $postCode;
+
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Terrain
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     * @return Terrain
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string 
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set postCode
+     *
+     * @param string $postCode
+     * @return Terrain
+     */
+    public function setPostCode($postCode)
+    {
+        $this->postCode = $postCode;
+
+        return $this;
+    }
+
+    /**
+     * Get postCode
+     *
+     * @return string 
+     */
+    public function getPostCode()
+    {
+        return $this->postCode;
+    }
 }

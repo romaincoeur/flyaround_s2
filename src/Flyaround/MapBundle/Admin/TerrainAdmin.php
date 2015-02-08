@@ -27,6 +27,7 @@ class TerrainAdmin extends Admin
             ->add('iATA')
             ->add('country')
             ->add('city')
+            ->add('town')
             ->add('latitude')
             ->add('longitude')
             ->add('timezone')
@@ -64,7 +65,7 @@ class TerrainAdmin extends Admin
             ->add('iATA')
             ->add('country')
             ->add('city')
-            ->add('vac')
+            ->add('town')
             ->add('published')
             ->add('_action', 'actions', array(
                 'actions' => array(
@@ -83,6 +84,7 @@ class TerrainAdmin extends Admin
             ->add('iATA')
             ->add('country')
             ->add('city')
+            ->add('town')
             ->add('latitude')
             ->add('longitude')
             ->add('timezone')

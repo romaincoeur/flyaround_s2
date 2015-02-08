@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/global.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/flyaround.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/profile.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/mapZone.css') }}" type="text/css"/>
     {% endblock %}
 
     <!-- FONTS -->
@@ -38,6 +39,7 @@
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
 
 </head>
+
 <body>
 
 <div id="map" style="width:100%; height:100%">
@@ -45,9 +47,9 @@
 </div>
 
 <div class="leftPanel col-md-2">
-    <div class="addingfly">
-        <a href=""><strong>Ajouter un Fly</strong></a>
-    </div>
+    <button class="addingfly" id="newfly-button">
+        <strong>Ajouter un Fly</strong>
+    </button>
     <div class="header">
         <img id="profilpic" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}" alt="photo profil">
         <br>
@@ -70,6 +72,7 @@
 <div id="news-panel" class="panel col-md-5">
     Actualités
 </div>
+
 <div id="flylist-panel" class="panel col-md-5">
     <div id="flylisttop">
         <div class="row">
@@ -153,9 +156,11 @@
         </div>
     </div>
 </div>
+
 <div id="myadds-panel" class="panel col-md-5">
     Mes ajouts
 </div>
+
 <div id="favorites-panel" class="panel col-md-5">
 
     {########################################################}
@@ -310,6 +315,40 @@
     </div><!--box-->
 </div>
 
+<div id="newfly-panel" class="panel col-md-5">
+    <h1 class="title">Fly Creation</h1>
+
+    <form action="{{ url('post_flies') }}" method="POST" >
+        <div id="flyaround_mapbundle_fly">
+            <div>
+                <label for="flyaround_mapbundle_fly_name" class="required">Name</label>
+                <input type="text" id="flyaround_mapbundle_fly_name" name="flyaround_mapbundle_fly[name]" required="required" maxlength="255" />
+            </div>
+            <div>
+                <label for="flyaround_mapbundle_fly_latitude" class="required">Latitude</label>
+                <input type="text" id="flyaround_mapbundle_fly_latitude" name="flyaround_mapbundle_fly[latitude]" required="required" />
+            </div>
+            <div>
+                <label for="flyaround_mapbundle_fly_longitude" class="required">Longitude</label>
+                <input type="text" id="flyaround_mapbundle_fly_longitude" name="flyaround_mapbundle_fly[longitude]" required="required" />
+            </div>
+            <div>
+                <label for="flyaround_mapbundle_fly_description" class="required">Description</label>
+                <textarea id="flyaround_mapbundle_fly_description" name="flyaround_mapbundle_fly[description]" required="required"></textarea>
+            </div>
+            <div>
+                <label for="flyaround_mapbundle_fly_category" class="required">Category</label>
+                <select id="flyaround_mapbundle_fly_category" name="flyaround_mapbundle_fly[category]">
+                    <option value="bridge">Ouvrage d&#039;art</option>
+                    <option value="monument">Monument historique</option>
+                    <option value="panorama">Paysage</option>
+                </select>
+            </div>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
 {# jquery est chargé en local si l'environnement est dev #}
 {% if app.environment == 'dev' %}
     <script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/jquery.js') }}"></script>
@@ -320,7 +359,8 @@
 
 <!-- Google map -->
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script>
+
+<script type="text/javascript">
     var script = '<script type="text/javascript" src="{{ asset('bundles/flyaroundmap/js/markerclusterer.js') }}';
     if (document.location.search.indexOf('compiled') !== -1) {
         script += '_compiled';
@@ -328,6 +368,7 @@
     script += '"><' + '/script>';
     document.write(script);
 </script>
+
 <script type="text/javascript">
 
     {% if latitude and longitude %}

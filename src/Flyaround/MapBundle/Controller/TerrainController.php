@@ -48,7 +48,10 @@ class TerrainController extends FOSRestController
         $lng1 = $paramFetcher->get('lng1');
         $lng2 = $paramFetcher->get('lng2');
 
-        $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->getZone($lat1, $lat2, $lng1, $lng2);
+        if ($lat1 && $lat2 && $lng1 && $lng2)
+            $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->getZone($lat1, $lat2, $lng1, $lng2);
+        else
+            $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->findAll();
 
 //        return $this->render('FlyaroundMapBundle:Terrain:index.html.twig', array(
 //            'entities' => $entities,
@@ -86,14 +89,6 @@ class TerrainController extends FOSRestController
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Terrain entity.');
         }
-
-//        $deleteForm = $this->createDeleteForm($id);
-//
-//        return $this->render('FlyaroundMapBundle:Terrain:show.html.twig', array(
-//            'entity'      => $entity,
-//            'delete_form' => $deleteForm->createView(),
-//        ));
-
 
         $view = new View($entity);
         $group = $this->container->get('security.context')->isGranted('ROLE_API') ? 'restapi' : 'standard';

@@ -165,7 +165,7 @@ class FlyController extends FOSRestController
      *
      * @throws NotFoundHttpException when fly not exist
      */
-    public function editfliesAction(Request $request, $id)
+    public function editFliesAction(Request $request, $id)
     {
         $fly = $this->getFlyRepository()->find($id);
         if (false === $fly) {
