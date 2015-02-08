@@ -57,6 +57,17 @@ $(function () {
             $('#profile-panel').animate({marginLeft: '0'});
         }
     });
+    $('#newfly-button').click(function () {
+        if ($('#newfly-panel').css('marginLeft') == '0px') {
+            $('#newfly-panel').animate({marginLeft: '-45%'});
+        }
+        else {
+            $(".panel").each(function (index) {
+                $(this).animate({marginLeft: '-45%'});
+            });
+            $('#newfly-panel').animate({marginLeft: '0'});
+        }
+    });
 
     $(".vue").mouseenter(function(){
         $(this).addClass("effet");

@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1 class="title">Fly Creation</h1>
+
+    {%  if (form is defined) %}
+        <form action="{{ url('post_flies') }}" method="POST" {{ form_enctype(form) }}>
+
+            {{ form_widget(form) }}
+
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+
+{% endblock %}

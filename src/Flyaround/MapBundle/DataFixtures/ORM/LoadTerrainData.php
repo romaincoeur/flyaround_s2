@@ -27,7 +27,7 @@ class LoadTerrainData extends AbstractFixture implements FixtureInterface, Order
             $entity = new Terrain();
             $entity->setICAO(str_replace('"', '', $data[1]));
             $entity->setIATA(str_replace('"', '', $data[2]));
-            $entity->setName(str_replace('"', '', $data[3]));
+            $entity->setTown(str_replace('"', '', $data[3]));
             $entity->setCity(str_replace('"', '', $data[4]));
             $entity->setCountry(str_replace('"', '', $data[5]));
             $entity->setLatitude(str_replace(',', '.', str_replace('"', '', $data[6])));
@@ -46,8 +46,8 @@ class LoadTerrainData extends AbstractFixture implements FixtureInterface, Order
             $entity->setHangarPrice(str_replace('"', '', $data[20]));
             $entity->setAltiport(str_replace('"', '', $data[21]));
             $entity->setRegion(str_replace('"', '', $data[22]));
-            $entity->setPhone(str_replace('"', '', $data[23]));
-            $entity->setPublished(str_replace('"', '', $data[24]));
+            $entity->setName(str_replace('"', '', $data[23]));
+            $entity->setPublished(true);
             $entity->setCreatedAt(new \DateTime());
             $em->persist($entity);
         }

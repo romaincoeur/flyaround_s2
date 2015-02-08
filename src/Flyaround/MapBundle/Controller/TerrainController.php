@@ -6,7 +6,6 @@ use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\View\View;
-use Flyaround\MapBundle\Entity\Terrain;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use FOS\RestBundle\Controller\Annotations;
@@ -48,11 +47,10 @@ class TerrainController extends FOSRestController
         $lng1 = $paramFetcher->get('lng1');
         $lng2 = $paramFetcher->get('lng2');
 
-        $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->getZone($lat1, $lat2, $lng1, $lng2);
-
-//        return $this->render('FlyaroundMapBundle:Terrain:index.html.twig', array(
-//            'entities' => $entities,
-//        ));
+        if ($lat1 && $lat2 && $lng1 && $lng2)
+            $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->getZone($lat1, $lat2, $lng1, $lng2);
+        else
+            $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->findAll();
 
         return $entities;
     }
@@ -86,14 +84,6 @@ class TerrainController extends FOSRestController
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Terrain entity.');
         }
-
-//        $deleteForm = $this->createDeleteForm($id);
-//
-//        return $this->render('FlyaroundMapBundle:Terrain:show.html.twig', array(
-//            'entity'      => $entity,
-//            'delete_form' => $deleteForm->createView(),
-//        ));
-
 
         $view = new View($entity);
         $group = $this->container->get('security.context')->isGranted('ROLE_API') ? 'restapi' : 'standard';

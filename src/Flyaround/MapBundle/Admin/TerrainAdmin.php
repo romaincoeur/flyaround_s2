@@ -7,7 +7,6 @@ namespace Flyaround\MapBundle\Admin;
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\AdminBundle\Validator\ErrorElement;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
@@ -27,6 +26,7 @@ class TerrainAdmin extends Admin
             ->add('iATA')
             ->add('country')
             ->add('city')
+            ->add('town')
             ->add('latitude')
             ->add('longitude')
             ->add('timezone')
@@ -64,7 +64,7 @@ class TerrainAdmin extends Admin
             ->add('iATA')
             ->add('country')
             ->add('city')
-            ->add('vac')
+            ->add('town')
             ->add('published')
             ->add('_action', 'actions', array(
                 'actions' => array(
@@ -83,6 +83,7 @@ class TerrainAdmin extends Admin
             ->add('iATA')
             ->add('country')
             ->add('city')
+            ->add('town')
             ->add('latitude')
             ->add('longitude')
             ->add('timezone')

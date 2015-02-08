@@ -3,7 +3,6 @@
 namespace Flyaround\MapBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Flyaround\MapBundle\Entity\Fly;
 use Flyaround\MapBundle\Form\FlyType;
@@ -165,7 +164,7 @@ class FlyController extends FOSRestController
      *
      * @throws NotFoundHttpException when fly not exist
      */
-    public function editfliesAction(Request $request, $id)
+    public function editFliesAction(Request $request, $id)
     {
         $fly = $this->getFlyRepository()->find($id);
         if (false === $fly) {
