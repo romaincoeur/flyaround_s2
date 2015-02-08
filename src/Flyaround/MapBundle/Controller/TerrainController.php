@@ -6,7 +6,6 @@ use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\View\View;
-use Flyaround\MapBundle\Entity\Terrain;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use FOS\RestBundle\Controller\Annotations;
@@ -52,10 +51,6 @@ class TerrainController extends FOSRestController
             $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->getZone($lat1, $lat2, $lng1, $lng2);
         else
             $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->findAll();
-
-//        return $this->render('FlyaroundMapBundle:Terrain:index.html.twig', array(
-//            'entities' => $entities,
-//        ));
 
         return $entities;
     }
