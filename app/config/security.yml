@@ -14,7 +14,7 @@ security:
         in_memory:
             memory:
                 users:
-                    restapi:  { password: secretpw, roles: [ 'ROLE_API' ] }
+                    restapi:  { password: %restapiPassword%, roles: [ 'ROLE_API' ] }
 
     firewalls:
 
