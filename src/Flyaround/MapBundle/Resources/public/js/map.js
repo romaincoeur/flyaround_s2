@@ -65,6 +65,14 @@ $(function () {
         $(this).removeClass("effet");
     });
 
-})
+});
 
+function closeAirportPanel() {
+    $(".panel").each(function (index) {
+        $(this).animate({marginLeft: '-45%'});
+    });
+    markers.forEach(function(current){
+        current.setIcon(icon_airport);
+    })
+}
 
