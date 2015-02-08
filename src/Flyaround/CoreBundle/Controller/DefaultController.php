@@ -19,11 +19,9 @@ class DefaultController extends Controller
             $request = $this->container->get('request');
             $session = $request->getSession();
             $lastUsername = (null === $session) ? '' : $session->get(SecurityContext::LAST_USERNAME);
-            $csrfToken = $this->container->get('form.csrf_provider')->generateCsrfToken('authenticate');
 
             return $this->render('FlyaroundCoreBundle:Default:index.html.twig', array(
                 'registration_form' => $registration_form->createView(),
-                'csrf_token' => $csrfToken,
                 'last_username' => $lastUsername
             ));
         }

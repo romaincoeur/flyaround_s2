@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new Flyaround\CoreBundle\FlyaroundCoreBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
-            new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
