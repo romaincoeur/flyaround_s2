@@ -2,7 +2,6 @@
 
 namespace Flyaround\MapBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Terrain
@@ -39,6 +38,7 @@ class Terrain
 
 
     // YAML GENERATED CODE
+    
     
     /**
      * @var integer
@@ -168,22 +168,7 @@ class Terrain
     /**
      * @var string
      */
-    private $virtualName;
-
-    /**
-     * @var string
-     */
-    private $context;
-
-    /**
-     * @var string
-     */
-    private $contextId;
-
-    /**
-     * @var boolean
-     */
-    private $isMainContext;
+    private $slug;
 
     /**
      * @var \DateTime
@@ -194,6 +179,21 @@ class Terrain
      * @var \DateTime
      */
     private $updatedAt;
+
+    /**
+     * @var string
+     */
+    private $address;
+
+    /**
+     * @var string
+     */
+    private $postCode;
+
+    /**
+     * @var string
+     */
+    private $town;
 
 
     /**
@@ -759,95 +759,26 @@ class Terrain
     }
 
     /**
-     * Set virtualName
+     * Set slug
      *
-     * @param string $virtualName
+     * @param string $slug
      * @return Terrain
      */
-    public function setVirtualName($virtualName)
+    public function setSlug($slug)
     {
-        $this->virtualName = $virtualName;
+        $this->slug = $slug;
 
         return $this;
     }
 
     /**
-     * Get virtualName
+     * Get slug
      *
      * @return string 
      */
-    public function getVirtualName()
+    public function getSlug()
     {
-        return $this->virtualName;
-    }
-
-    /**
-     * Set context
-     *
-     * @param string $context
-     * @return Terrain
-     */
-    public function setContext($context)
-    {
-        $this->context = $context;
-
-        return $this;
-    }
-
-    /**
-     * Get context
-     *
-     * @return string 
-     */
-    public function getContext()
-    {
-        return $this->context;
-    }
-
-    /**
-     * Set contextId
-     *
-     * @param string $contextId
-     * @return Terrain
-     */
-    public function setContextId($contextId)
-    {
-        $this->contextId = $contextId;
-
-        return $this;
-    }
-
-    /**
-     * Get contextId
-     *
-     * @return string 
-     */
-    public function getContextId()
-    {
-        return $this->contextId;
-    }
-
-    /**
-     * Set isMainContext
-     *
-     * @param boolean $isMainContext
-     * @return Terrain
-     */
-    public function setIsMainContext($isMainContext)
-    {
-        $this->isMainContext = $isMainContext;
-
-        return $this;
-    }
-
-    /**
-     * Get isMainContext
-     *
-     * @return boolean 
-     */
-    public function getIsMainContext()
-    {
-        return $this->isMainContext;
+        return $this->slug;
     }
 
     /**
@@ -894,5 +825,74 @@ class Terrain
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     * @return Terrain
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string 
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set postCode
+     *
+     * @param string $postCode
+     * @return Terrain
+     */
+    public function setPostCode($postCode)
+    {
+        $this->postCode = $postCode;
+
+        return $this;
+    }
+
+    /**
+     * Get postCode
+     *
+     * @return string 
+     */
+    public function getPostCode()
+    {
+        return $this->postCode;
+    }
+
+    /**
+     * Set town
+     *
+     * @param string $town
+     * @return Terrain
+     */
+    public function setTown($town)
+    {
+        $this->town = $town;
+
+        return $this;
+    }
+
+    /**
+     * Get town
+     *
+     * @return string 
+     */
+    public function getTown()
+    {
+        return $this->town;
     }
 }

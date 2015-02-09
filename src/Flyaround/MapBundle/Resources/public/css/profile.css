@@ -1,0 +1,26 @@
+#inter-connexions
+{
+    background-color: #ECF0EF
+}
+
+#inter-connexions h3
+{
+    text-align: center;
+}
+
+.Parametres.facebook
+{
+    height: 30px;
+    width: 200px;
+    background-color: #FFF;
+    border-radius: 5px;
+}
+
+.Parametres.facebook .icon {
+	height: 20px;
+}
+
+.profile.top
+{
+    background-color: #ECF0EF
+}

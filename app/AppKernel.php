@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new Flyaround\CoreBundle\FlyaroundCoreBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
-            new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
@@ -29,6 +28,9 @@ class AppKernel extends Kernel
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Flyaround\MapBundle\FlyaroundMapBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

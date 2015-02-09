@@ -1,5 +1,5 @@
 <?php
-// src/Acme/HelloBundle/DataFixtures/ORM/LoadFlyData.php
+// src/Flyaround/MapBundle/DataFixtures/ORM/LoadFlyData.php
 
 namespace Flyaround\MapBundle\DataFixtures\ORM;
 
@@ -26,7 +26,9 @@ class LoadFlyData extends AbstractFixture implements FixtureInterface, OrderedFi
         $fly1->setLatitude('48');
         $fly1->setLongitude('1.0');
         $fly1->setDescription('magnifique chateau de la region ');
+        $fly1->setCategory($faker->randomElement($fly1->getCategoryValues()));
         $manager->persist($fly1);
+        $manager->flush();
 
         $lon_min = -1.0522795;
         $lon_max = 6.7260408;
@@ -38,6 +40,7 @@ class LoadFlyData extends AbstractFixture implements FixtureInterface, OrderedFi
             $fly->setDescription($faker->realText(250));
             $fly->setLatitude((mt_rand() / mt_getrandmax())*($lat_max-$lat_min) + $lat_min);
             $fly->setLongitude((mt_rand() / mt_getrandmax())*($lon_max-$lon_min) + $lon_min);
+            $fly->setCategory($faker->randomElement($fly1->getCategoryValues()));
             $manager->persist($fly);
         }
 

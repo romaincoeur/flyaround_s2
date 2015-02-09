@@ -1,30 +1,7 @@
 terrain:
     path:     /
-    defaults: { _controller: "FlyaroundMapBundle:Terrain:index" }
+    defaults: { _controller: "FlyaroundMapBundle:Terrain:getTerrains", _format: 'html' }
 
 terrain_show:
-    path:     /{id}/show
-    defaults: { _controller: "FlyaroundMapBundle:Terrain:show" }
-
-terrain_new:
-    path:     /new
-    defaults: { _controller: "FlyaroundMapBundle:Terrain:new" }
-
-terrain_create:
-    path:     /create
-    defaults: { _controller: "FlyaroundMapBundle:Terrain:create" }
-    requirements: { _method: post }
-
-terrain_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "FlyaroundMapBundle:Terrain:edit" }
-
-terrain_update:
-    path:     /{id}/update
-    defaults: { _controller: "FlyaroundMapBundle:Terrain:update" }
-    requirements: { _method: post|put }
-
-terrain_delete:
-    path:     /{id}/delete
-    defaults: { _controller: "FlyaroundMapBundle:Terrain:delete" }
-    requirements: { _method: post|delete }
+    path:     /{id}/show.{_format}
+    defaults: { _controller: "FlyaroundMapBundle:Terrain:getTerrain", _format: 'html' }

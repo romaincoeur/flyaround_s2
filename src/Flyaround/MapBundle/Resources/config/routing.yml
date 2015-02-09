@@ -2,9 +2,15 @@ flyaround_map_terrain:
     resource: "@FlyaroundMapBundle/Resources/config/routing/terrain.yml"
     prefix:   /terrain
 
+flyaround_map_terrain:
+    resource: "@FlyaroundMapBundle/Controller/TerrainController.php"
+    type:     rest
+    prefix: api
+
 flyaround_map_fly:
-    resource: "@FlyaroundMapBundle/Resources/config/routing/fly.yml"
-    prefix:   /fly
+    resource: "@FlyaroundMapBundle/Controller/FlyController.php"
+    type:     rest
+    prefix: api
 
 flyaround_map_homepage:
     pattern:  /app

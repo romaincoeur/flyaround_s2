@@ -20,80 +20,100 @@ Flyaround\MapBundle\Entity\Terrain:
             type: string
             length: '4'
             column: ICAO
+            nullable: true
         iATA:
             type: string
             length: '3'
             column: IATA
+            nullable: true
         description:
             type: text
             nullable: true
         altitude:
             type: float
+            nullable: true
         city:
             type: string
             length: 255
+            nullable: true
         country:
             type: string
             length: 255
+            nullable: true
         timezone:
             type: string
             length: 255
+            nullable: true
         dac:
             type: string
             length: 255
+            nullable: true
         departement:
             type: string
             length: 255
+            nullable: true
         restreint:
             type: boolean
+            nullable: true
         ulm:
             type: boolean
+            nullable: true
         heliStation:
             type: boolean
+            nullable: true
         vac:
             type: string
             length: 255
+            nullable: true
         touchAndGoPrice:
             type: string
             length: 255
+            nullable: true
         landingPrice:
             type: string
             length: 255
+            nullable: true
         dayLawnPrice:
             type: string
             length: 255
+            nullable: true
         hangarPrice:
             type: string
             length: 255
+            nullable: true
         altiport:
             type: boolean
+            nullable: true
         region:
             type: string
             length: 255
+            nullable: true
         phone:
             type: string
             length: 255
+            nullable: true
         published:
             type: boolean
-        virtualName:
+        slug:
             type: string
             length: 255
-            nullable: true
-        context:
-            type: string
-            length: 255
-            nullable: true
-        contextId:
-            type: string
-            length: 255
-            nullable: true
-        isMainContext:
-            type: boolean
             nullable: true
         createdAt:
             type: datetime
         updatedAt:
             type: datetime
+            nullable: true
+        address:
+            type: string
+            length: 255
+            nullable: true
+        postCode:
+            type: string
+            length: 255
+            nullable: true
+        town:
+            type: string
+            length: 255
             nullable: true
     lifecycleCallbacks:
         prePersist: [ setCreatedAtValue ]

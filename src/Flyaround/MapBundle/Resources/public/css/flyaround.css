@@ -94,7 +94,7 @@ p{
   height: auto;
   text-align: center;
   background-color: #F2F2F2;
-  padding-top: 100px; /*Marge pour le slider*/
+  padding-top: 160px; /*Marge pour le slider*/
 }
 .vue{
   width: 230px;
@@ -172,4 +172,7 @@ p{
   width: 40px;
   height: 40px;
   margin: 120px 15px 0px 15px;
+}
+.effet{
+  box-shadow: 3px 3px 3px #888888;
 }

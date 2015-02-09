@@ -9,5 +9,3 @@
 /vendor/
 /bin/
 /composer.phar
-.idea/*
-/composer.lock
