@@ -11,11 +11,11 @@
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/bootstrap.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/style.css') }}" type="text/css"/>
-        <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/global.css') }}" type="text/css"/>
-        <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/flyaround.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/global.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/profile.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/actualites.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/mapZone.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/flyaround.css') }}" type="text/css"/>
     {% endblock %}
 
     <!-- FONTS -->
@@ -131,10 +131,6 @@
 
 </div>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 04a855c14fc2820b228882f26529e79d262bdf13
 <div id="flylist-panel" class="panel col-md-5">
     <div id="flylisttop">
         <div class="row">
@@ -288,37 +284,36 @@
                 Parametres messagerie
             </div>
         </a>
-
     </div>
-
-
 </div>
+
+
 
 <div id="terrain-panel" class="panel col-md-5">
     <header>
         <div id="care1" class="care">
             <div class="icone">
-                <p class="geo" id="terrain-latlng"></p>
+                <p class="geo">13.45.324</p>
                 <img id="ico1" class="ico" src="{{ asset('bundles/flyaroundmap/img/icones-27.png') }}">
             </div>
             <div class="icone">
-                <p class="geo" id="terrain-phone"></p>
+                <p class="geo">02.37.34.43.48</p>
                 <img id="ico2" class="ico" src="{{ asset('bundles/flyaroundmap/img/icones-32.png') }}">
             </div>
             <div class="icone">
-                <p class="geo" id="terrain-address1"></p>
-                <p class="geo" id="terrain-address2"></p>
+                <p class="geo">Route de Coltainville</p>
+                <p class="geo">28000 Chartres</p>
                 <img id="ico3" class="ico" src="{{ asset('bundles/flyaroundmap/img/icones-33.png') }}">
             </div>
         </div>
         <div class="care">
-            <img id="logo" src="{{ asset('bundles/flyaroundmap/img/icones-29.png') }}">
-            <h5 id="terrain-name"></h5>
+            <img id="logo" src="{{ asset('bundles/flyaroundmap/img/geotheme-29.png') }}">
+            <h5 id="spotname">Aérodrôme de Chartres</h5>
             <div id="line"></div>
         </div>
         <div class="care">
             <button type="button" id="bouton"><img id="flag" src="{{ asset('bundles/flyaroundmap/img/icones-28.png') }}">Alentours de ce terrain</button>
-            <img onclick="closeAirportPanel();" id="croix" src="{{ asset('bundles/flyaroundmap/img/icones-23.png') }}">
+            <a href="#"><img id="croix" src="{{ asset('bundles/flyaroundmap/img/icones-23.png') }}"></a>
         </div>
     </header>
     <div id="box">
@@ -326,56 +321,79 @@
         <div id="line2"></div>
         <div class="vue">
             <div class="profil">
-                <div class="profil">
-                    <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
-                    <div class="dynamicText">
-                        <p class="name">Port</p>
-                        <div id="line3"></div>
-                        <p class="name">Robert Downey</p>
-                    </div>
-                    <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-28.png') }}">
-                </div>
-                <img class="decor" src="{{ asset('bundles/flyaroundmap/img/chateau.jpg') }}">
-            </div>
-        </div>
-        <div class="vue">
-            <div class="profil">
                 <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
                 <div class="dynamicText">
-                    <p class="name">Port</p>
-                    <div id="line3"></div>
-                    <p class="name">Robert Downey</p>
-                </div>
-                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-27.png') }}">
-            </div>
-            <img class="decor" src="{{ asset('bundles/flyaroundmap/img/fribourg.jpg') }}">
-        </div>
-        <div class="vue">
-            <div class="profil">
-                <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
-                <div class="dynamicText">
-                    <p class="name">Port</p>
-                    <div id="line3"></div>
-                    <p class="name">Robert Downey</p>
-                </div>
-                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-29.png') }}">
-            </div>
-            <img class="decor" src="{{ asset('bundles/flyaroundmap/img/corse4.jpg') }}">
-        </div>
-        <div class="vue">
-            <div class="profil">
-                <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
-                <div class="dynamicText">
-                    <p class="name">Port</p>
+                    <p class="name">Chateau</p>
                     <div id="line3"></div>
                     <p class="name">Robert Downey</p>
                 </div>
                 <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-28.png') }}">
             </div>
-            <img class="decor" src="{{ asset('bundles/flyaroundmap/img/chateau.jpg') }}">
+            <div id="decor1" class="decor">
+                <div class="contenu">
+                    <a href="#"><img class="num1 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-34.png') }}"></a>
+                    <a href="#"><img class="num2 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-35.png') }}"></a>
+                    <a href="#"><img class="num3 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-36.png') }}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="vue">
+            <div class="profil">
+                <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
+                <div class="dynamicText">
+                    <p class="name">Pont</p>
+                    <div id="line3"></div>
+                    <p class="name">Robert Downey</p>
+                </div>
+                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-26.png') }}">
+            </div>
+            <div id="decor2" class="decor">
+                <div class="contenu">
+                    <a href="#"><img class="num1 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-34.png') }}"></a>
+                    <a href="#"><img class="num2 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-35.png') }}"></a>
+                    <a href="#"><img class="num3 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-36.png') }}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="vue">
+            <div class="profil">
+                <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
+                <div class="dynamicText">
+                    <p class="name">Falaise</p>
+                    <div id="line3"></div>
+                    <p class="name">Robert Downey</p>
+                </div>
+                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-27.png') }}">
+            </div>
+            <div id="decor3" class="decor">
+                <div class="contenu">
+                    <a href="#"><img class="num1 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-34.png') }}"></a>
+                    <a href="#"><img class="num2 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-35.png') }}"></a>
+                    <a href="#"><img class="num3 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-36.png') }}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="vue">
+            <div class="profil">
+                <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
+                <div class="dynamicText">
+                    <p class="name">Chateau</p>
+                    <div id="line3"></div>
+                    <p class="name">Robert Downey</p>
+                </div>
+                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-28.png') }}">
+            </div>
+            <div id="decor4" class="decor">
+                <div class="contenu">
+                    <a href="#"><img class="num1 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-34.png') }}"></a>
+                    <a href="#"><img class="num2 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-35.png') }}"></a>
+                    <a href="#"><img class="num3 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-36.png') }}"></a>
+                </div>
+            </div>
         </div>
     </div><!--box-->
-</div>
+</div><!--Terrain-panel-->
+
 
 <div id="newfly-panel" class="panel col-md-5">
     <h1 class="title">Fly Creation</h1>
@@ -541,6 +559,6 @@
 </script>
 
 <script type="text/javascript" src="{{ asset('bundles/flyaroundmap/js/map.js') }}"></script>
-
+<script type="text/javascript" src="{{ asset('bundles/flyaroundmap/js/flyaround.js') }}"></script>
 </body>
 </html>
