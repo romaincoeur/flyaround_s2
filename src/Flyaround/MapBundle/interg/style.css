@@ -1,0 +1,55 @@
+
+/* 
+*CSS PAGE CREATION DUN FLY
+*/
+
+/*
+*HAUT 
+*/
+.icon {
+    width: 40px;
+    height: 40px;
+}
+.textcenter {
+    text-align: center;
+}
+.icon img {
+    margin: 0 auto;
+
+}
+.btnslec{
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    box-shadow: 0px 3px 1px #808080;
+    padding: 6% 3% 6% 1%;
+}
+/*
+*FIN HAUT
+*/
+
+/*
+*MID 
+*/
+.spaceimgtop {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#flymid{
+    background-color: #f5f7f6;
+    padding-top: 30px;
+}
+.imgpro{
+    width: 12%;
+    border-radius: 100%;
+    height: 16%;
+}
+
+.procomit{
+  pmargin: auto 0;
+}
+#flycarou{
+    margin-left: 8%;
+    margin-top: 2%;
+    height: 30%;
+    width: 30%;
+}
