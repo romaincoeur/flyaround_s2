@@ -490,7 +490,7 @@
     {% for entity in flies %}
     {% if entity.latitude and entity.longitude %}
     var LatLng = new google.maps.LatLng({{ entity.latitude }},{{ entity.longitude }});
-    var marker = new google.maps.Marker({
+    var markerfly = new google.maps.Marker({
         position: LatLng,
         map: map,
         {% if entity.category=='bridge' %}
@@ -504,7 +504,38 @@
         {% endif %}
         title: "{{ entity.category }}-{{ entity.id }}"
     });
-    markers.push(marker);
+    markers.push(markerfly);
+		google.maps.event.addListener(markerfly, 'click', function() {
+				if ($('#flylist-panel').css('marginLeft') == '0px') {
+            this.setIcon(icon_basicfly);
+            $('#flylist-panel').animate({marginLeft: '-45%'});
+        }
+        else {
+            console.log(this.title);
+            var id = this.title.split('-')[1];
+            console.log(id);
+            this.setIcon(icon_basicfly);
+            $.ajax({
+                type        : "GET",
+                url         : "api/flies/"+id+".json",
+                success     : function(response) {
+                    console.log(response);
+                    $("#flies-latlng").html(response.latitude+" "+response.longitude);
+                    $("#flies-phone").html(response.phone);
+                    $('#flies-address1').html(response.address);
+                    $('#flies-address2').html(response.postCode+" "+response.city);
+                    $('#flies-name').html(response.name);
+                },
+                error     : function(data) {
+                    console.log(data);
+                }
+            });
+            $(".panel").each(function (index) {
+                $(this).animate({marginLeft: '-45%'});
+            });
+            $('#flylist-panel').animate({marginLeft: '0'});
+        }
+    });
     {% endif %}
     {% endfor %}
 
@@ -519,15 +550,15 @@
     });
     markers.push(marker);
     google.maps.event.addListener(marker, 'click', function() {
-        if ($('#terrain-panel').css('marginLeft') == '0px') {
-            this.setIcon(icon_airport);
-            $('#terrain-panel').animate({marginLeft: '-45%'});
+				if ($('#flylist-panel').css('marginLeft') == '0px') {
+            this.setIcon(icon_basicfly);
+            $('#flylist-panel').animate({marginLeft: '-45%'});
         }
         else {
             console.log(this.title);
             var id = this.title.split('-')[1];
             console.log(id);
-            this.setIcon(icon_basicfly);
+            this.setIcon(icon_airport);
             $.ajax({
                 type        : "GET",
                 url         : "api/terrains/"+id+".json",
