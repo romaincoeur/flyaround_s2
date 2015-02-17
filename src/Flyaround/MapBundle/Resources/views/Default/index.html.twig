@@ -1,7 +1,7 @@
 {# src/Flyaround/MapBundle/Resources/views/index.html.twig #}
 
 <!DOCTYPE HTML>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/profile.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/actualites.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/mapZone.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/createFly.css') }}" type="text/css"/>
     {% endblock %}
 
     <!-- FONTS -->
@@ -372,43 +373,57 @@
                 </div>
                 <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-28.png') }}">
             </div>
-            <img class="decor" src="{{ asset('bundles/flyaroundmap/img/chateau.jpg') }}">
+            <img class="decor" src="{{ asset('bundles/flyaroundmap/img/chateau.jpg') }}"/>
         </div>
     </div><!--box-->
 </div>
 
 <div id="newfly-panel" class="panel col-md-5">
-    <h1 class="title">Fly Creation</h1>
-
     <form action="{{ url('post_flies') }}" method="POST" >
-        <div id="flyaround_mapbundle_fly">
-            <div>
-                <label for="flyaround_mapbundle_fly_name" class="required">Name</label>
-                <input type="text" id="flyaround_mapbundle_fly_name" name="flyaround_mapbundle_fly[name]" required="required" maxlength="255" />
-            </div>
-            <div>
-                <label for="flyaround_mapbundle_fly_latitude" class="required">Latitude</label>
-                <input type="text" id="flyaround_mapbundle_fly_latitude" name="flyaround_mapbundle_fly[latitude]" required="required" />
-            </div>
-            <div>
-                <label for="flyaround_mapbundle_fly_longitude" class="required">Longitude</label>
-                <input type="text" id="flyaround_mapbundle_fly_longitude" name="flyaround_mapbundle_fly[longitude]" required="required" />
-            </div>
-            <div>
-                <label for="flyaround_mapbundle_fly_description" class="required">Description</label>
-                <textarea id="flyaround_mapbundle_fly_description" name="flyaround_mapbundle_fly[description]" required="required"></textarea>
-            </div>
-            <div>
-                <label for="flyaround_mapbundle_fly_category" class="required">Category</label>
-                <select id="flyaround_mapbundle_fly_category" name="flyaround_mapbundle_fly[category]">
-                    <option value="bridge">Ouvrage d&#039;art</option>
-                    <option value="monument">Monument historique</option>
-                    <option value="panorama">Paysage</option>
-                </select>
+        <div id="white">
+            <img src="{{ asset ('bundles/flyaroundmap/img/geotheme-28.png') }}"/>
+
+            <div id="flyaround_mapbundle_fly">
+                <div>
+                    <label for="flyaround_mapbundle_fly_name" class="required"></label>
+                    <input type="text" id="flyaround_mapbundle_fly_name" name="flyaround_mapbundle_fly[name]" required="required" maxlength="255" placeholder="Titre du Fly" />
+                </div>
             </div>
         </div>
-        <input type="submit" value="Submit">
-    </form>
+
+        <div>
+            <label for="flyaround_mapbundle_fly_description" class="required"></label>
+            <textarea id="flyaround_mapbundle_fly_description" name="flyaround_mapbundle_fly[description]" required="required" placeholder="Décris ton intérêt pour ce site"></textarea>
+        </div>
+
+        <div id="send">
+
+        </div>
+
+        <div id="flyaround_mapbundle_fly_sendimg">
+            <img src="{{ asset ('bundles/flyaroundmap/img/icones-24.png') }}"/>
+            <p>Glisse une image içi pour l'importer <br>ou</p>
+            <button class="addingimg" id="download-button">
+                <img src="{{ asset ('bundles/flyaroundmap/img/icones-60.png') }}"/>
+                <strong>Télécharge</strong>
+            </button>
+            <p>la depuis ton ordinateur</p>
+        </div>
+
+        <div>
+            <label for="flyaround_mapbundle_fly_category" class="required">Categories</label>
+            <select id="flyaround_mapbundle_fly_category" name="flyaround_mapbundle_fly[category]">
+                <option value="bridge">Ouvrage d&#039;art</option>
+                <option value="monument">Monument historique</option>
+                <option value="panorama">Paysage</option>
+            </select>
+        </div>
+        <button type="submit" value="Submit" class="addingimg">
+            <img src="{{ asset ('bundles/flyaroundmap/img/icones-55.png') }}"/>
+            <strong>Valider</strong>
+        </button>
+</div>
+</form>
 </div>
 
 {# jquery est chargé en local si l'environnement est dev #}
