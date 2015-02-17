@@ -1,8 +1,9 @@
 $(document).ready(function(){
-	$(".vue").mouseenter(function(){
-		$(this).addClass("effet");
-	});
-	$(".vue").mouseleave(function(){
-		$(this).removeClass("effet");
+	$('.contenu').hide();
+	$('.vue').mouseenter(function(){
+		$('.contenu', this).fadeTo('slow', 1)
+		$(this).mouseleave(function(){
+			$('.contenu').hide();
+		});
 	});
 });

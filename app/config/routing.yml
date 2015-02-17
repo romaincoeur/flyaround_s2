@@ -4,7 +4,7 @@ flyaround_map:
 
 flyaround_core:
     resource: "@FlyaroundCoreBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /terrain
 
 
 
