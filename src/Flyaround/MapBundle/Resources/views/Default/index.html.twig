@@ -295,7 +295,7 @@
 
 
 <div id="terrain-panel" class="panel col-md-5">
-    <header>
+    <div class="header-terrain">
         <div id="care1" class="care">
             <div class="icone">
                 <p class="geo">13.45.324</p>
@@ -317,11 +317,18 @@
             <div id="line"></div>
         </div>
         <div class="care">
+            <img id="croix" src="{{ asset('bundles/flyaroundmap/img/icones-23.png') }}" onclick="closeAirportPanel()">
             <button type="button" id="bouton"><img id="flag" src="{{ asset('bundles/flyaroundmap/img/icones-28.png') }}">Alentours de ce terrain</button>
-            <a href="#"><img id="croix" src="{{ asset('bundles/flyaroundmap/img/icones-23.png') }}"></a>
         </div>
-    </header>
+    </div>
     <div id="box">
+        <a href="#"><div class="slider"></div></a>
+        <div class="line"></div>
+        <a href="#"><div class="slider"></div></a>
+        <div class="line"></div>
+        <a href="#"><div class="slider"></div></a>
+        <div class="line"></div>
+        <a href="#"><div class="slider"></div></a>
         <p id="desc">Les plus beaux sites aux alentours de ce terrain</p>
         <div id="line2"></div>
         <div class="vue">
@@ -382,13 +389,12 @@
             <div class="profil">
                 <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
                 <div class="dynamicText">
-                    <p class="name">Chateau</p>
+                    <p class="name">Falaise</p>
                     <div id="line3"></div>
                     <p class="name">Robert Downey</p>
                 </div>
-                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-28.png') }}">
+                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-27.png') }}">
             </div>
-            <img class="decor" src="{{ asset('bundles/flyaroundmap/img/chateau.jpg') }}"/>
             <div id="decor4" class="decor">
                 <div class="contenu">
                     <a href="#"><img class="num1 icone2" src="{{ asset('bundles/flyaroundmap/img/icones-34.png') }}"></a>
