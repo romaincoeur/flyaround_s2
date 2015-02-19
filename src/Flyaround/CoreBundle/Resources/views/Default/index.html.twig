@@ -105,7 +105,7 @@
     </div>
 
     <div id="second">
-        <img id="back1" src="{{ asset('bundles/flyaroundcore/images/back1.png') }}">
+        <div id="black1" class="parallax-window" data-parallax="scroll" data-image-src="{{ asset('bundles/flyaroundcore/images/back1.png') }}"></div>
     </div>
 
     <div id="third">
@@ -125,7 +125,7 @@
     </div>
 
     <div id="four">
-        <img id="back2" src="{{ asset('bundles/flyaroundcore/images/back2.png') }}">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="{{ asset('bundles/flyaroundcore/images/back2.png') }}"></div>
     </div>
 
     <div id="fifth">
@@ -161,7 +161,7 @@
     </div>
 
     <div id="seven">
-        <img id="back3" src="{{ asset('bundles/flyaroundcore/images/back3.png') }}">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="{{ asset('bundles/flyaroundcore/images/back3.png') }}"></div>
     </div>
 
 <div id="suggestions" class="bg-grey">
@@ -303,8 +303,10 @@
 {# jquery est chargé en local si l'environnement est dev #}
 {% if app.environment == 'dev' %}
     <script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/parallax.min.js')}}"></script>
 {% else %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/parallax.min.js')}}"></script>
 {% endif %}
 <script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bundles/flyaroundcore/js/carousel.js') }}"></script>
