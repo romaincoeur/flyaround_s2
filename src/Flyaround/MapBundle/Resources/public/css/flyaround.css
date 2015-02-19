@@ -1,12 +1,11 @@
 .header-terrain{
-  width: 600px;
+  width: 100%;
   height: 120px;
   text-align: center;
   background: #ffffff;
-  display: block;
 }
 .care{
-  width: 197px;
+  width: 150px;
   height: 110px;
   display: inline-block;
   overflow: hidden;
@@ -28,7 +27,7 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  left: 0;
+  left: 15px;
 }
 #ico1{
   top: -3px;
@@ -51,15 +50,19 @@
   margin: 0 auto;
   margin-bottom: 20px;
 }
+#croix{
+  width: 25px;
+  height: 25px;
+  margin-left: 130px;
+}
 #bouton{
-  width: 170px;
+  width: 150px;
   height: 25px;
   color: blue;
   border-radius: 7px;
   box-shadow: 0 4px 0 #B2B2B2;
   text-align: left;
-  font-size: 12px;
-  margin-top: 30px;
+  font-size: 10px;
 }
 #flag{
   height: 20px;
@@ -82,14 +85,8 @@ p{
   margin: 0 auto;
   margin-bottom: 35px;
 }
-#croix{
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  left: 580px;
-}
 #box{
-  width: 600px;
+  width: 100%;
   height: auto;
   text-align: center;
   background-color: #F2F2F2;
@@ -110,10 +107,10 @@ p{
   display: inline-block;
 }
 .vue{
-  width: 230px;
-  height: 215px;
+  width: 200px;
+  height: 190px;
   display: inline-block;
-  margin: 0 20px 40px 20px;
+  margin: 0 10px 20px 10px;
   overflow: hidden;
   text-align: center;
 }
@@ -122,21 +119,21 @@ p{
 }
 .profil{
   width: auto;
-  height: 55px;
+  height: 50px;
   background-color: #ffffff;
   text-align: center;
 }
 .avatar{
   border-radius: 100%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   float: left;
   margin: 8px 0 0 8px;
 }
 .embleme{
   width: 40px;
   height: 40px;
-  margin: 8px 8px 0 0;
+  margin-top: 5px;
   float: right;
 }
 #desc{
@@ -177,14 +174,14 @@ p{
 }
 .dynamicText{
   padding-top: 5px;
-  width:110px;
+  width: 90px;
   display: inline-block;
   text-align: center;
 }
 .icone2{
   width: 40px;
   height: 40px;
-  margin: 120px 15px 0 15px;
+  margin: 100px 10px 0 10px;
 }
 .effet{
   box-shadow: 3px 3px 3px #888888;
