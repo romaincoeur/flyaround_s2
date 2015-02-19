@@ -370,4 +370,7 @@ footer .big-icon:hover {
 .bg-grey {
     background-color: #E8E8E9;
 }
-
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
