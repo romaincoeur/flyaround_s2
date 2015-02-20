@@ -87,19 +87,21 @@
 
 .addingfly
 {
-	height:25px;
-	width:150px;
+	height:30px;
+	width:110px;
 	z-index:3;
-	background-color:#FFFFFF;
-	color:#000000;
+	background-color:#ECF0EF;
+	color: #0000ff;
 	position:absolute;
 	margin-left:500%;
 	display:inline;
 	border-radius:10px;
 	text-align:center;
 	margin-top:10px;
-	box-shadow: 0px 5px 0px #333331;
+	box-shadow: 0px 5px 0px #b4b4b4;
 	padding-top:2px;
+    font-size: 10px;
+    border-style:none;
 }
 
 #profilpic
@@ -115,14 +117,18 @@
 	margin:auto;
 	height:30px;
 	padding-top:5px;
-	color:#000000;
+	color: #0000ff;
 	width:125px;
-	background-color:skyblue;
+	background-color: #ECF0EF;
 	border-radius:10px;
-	box-shadow: 0px 5px 0px #333331;
+	box-shadow: 0px 5px 0px #808080;
 }
 
 #prosettings
 {
 	text-align:center;
+}
+
+.addingflyimg {
+    height: 23px;
 }

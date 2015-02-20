@@ -892,17 +892,17 @@
         },
         {
             "name": "friendsofsymfony/rest-bundle",
-            "version": "1.5.2",
+            "version": "1.5.3",
             "target-dir": "FOS/RestBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
-                "reference": "d72f3a41409997ebd91ca34561075c615d2ddcc0"
+                "reference": "fdd21c4c0cb6222ae37efc9362c6a96bd1432412"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/d72f3a41409997ebd91ca34561075c615d2ddcc0",
-                "reference": "d72f3a41409997ebd91ca34561075c615d2ddcc0",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/fdd21c4c0cb6222ae37efc9362c6a96bd1432412",
+                "reference": "fdd21c4c0cb6222ae37efc9362c6a96bd1432412",
                 "shasum": ""
             },
             "require": {
@@ -966,7 +966,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2015-02-09 12:22:33"
+            "time": "2015-02-16 15:26:12"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1058,9 +1058,7 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": [
-
-                ]
+                "branch-alias": []
             },
             "autoload": {
                 "psr-0": {
@@ -1462,7 +1460,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -1518,7 +1516,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -2096,12 +2094,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "41ecba8f2cd207be217035f9439a6219917cfd0d"
+                "reference": "2354471002e843f8274c4634816d3c22d5979477"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/41ecba8f2cd207be217035f9439a6219917cfd0d",
-                "reference": "41ecba8f2cd207be217035f9439a6219917cfd0d",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/2354471002e843f8274c4634816d3c22d5979477",
+                "reference": "2354471002e843f8274c4634816d3c22d5979477",
                 "shasum": ""
             },
             "require": {
@@ -2169,7 +2167,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2015-02-15 19:53:26"
+            "time": "2015-02-19 14:15:37"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -2302,12 +2300,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCoreBundle.git",
-                "reference": "bad98809010882201eec051dbae1adef6a24e954"
+                "reference": "87a84ae34c5b2d5fb96fb175f4948cd8bc070095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/bad98809010882201eec051dbae1adef6a24e954",
-                "reference": "bad98809010882201eec051dbae1adef6a24e954",
+                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/87a84ae34c5b2d5fb96fb175f4948cd8bc070095",
+                "reference": "87a84ae34c5b2d5fb96fb175f4948cd8bc070095",
                 "shasum": ""
             },
             "require": {
@@ -2359,7 +2357,7 @@
             "keywords": [
                 "sonata"
             ],
-            "time": "2015-02-15 18:22:51"
+            "time": "2015-02-18 10:03:53"
         },
         {
             "name": "sonata-project/datagrid-bundle",
@@ -3369,12 +3367,8 @@
             "time": "2014-10-02 07:26:00"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "doctrine/doctrine-fixtures-bundle": 20,
@@ -3386,10 +3380,9 @@
         "sonata-project/core-bundle": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
