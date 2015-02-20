@@ -1,16 +1,11 @@
-#terrain-panel{
-  width: 600px;
-  height: 600px;
-}
-header{
-  width: 600px;
-  height: 110px;
-  margin-bottom: 10px;
+.header-terrain{
+  width: 100%;
+  height: 120px;
   text-align: center;
   background: #ffffff;
 }
 .care{
-  width: 197px;
+  width: 150px;
   height: 110px;
   display: inline-block;
   overflow: hidden;
@@ -32,7 +27,7 @@ header{
   position: absolute;
   width: 40px;
   height: 40px;
-  left: 0px;
+  left: 15px;
 }
 #ico1{
   top: -3px;
@@ -45,7 +40,7 @@ header{
 }
 .geo{
   text-align: left;
-  margin: 0px 0px 0px 40px;
+  margin: 0 0 0 40px;
   font-size: 11px;
 }
 #line{
@@ -55,16 +50,19 @@ header{
   margin: 0 auto;
   margin-bottom: 20px;
 }
+#croix{
+  width: 25px;
+  height: 25px;
+  margin-left: 130px;
+}
 #bouton{
-  width: 170px;
+  width: 150px;
   height: 25px;
   color: blue;
-  font-size: 13px;
   border-radius: 7px;
-  box-shadow: 0px 4px 0px #B2B2B2;
+  box-shadow: 0 4px 0 #B2B2B2;
   text-align: left;
-  font-size: 12px;
-  margin-top: 30px;
+  font-size: 10px;
 }
 #flag{
   height: 20px;
@@ -87,47 +85,55 @@ p{
   margin: 0 auto;
   margin-bottom: 35px;
 }
-#croix{
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  left: 580px;
-}
 #box{
-  width: 600px;
+  width: 100%;
   height: auto;
   text-align: center;
   background-color: #F2F2F2;
-  padding-top: 160px; /*Marge pour le slider*/
+}
+.slider{
+  width: 20px;
+  height: 20px;
+  border: 4px solid #633950;
+  margin: 20px -8px 10px 0;
+  border-radius: 100%;
+  display: inline-block;
+}
+.line{
+  height: 4px;
+  width: 35px;
+  margin: 0 -8px 17px 0;
+  background-color: #633950;
+  display: inline-block;
 }
 .vue{
-  width: 230px;
-  height: 215px;
+  width: 200px;
+  height: 190px;
   display: inline-block;
-  margin: 0px 20px 40px 20px;
+  margin: 0 10px 20px 10px;
   overflow: hidden;
   text-align: center;
 }
 .vue:hover{
-  box-shadow: 3px 3px 3px #888888;
+  box-shadow: 3px 3px 3px #A2A2A2;
 }
 .profil{
   width: auto;
-  height: 55px;
-  background-color: white;
+  height: 50px;
+  background-color: #ffffff;
   text-align: center;
 }
 .avatar{
   border-radius: 100%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   float: left;
-  margin: 8px 0px 0px 8px;
+  margin: 8px 0 0 8px;
 }
 .embleme{
   width: 40px;
   height: 40px;
-  margin: 8px 8px 0px 0px;
+  margin-top: 5px;
   float: right;
 }
 #desc{
@@ -164,19 +170,25 @@ p{
   margin: 0 auto;
 }
 .name{
-  margin: 0px;
+  margin: 0;
 }
 .dynamicText{
   padding-top: 5px;
-    width:110px;
+  width: 90px;
   display: inline-block;
-    text-align: center;
+  text-align: center;
 }
 .icone2{
   width: 40px;
   height: 40px;
-  margin: 120px 15px 0px 15px;
+  margin: 100px 10px 0 10px;
 }
 .effet{
   box-shadow: 3px 3px 3px #888888;
+}
+.perimetre{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
 }

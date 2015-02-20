@@ -1,7 +1,7 @@
 {# src/Flyaround/MapBundle/Resources/views/index.html.twig #}
 
 <!DOCTYPE HTML>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/profile.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/actualites.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/mapZone.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/createFly.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/flyaround.css') }}" type="text/css"/>
     {% endblock %}
 
@@ -132,85 +133,94 @@
 </div>
 
 <div id="flylist-panel" class="panel col-md-5">
-    <div id="flylisttop">
-        <div class="row">
-            <div class="flylistgauche col-md-4">
-                <img src="{{ asset('bundles/flyaroundmap/img/icones-27.png') }}"/> 48,3615
+    <div class="row">
+        <div id="flytop">
+            <div class="col-md-4">
+                <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-27.png') }}"/>48,3615
                 <br>
-                <img src="{{ asset('bundles/flyaroundmap/img/icones-26.png') }}"/> Esbly 23KM
+                <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-26.png') }}"/> Esbly 23KM
             </div>
+            <div class="col-md-3">
+                <img class="icon center-block" src="{{ asset('bundles/flyaroundmap/img/geotheme-26.png') }}"/>
 
-            <div class="flylistmid col-md-4">
-                <img src="{{ asset('bundles/flyaroundmap/img/geotheme-26.png') }}"/>
-                <p>ZONE TEXT 1</p>
-                <p>Ajouté par Marc Degranjean</p>
+                <p class="textcenter">ZONE TEXT 1</p>
 
+                <p class="textcenter">Ajouté par Marc Degranjean</p>
             </div>
+            <div class="col-md-5 center-block ">
+                <a class="btnslec" href="#retenir" role="button" class="" data-toggle="modal">
+                    <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-25.png') }}">Retenir</a>
 
-            <div class="flylistdroit col-md-4">
-                <div class="col-md-1">
-                    <a href="#retenir" role="button" class="" data-toggle="modal">
-                        <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-25.png') }}"><p>Btn1</p>
-                    </a>
-                </div>
-
-                <div class="col-md-2">
-                    <a href="#retenir" role="button" class="" data-toggle="modal">
-                        <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-25.png') }}"><p>Btn2</p>
-                    </a>
-                </div>
+                <a class="btnslec" href="#retenir" role="button" class="" data-toggle="modal">
+                    <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-25.png') }}">Enrichir</a>
             </div>
         </div>
     </div>
-    <div id="fontgris">
-        <div class="flylistbody">
-            <div class="row">
-                <div style="background: url('{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}') no-repeat; background-position: 50% center;"class="col-md-1 circular">
-                </div>
-                <div class="col-md-4 text-center">
-                    <p>"Primi igitur omnium statuuntur Epigonus "</p>
+    <div id="flymid">
+        <div class="row">
+            <div class="procomit">
+                <div class=" center-block">
+                    <img style="float:left;" class="imgpro icon spaceimgtop" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}">
+                    <p class=" procommit ">Join team flyaround bro PHP IS GREAT</p>
                 </div>
             </div>
         </div>
-        <div id="carouselflylist">
+        <div class="row">
+            <div class="col-mid-5">
+                <div id="flycarou" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
 
-            <div class="row">
-                <div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
-                    <div class="carousel-inner">
-                        <div class="item active"><!-- class of active since it's the first item -->
-                            <img src="{{ asset('bundles/flyaroundcore/images/chateau.jpg') }}" alt="" />
-
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="{{ asset('bundles/flyaroundmap/img/chateau.jpg') }}" alt="chateau">
                         </div>
+
                         <div class="item">
-                            <img src="{{ asset('bundles/flyaroundcore/images/corse4.jpg') }}" alt="" />
-
+                            <img src="{{ asset('bundles/flyaroundmap/img/corse4.jpg') }}" alt="Ccorse">
                         </div>
 
-                    </div><!-- /.carousel-inner -->
-                    <!--  Next and Previous controls below
-                          href values must reference the id for this carousel -->
-                    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
-                    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
-                </div><!-- /.carousel -->
-            </div>
-        </div>
-
-        <div id="flylistcom">
-            <div class="xyz">
-                <div class="row">
-                    <div style="background: url('{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}') no-repeat; background-position: 50% center;"class="col-md-1 circular">
-                        <p>Jean dupont</p>
-
-
-                        <div class="col-md-5">
-                            <div class="flylistcomtxt">
-                                <p class="text-center">"Primi igitur omnium statuuntur Epigonus "</p>
-                            </div>
+                        <div class="item">
+                            <img src="{{ asset('bundles/flyaroundmap/img/fribourg.jpg') }}" alt="fribour">
                         </div>
                     </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
-
+        </div>
+        <div class="row">
+            <div id="flycommit">
+                <div class=" center-block">
+                    <a class="btnslec2" style="float:right;" href="#retenir" role="button" class="" data-toggle="modal">
+                        <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-25.png') }}">Enrichir</a>
+                    <img style="float:left;" class="imgpro icon spaceimgtop" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}">
+                    <a href="#"><p class="flypidname">JEAN JACK</p></a>
+                    <div class="flycommitfont">
+                        <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis</p>
+                    </div>
+                </div>
+                <br>
+                <img style="float:left;" class="imgpro icon spaceimgtop" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}">
+                <a href="#"><p class="flypidname">Robert</p></a>
+                <div class="flycommitfont">
+                    <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -238,6 +248,10 @@
         <p>pilote chez Air France </p>
         <img src="{{ asset('bundles/flyaroundmap/img/icones-89.png') }}">
         <p>Paris</p>
+    </div>
+    <br></br>
+    <div class="proset">
+        <a href="#prosettings" role="button" class="" data-toggle="modal">Paramètres</a>
     </div>
 
     <div id='inter-connexions'>
@@ -290,7 +304,7 @@
 
 
 <div id="terrain-panel" class="panel col-md-5">
-    <header>
+    <div class="header-terrain">
         <div id="care1" class="care">
             <div class="icone">
                 <p class="geo">13.45.324</p>
@@ -312,11 +326,18 @@
             <div id="line"></div>
         </div>
         <div class="care">
+            <img id="croix" src="{{ asset('bundles/flyaroundmap/img/icones-23.png') }}" onclick="closeAirportPanel()">
             <button type="button" id="bouton"><img id="flag" src="{{ asset('bundles/flyaroundmap/img/icones-28.png') }}">Alentours de ce terrain</button>
-            <a href="#"><img id="croix" src="{{ asset('bundles/flyaroundmap/img/icones-23.png') }}"></a>
         </div>
-    </header>
+    </div>
     <div id="box">
+        <a href="#"><div class="slider"></div></a>
+        <div class="line"></div>
+        <a href="#"><div class="slider"></div></a>
+        <div class="line"></div>
+        <a href="#"><div class="slider"></div></a>
+        <div class="line"></div>
+        <a href="#"><div class="slider"></div></a>
         <p id="desc">Les plus beaux sites aux alentours de ce terrain</p>
         <div id="line2"></div>
         <div class="vue">
@@ -377,11 +398,11 @@
             <div class="profil">
                 <img class="avatar" src="{{ asset('bundles/flyaroundmap/img/facetest.jpg') }}">
                 <div class="dynamicText">
-                    <p class="name">Chateau</p>
+                    <p class="name">Falaise</p>
                     <div id="line3"></div>
                     <p class="name">Robert Downey</p>
                 </div>
-                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-28.png') }}">
+                <img class="embleme" src="{{ asset('bundles/flyaroundmap/img/geotheme-27.png') }}">
             </div>
             <div id="decor4" class="decor">
                 <div class="contenu">
@@ -396,37 +417,83 @@
 
 
 <div id="newfly-panel" class="panel col-md-5">
-    <h1 class="title">Fly Creation</h1>
-
     <form action="{{ url('post_flies') }}" method="POST" >
-        <div id="flyaround_mapbundle_fly">
-            <div>
-                <label for="flyaround_mapbundle_fly_name" class="required">Name</label>
-                <input type="text" id="flyaround_mapbundle_fly_name" name="flyaround_mapbundle_fly[name]" required="required" maxlength="255" />
-            </div>
-            <div>
-                <label for="flyaround_mapbundle_fly_latitude" class="required">Latitude</label>
-                <input type="text" id="flyaround_mapbundle_fly_latitude" name="flyaround_mapbundle_fly[latitude]" required="required" />
-            </div>
-            <div>
-                <label for="flyaround_mapbundle_fly_longitude" class="required">Longitude</label>
-                <input type="text" id="flyaround_mapbundle_fly_longitude" name="flyaround_mapbundle_fly[longitude]" required="required" />
-            </div>
-            <div>
-                <label for="flyaround_mapbundle_fly_description" class="required">Description</label>
-                <textarea id="flyaround_mapbundle_fly_description" name="flyaround_mapbundle_fly[description]" required="required"></textarea>
-            </div>
-            <div>
-                <label for="flyaround_mapbundle_fly_category" class="required">Category</label>
-                <select id="flyaround_mapbundle_fly_category" name="flyaround_mapbundle_fly[category]">
-                    <option value="bridge">Ouvrage d&#039;art</option>
-                    <option value="monument">Monument historique</option>
-                    <option value="panorama">Paysage</option>
-                </select>
+        <div>
+            <img src="{{ asset ('bundles/flyaroundmap/img/icones-51.png') }}" class="headImg"/>
+
+            <div id="flyaround_mapbundle_fly">
+                <div>
+                    <label for="flyaround_mapbundle_fly_name" class="required"></label>
+                    <input type="text" id="flyaround_mapbundle_fly_name" class="flyaround_mapbundle_fly_name" name="flyaround_mapbundle_fly[name]" required="required" maxlength="255" placeholder="Titre" />
+                </div>
             </div>
         </div>
-        <input type="submit" value="Submit">
+
+            <div>
+                <label for="flyaround_mapbundle_fly_description" class="required"></label>
+                <textarea id="flyaround_mapbundle_fly_description" name="flyaround_mapbundle_fly[description]" required="required" placeholder="Décris ton intérêt pour ce site"></textarea>
+            </div>
+
+            <div class="containerTest">
+                <div id="flyaround_mapbundle_fly_sendimg">
+                    <img src="{{ asset ('bundles/flyaroundmap/img/icones-24.png') }}" class="photoImg"/>
+                    <p class="textSpace">Clique sur le bouton çi-dessous pour</p>
+                    <input type="file" class="sendImg">
+                        <!--<img src="{{ asset ('bundles/flyaroundmap/img/icones-60.png') }}" class="buttonImg"/>
+                        <strong class="textSpace">Télécharge</strong>-->
+                    </button>
+                    <p class="textSpace">l'image depuis ton ordinateur</p>
+                </div>
+
+                <div>
+                    <label for="flyaround_mapbundle_fly_category" class="required" id="flyaround_mapbundle_fly_category">Categories:</label>
+                    <select id="flyaround_mapbundle_fly_category" name="flyaround_mapbundle_fly[category]">
+                        <option value="bridge">Ouvrage d&#039;art</option>
+                        <option value="monument">Monument historique</option>
+                        <option value="panorama">Paysage</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" value="Submit" class="blabla">
+                <img src="{{ asset ('bundles/flyaroundmap/img/icones-55.png') }}" class="buttonImg"/>
+                <strong>Valider</strong>
+            </button>
     </form>
+</div>
+</div>
+
+<div class="modal fade" id="prosettings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Paramètres du profil</h3>
+            </div>
+            <form action="{{ url('fos_user_profile_edit') }}" method="POST" >
+                <br></br>
+                <div>
+                    <label for="fos_user_profile_form_username" class="required">Username</label>
+                    <br></br>
+                    <input type="text" id="fos_user_profile_form_username" name="fos_user_profile_form[username]" required="required"/>
+                </div>
+                <br></br>
+                <div>
+                    <label for="fos_user_profile_form_email" class="required">Email</label>
+                    <br></br>
+                    <input type="email" id="fos_user_profile_form_email" name="fos_user_profile_form[email]" required="required"/>
+                </div>
+                <br></br>
+                <div>
+                    <label for="fos_user_profile_form_current_password" class="required">Password</label>
+                    <br></br>
+                    <input type="password" id="fos_user_profile_form_current_password" name="fos_user_profile_form[current_password]" required="required"/>
+                </div>
+                <br></br>
+                <input type="submit" value="Update">
+                <br></br>
+            </form>
+        </div>
+    </div>
 </div>
 
 {# jquery est chargé en local si l'environnement est dev #}
@@ -490,7 +557,7 @@
     {% for entity in flies %}
     {% if entity.latitude and entity.longitude %}
     var LatLng = new google.maps.LatLng({{ entity.latitude }},{{ entity.longitude }});
-    var marker = new google.maps.Marker({
+    var markerfly = new google.maps.Marker({
         position: LatLng,
         map: map,
         {% if entity.category=='bridge' %}
@@ -504,7 +571,38 @@
         {% endif %}
         title: "{{ entity.category }}-{{ entity.id }}"
     });
-    markers.push(marker);
+    markers.push(markerfly);
+    google.maps.event.addListener(markerfly, 'click', function() {
+        if ($('#flylist-panel').css('marginLeft') == '0px') {
+            this.setIcon(icon_basicfly);
+            $('#flylist-panel').animate({marginLeft: '-45%'});
+        }
+        else {
+            console.log(this.title);
+            var id = this.title.split('-')[1];
+            console.log(id);
+            this.setIcon(icon_basicfly);
+            $.ajax({
+                type        : "GET",
+                url         : "api/flies/"+id+".json",
+                success     : function(response) {
+                    console.log(response);
+                    $("#flies-latlng").html(response.latitude+" "+response.longitude);
+                    $("#flies-phone").html(response.phone);
+                    $('#flies-address1').html(response.address);
+                    $('#flies-address2').html(response.postCode+" "+response.city);
+                    $('#flies-name').html(response.name);
+                },
+                error     : function(data) {
+                    console.log(data);
+                }
+            });
+            $(".panel").each(function (index) {
+                $(this).animate({marginLeft: '-45%'});
+            });
+            $('#flylist-panel').animate({marginLeft: '0'});
+        }
+    });
     {% endif %}
     {% endfor %}
 
@@ -519,15 +617,15 @@
     });
     markers.push(marker);
     google.maps.event.addListener(marker, 'click', function() {
-        if ($('#terrain-panel').css('marginLeft') == '0px') {
-            this.setIcon(icon_airport);
-            $('#terrain-panel').animate({marginLeft: '-45%'});
+        if ($('#flylist-panel').css('marginLeft') == '0px') {
+            this.setIcon(icon_basicfly);
+            $('#flylist-panel').animate({marginLeft: '-45%'});
         }
         else {
             console.log(this.title);
             var id = this.title.split('-')[1];
             console.log(id);
-            this.setIcon(icon_basicfly);
+            this.setIcon(icon_airport);
             $.ajax({
                 type        : "GET",
                 url         : "api/terrains/"+id+".json",

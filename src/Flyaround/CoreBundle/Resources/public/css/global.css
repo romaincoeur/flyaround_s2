@@ -289,6 +289,7 @@ header h2 {
     height: 100%;
     z-index: 1;
     margin-left: -45%;
+    /*overflow: scroll;*/
 }
 
 /*************************************************/
@@ -369,4 +370,7 @@ footer .big-icon:hover {
 .bg-grey {
     background-color: #E8E8E9;
 }
-
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}

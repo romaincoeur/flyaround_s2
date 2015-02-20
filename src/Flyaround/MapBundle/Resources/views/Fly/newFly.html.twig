@@ -2,6 +2,7 @@
 
 {% block body %}
     <h1 class="title">Fly Creation</h1>
+    <p>test</p>
 
     {%  if (form is defined) %}
         <form action="{{ url('post_flies') }}" method="POST" {{ form_enctype(form) }}>
