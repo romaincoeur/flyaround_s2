@@ -54,6 +54,7 @@
   width: 25px;
   height: 25px;
   margin-left: 130px;
+  cursor: pointer;
 }
 #bouton{
   width: 150px;

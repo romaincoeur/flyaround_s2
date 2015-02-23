@@ -37,7 +37,7 @@
     margin-bottom: 25px;
 }
 
-.blabla {
+.validatebuttonimg {
     height: 30px;
     width: 150px;
     display: block;
@@ -45,8 +45,9 @@
     border-radius: 10px;
     margin: auto;
     margin-bottom: 10px;
-    background-color: #d3d3d3;
+    background-color: #ECF0EF;
     color: #0000ff;
+    border-style: none;
 }
 
 .buttonImg {
