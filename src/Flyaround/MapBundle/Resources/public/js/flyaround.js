@@ -8,8 +8,7 @@ $(document).ready(function(){
 	});
 	$('.slider').click(function(){
 		$(this).hide(function(){
-			$(this).html("<img class='img-slider' src=\"{{ asset('bundles/flyaroundmap/img/icone-53.png') }}\" ");
+			$(this).add("<img class='img-slider' src=\"{{ asset('bundles/flyaroundmap/img/icone-53.png') }}\" ");
 		});
 	});
-
 });
