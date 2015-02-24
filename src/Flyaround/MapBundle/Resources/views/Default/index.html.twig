@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/style.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundcore/css/global.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/profile.css') }}" type="text/css"/>
-        <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/actualites.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/mapZone.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset('bundles/flyaroundmap/css/createFly.css') }}" type="text/css"/>
         <link rel="stylesheet" href="{{ asset ('bundles/flyaroundmap/css/flyaround.css') }}" type="text/css"/>
@@ -70,36 +69,39 @@
     </div>
 </div>
 
-<div id="flylist-panel" class="panel col-md-5">
+<div id="flylist-panel" class="flylistpanel panel col-md-5">
     <div class="row">
         <div id="flytop">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-27.png') }}"/>48,3615
                 <br>
                 <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-26.png') }}"/> Esbly 23KM
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <img class="icon center-block" src="{{ asset('bundles/flyaroundmap/img/geotheme-26.png') }}"/>
 
                 <p class="textcenter">ZONE TEXT 1</p>
 
                 <p class="textcenter">Ajouté par Marc Degranjean</p>
             </div>
-            <div class="col-md-5 center-block ">
-                <a class="btnslec" href="#retenir" role="button" class="" data-toggle="modal">
-                    <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-25.png') }}">Retenir</a>
-
-                <a class="btnslec" href="#retenir" role="button" class="" data-toggle="modal">
-                    <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-25.png') }}">Enrichir</a>
+            <div class="col-md-5">
+                <button class="btnslec2" id="newfly-button">
+                    <img src="{{ asset('bundles/flyaroundmap/img/sites-ajoutes-2.png') }}" class="addingflyimg"/>
+                    <strong>Retenir</strong>
+                </button>
+                <button class="btnslec2" id="newfly-button">
+                    <img src="{{ asset('bundles/flyaroundmap/img/sites-ajoutes-24.png') }}" class="addingflyimg"/>
+                    <strong>Enrichir</strong>
+                </button>
             </div>
         </div>
     </div>
     <div id="flymid">
         <div class="row">
             <div class="procomit">
-                <div class=" center-block">
+                <div class="center-block">
                     <img style="float:left;" class="imgpro icon spaceimgtop" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}">
-                    <p class=" procommit ">Join team flyaround bro PHP IS GREAT</p>
+                    <p class="procommit">L'expression châteaux de la Loire regroupe sous une même appellation un ensemble de châteaux français</p>
                 </div>
             </div>
         </div>
@@ -111,7 +113,6 @@
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
-                        <li data-target="#myCarousel" data-slide-to="3"></li>
                     </ol>
 
                     <!-- Wrapper for slides -->
@@ -143,11 +144,9 @@
         </div>
         <div class="row">
             <div id="flycommit">
-                <div class=" center-block">
-                    <a class="btnslec2" style="float:right;" href="#retenir" role="button" class="" data-toggle="modal">
-                        <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-25.png') }}">Enrichir</a>
+                <div class="center-block">
                     <img style="float:left;" class="imgpro icon spaceimgtop" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}">
-                    <a href="#"><p class="flypidname">JEAN JACK</p></a>
+                        <a href="#"><p class="flypidname">JEAN JACK</p></a>
                     <div class="flycommitfont">
                         <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis</p>
                     </div>
@@ -176,7 +175,7 @@
         <img src="{{ asset('bundles/flyaroundmap/img/icones-89.png') }}">
         <p>Paris</p>
     </div>
-    <br></br>
+    <br>
     <div class="proset">
         <a href="#prosettings" role="button" class="" data-toggle="modal">Paramètres</a>
     </div>
@@ -351,27 +350,27 @@
                 <h3 id="myModalLabel">Paramètres du profil</h3>
             </div>
             <form action="{{ url('fos_user_profile_edit') }}" method="POST" >
-                <br></br>
+                <br>
                 <div>
                     <label for="fos_user_profile_form_username" class="required">Username</label>
-                    <br></br>
+                    <br>
                     <input type="text" id="fos_user_profile_form_username" name="fos_user_profile_form[username]" required="required"/>
                 </div>
-                <br></br>
+                <br>
                 <div>
                     <label for="fos_user_profile_form_email" class="required">Email</label>
-                    <br></br>
+                    <br>
                     <input type="email" id="fos_user_profile_form_email" name="fos_user_profile_form[email]" required="required"/>
                 </div>
-                <br></br>
+                <br>
                 <div>
-                    <label for="fos_user_profile_form_current_password" class="required">Password</label>
-                    <br></br>
+                    <label for="fos_user_profile_form_current_password" class="required">Most de passe actuelle</label>
+                    <br>
                     <input type="password" id="fos_user_profile_form_current_password" name="fos_user_profile_form[current_password]" required="required"/>
                 </div>
-                <br></br>
+                <br>
                 <input type="submit" value="Update">
-                <br></br>
+                <br>
             </form>
         </div>
     </div>
