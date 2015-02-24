@@ -1,6 +1,11 @@
 /*
 *CSS PAGE CREATION DUN FLY
 */
+.flylistpanel{
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 12px;
+}
 
 /*
 *HAUT
@@ -12,15 +17,27 @@
 .textcenter {
     text-align: center;
 }
-.icon img {
-    margin: 0 auto;
 
-}
 .btnslec{
     background-color: #F5F5F5;
     border-radius: 10px;
     box-shadow: 0px 3px 1px #808080;
     padding: 6% 3% 6% 1%;
+}
+.btnslec2{
+    height: 30px;
+    width: 87px;
+    z-index: 3;
+    background-color: #ECF0EF;
+    color: #0000ff;
+    display: inline;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0px 5px 0px #b4b4b4;
+    padding-top: 2px;
+    font-size: 10px;
+    border-style: none;
 }
 /*
 *FIN HAUT
@@ -34,7 +51,7 @@
     padding-top: 1%;
 }
 .spaceimgtop {
-    margin-left: 5%;
+    margin-left: 20%;
     margin-right: 5%;
 }
 .imgpro{
@@ -43,7 +60,11 @@
     height: 16%;
 }
 .procomit{
-    margin: auto 0;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+.procomit p {
+    padding: 2%;
 }
 #flycarou{
     margin-left: 8%;
@@ -61,7 +82,7 @@
     margin: 5%
 }
 .flypidname{
-    padding: 4%;
+    padding: 1%;
 }
 .flycommitfont{
     padding: 3%;
