@@ -1,0 +1,5 @@
+application_sonata_user_profile_edit:
+    path:     /profileEdit
+    defaults: { _controller: "ApplicationSonataUserBundle:Profile:editProfile" }
+    requirements:
+        _method: POST

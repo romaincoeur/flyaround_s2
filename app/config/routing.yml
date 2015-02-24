@@ -47,3 +47,7 @@ homepage:
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
+
+ApplicationSonataUserBundle:
+    resource: "@ApplicationSonataUserBundle/Resources/config/routing.yml"
+    prefix:   /
