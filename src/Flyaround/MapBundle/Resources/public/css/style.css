@@ -1,12 +1,17 @@
 /*
-*CSS PAGE CREATION DUN FLY
+*CSS PAGE VUE DUN FLY
 */
 .flylistpanel{
     padding-left: 0px;
     padding-right: 0px;
     font-size: 12px;
 }
-
+.fondgris{
+    background-color: #f5f7f6;
+}
+.proleft{
+    margin-left: 10%;
+}
 /*
 *HAUT
 */
@@ -88,7 +93,13 @@
     padding: 3%;
     background-color: #FFF;
 }
+/*
+*FIN VUE FLY
+*/
 
+/*
+*BTN AJOUTER UN FLY
+*/
 .addingfly {
     height: 30px;
     width: 110px;
@@ -130,4 +141,18 @@
 
 .addingflyimg {
     height: 23px;
+}
+/*
+*FIN BTN AJOUTER FLY
+*/
+
+/*
+*
+*/
+
+.imgprofile {
+    width: 30%;
+    border-radius: 100%;
+    height: 30%;
+    margin: 6% 35%;
 }
