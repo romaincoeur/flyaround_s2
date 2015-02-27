@@ -2,10 +2,10 @@
 
 namespace Flyaround\MapBundle\Controller;
 
+use Flyaround\MapBundle\Form\Type\FlyType;
 use Symfony\Component\HttpFoundation\Request;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Flyaround\MapBundle\Entity\Fly;
-use Flyaround\MapBundle\Form\FlyType;
 use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\Controller\Annotations;
 use FOS\RestBundle\Controller\FOSRestController;

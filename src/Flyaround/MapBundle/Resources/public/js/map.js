@@ -66,6 +66,29 @@ $(function () {
                 $(this).animate({marginLeft: '-45%'});
             });
             $('#newfly-panel').animate({marginLeft: '0'});
+
+            // creation du marker
+            //création du marqueur
+            marqueur = new google.maps.Marker({
+                position: new google.maps.LatLng(48.8567,2.3508),
+                draggable: true,
+                map: map
+            });
+            google.maps.event.addListener(marqueur, 'dragend', function(event) {
+                map.setCenter(marqueur.getPosition());
+                $('input[name="flyaround_mapbundle_fly[latitude]"]').attr('value', marqueur.getPosition().lat());
+                $('input[name="flyaround_mapbundle_fly[longitude]"]').attr('value', marqueur.getPosition().lng());
+            });
+            google.maps.event.addListener(map, 'dragend', function() {
+                marqueur.setPosition(map.getCenter());
+                $('input[name="flyaround_mapbundle_fly[latitude]"]').attr('value', map.getCenter().lat());
+                $('input[name="flyaround_mapbundle_fly[longitude]"]').attr('value', map.getCenter().lng());
+            });
+            google.maps.event.addListener(map, 'zoom_changed', function() {
+                marqueur.setPosition(map.getCenter());
+                $('input[name="flyaround_mapbundle_fly[latitude]"]').attr('value', map.getCenter().lat());
+                $('input[name="flyaround_mapbundle_fly[longitude]"]').attr('value', map.getCenter().lng());
+            });
         }
     });
 

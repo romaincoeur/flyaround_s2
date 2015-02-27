@@ -25,6 +25,10 @@
                 <th>Description</th>
                 <td>{{ fly.description }}</td>
             </tr>
+        <tr>
+            <th>Image</th>
+            <td><img src="{{ asset('uploads/flies/' ~ fly.image) }}"></td>
+        </tr>
         </tbody>
     </table>
 

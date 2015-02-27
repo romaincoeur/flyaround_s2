@@ -146,7 +146,7 @@
             <div id="flycommit">
                 <div class="center-block">
                     <img style="float:left;" class="imgpro icon spaceimgtop" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}">
-                        <a href="#"><p class="flypidname">JEAN JACK</p></a>
+                    <a href="#"><p class="flypidname">JEAN JACK</p></a>
                     <div class="flycommitfont">
                         <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis</p>
                     </div>
@@ -168,61 +168,61 @@
 
 <div id="profile-panel" class="panel col-md-5">
     <div class="container-fluid flylistpanel">
-         <div class="row">
-             <div class="proimg fondgris">
-                 <img class="imgprofile" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}">
-                    <div class="textcenter">
-                        <p>{{ app.user.firstname }} {{ app.user.lastname }}</p>
-                        <p>---------------</p>
-                        <p>pilote chez Air France </p>
-                        <div class="col-md-1">
-                            <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-89.png') }}">
-                        </div>
-                        <div class="col-md-2">
-                            <p>Location: {{ app.user.locale }}</p>
-                        </div>
+        <div class="row">
+            <div class="proimg fondgris">
+                <img class="imgprofile" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}">
+                <div class="textcenter">
+                    <p>{{ app.user.firstname }} {{ app.user.lastname }}</p>
+                    <p>---------------</p>
+                    <p>pilote chez Air France </p>
+                    <div class="col-md-1">
+                        <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-89.png') }}">
                     </div>
-             </div>
-         </div>
+                    <div class="col-md-2">
+                        <p>Location: {{ app.user.locale }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
 
-        <div class='profile top'>
+    <div class='profile top'>
 
 
 
 
-        </div>
-        <br>
-        <div class="proform">
-            <form action="{{ url('application_sonata_user_profile_edit') }}" method="POST" >
+    </div>
+    <br>
+    <div class="proform">
+        <form action="{{ url('application_sonata_user_profile_edit') }}" method="POST" >
+            <br>
+            <div>
+                <input class="form-control" id="disabledInput" type="text" placeholder="{{ app.user.username }}" disabled>
+                <input class="form-control" id="disabledInput" type="text" placeholder="{{ app.user.email }}" disabled>
+                <label for="fos_user_profile_form_username" class="required">Nom utilisateur</label>
                 <br>
-                <div>
-                    <input class="form-control" id="disabledInput" type="text" placeholder="{{ app.user.username }}" disabled>
-                    <input class="form-control" id="disabledInput" type="text" placeholder="{{ app.user.email }}" disabled>
-                    <label for="fos_user_profile_form_username" class="required">Nom utilisateur</label>
-                    <br>
-                    <input type="text" id="fos_user_profile_form_username" name="fos_user_profile_form[username]" required="required"/>
-                </div>
+                <input type="text" id="fos_user_profile_form_username" name="fos_user_profile_form[username]" required="required"/>
+            </div>
+            <br>
+            <div>
+                <label for="fos_user_profile_form_email" class="required">Adresse Email</label>
                 <br>
-                <div>
-                    <label for="fos_user_profile_form_email" class="required">Adresse Email</label>
-                    <br>
-                    <input type="email" id="fos_user_profile_form_email" name="fos_user_profile_form[email]" required="required"/>
-                </div>
+                <input type="email" id="fos_user_profile_form_email" name="fos_user_profile_form[email]" required="required"/>
+            </div>
+            <br>
+            <div>
+                <label for="fos_user_profile_form_current_password" class="required">Most de passe actuelle</label>
                 <br>
-                <div>
-                    <label for="fos_user_profile_form_current_password" class="required">Most de passe actuelle</label>
-                    <br>
-                    <input type="password" id="fos_user_profile_form_current_password" name="fos_user_profile_form[current_password]" required="required"/>
-                </div>
-                <br>
-                <input type="submit" value="Validez">
-                <br>
-            </form>
+                <input type="password" id="fos_user_profile_form_current_password" name="fos_user_profile_form[current_password]" required="required"/>
+            </div>
+            <br>
+            <input type="submit" value="Validez">
+            <br>
+        </form>
 
-        </div>
+    </div>
 </div>
 
 
@@ -353,72 +353,41 @@
             </div>
         </div>
 
-            <div>
-                <label for="flyaround_mapbundle_fly_description" class="required"></label>
-                <textarea id="flyaround_mapbundle_fly_description" name="flyaround_mapbundle_fly[description]" required="required" placeholder="Décris ton intérêt pour ce site"></textarea>
-            </div>
+        <div>
+            <label for="flyaround_mapbundle_fly_description" class="required"></label>
+            <textarea id="flyaround_mapbundle_fly_description" name="flyaround_mapbundle_fly[description]" required="required" placeholder="Décris ton intérêt pour ce site"></textarea>
+        </div>
 
-            <div class="containerTest">
-                <div id="flyaround_mapbundle_fly_sendimg">
-                    <img src="{{ asset ('bundles/flyaroundmap/img/icones-24.png') }}" class="photoImg"/>
-                    <p class="textSpace">Clique sur le bouton çi-dessous pour</p>
-                    <input type="file" class="sendImg">
-                        <!--<img src="{{ asset ('bundles/flyaroundmap/img/icones-60.png') }}" class="buttonImg"/>
+        <div class="containerTest">
+            <div id="flyaround_mapbundle_fly_sendimg">
+                <img src="{{ asset ('bundles/flyaroundmap/img/icones-24.png') }}" class="photoImg"/>
+                <p class="textSpace">Clique sur le bouton çi-dessous pour</p>
+                <input type="file" class="sendImg" name="flyaround_mapbundle_fly[file]">
+                <!--<img src="{{ asset ('bundles/flyaroundmap/img/icones-60.png') }}" class="buttonImg"/>
                         <strong class="textSpace">Télécharge</strong>-->
-                    </button>
-                    <p class="textSpace">l'image depuis ton ordinateur</p>
-                </div>
-
-                <div>
-                    <label for="flyaround_mapbundle_fly_category" class="required" id="flyaround_mapbundle_fly_category">Categories:</label>
-                    <select id="flyaround_mapbundle_fly_category" name="flyaround_mapbundle_fly[category]">
-                        <option value="bridge">Ouvrage d&#039;art</option>
-                        <option value="monument">Monument historique</option>
-                        <option value="panorama">Paysage</option>
-                    </select>
-                </div>
+                </button>
+                <p class="textSpace">l'image depuis ton ordinateur</p>
             </div>
-            <button type="submit" value="Submit" class="validatebuttonimg">
-                <img src="{{ asset ('bundles/flyaroundmap/img/icones-55.png') }}" class="buttonImg"/>
-                <strong>Valider</strong>
-            </button>
+
+            <div>
+                <label for="flyaround_mapbundle_fly_category" class="required" id="flyaround_mapbundle_fly_category">Categories:</label>
+                <select id="flyaround_mapbundle_fly_category" name="flyaround_mapbundle_fly[category]">
+                    <option value="bridge">Ouvrage d&#039;art</option>
+                    <option value="monument">Monument historique</option>
+                    <option value="panorama">Paysage</option>
+                </select>
+            </div>
+        </div>
+        <input type="hidden" name="flyaround_mapbundle_fly[latitude]">
+        <input type="hidden" name="flyaround_mapbundle_fly[longitude]">
+        <button type="submit" value="Submit" class="validatebuttonimg">
+            <img src="{{ asset ('bundles/flyaroundmap/img/icones-55.png') }}" class="buttonImg"/>
+            <strong>Valider</strong>
+        </button>
     </form>
 </div>
-</div>
 
-{#<div class="modal fade" id="prosettings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="myModalLabel">Paramètres du profil</h3>
-            </div>
-            <form action="{{ url('fos_user_profile_edit') }}" method="POST" >
-                <br>
-                <div>
-                    <label for="fos_user_profile_form_username" class="required">Username</label>
-                    <br>
-                    <input type="text" id="fos_user_profile_form_username" name="fos_user_profile_form[username]" required="required"/>
-                </div>
-                <br>
-                <div>
-                    <label for="fos_user_profile_form_email" class="required">Email</label>
-                    <br>
-                    <input type="email" id="fos_user_profile_form_email" name="fos_user_profile_form[email]" required="required"/>
-                </div>
-                <br>
-                <div>
-                    <label for="fos_user_profile_form_current_password" class="required">Most de passe actuelle</label>
-                    <br>
-                    <input type="password" id="fos_user_profile_form_current_password" name="fos_user_profile_form[current_password]" required="required"/>
-                </div>
-                <br>
-                <input type="submit" value="Update">
-                <br>
-            </form>
-        </div>
-    </div>
-</div>#}
+
 
 {# jquery est chargé en local si l'environnement est dev #}
 {% if app.environment == 'dev' %}

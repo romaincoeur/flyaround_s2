@@ -2,7 +2,6 @@
 
 namespace Flyaround\MapBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Fly
@@ -22,6 +21,32 @@ class Fly
     {
         return array_keys(self::getCategories());
     }
+
+    public $file;
+
+    protected function getUploadDir()
+    {
+        return 'uploads/flies';
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
+    }
+
+
+
+
 
 
 
@@ -186,5 +211,33 @@ class Fly
     public function getCategory()
     {
         return $this->category;
+    }
+    /**
+     * @var string
+     */
+    private $image;
+
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Fly
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

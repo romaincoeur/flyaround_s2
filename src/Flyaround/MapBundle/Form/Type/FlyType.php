@@ -1,6 +1,6 @@
 <?php
 
-namespace Flyaround\MapBundle\Form;
+namespace Flyaround\MapBundle\Form\Type;
 
 use Flyaround\MapBundle\Entity\Fly;
 use Symfony\Component\Form\AbstractType;
@@ -26,6 +26,7 @@ class FlyType extends AbstractType
                 'multiple' => false,
                 'required' => true
             ))
+            ->add('file', 'file', array('label' => 'Fly logo', 'required' => false))
         ;
     }
     
