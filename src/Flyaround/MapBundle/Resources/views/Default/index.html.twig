@@ -1,7 +1,7 @@
 {# src/Flyaround/MapBundle/Resources/views/index.html.twig #}
 
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -59,7 +59,7 @@
         <hr>
         <div class="description">Pilote chez Air France</div>
         <div class="city">
-            <strong>Paris</strong>
+            <strong>{{ app.user.locale }}</strong>
         </div>
     </div>
     <div class="menu">
@@ -73,7 +73,7 @@
     <div class="row">
         <div id="flytop">
             <div class="col-md-3">
-                <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-27.png') }}"/>48,3615
+                <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-27.png') }}"/>latitude
                 <br>
                 <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-26.png') }}"/> Esbly 23KM
             </div>
@@ -167,18 +167,62 @@
 </div>
 
 <div id="profile-panel" class="panel col-md-5">
-    {#<img src="{{ asset('bundles/flyaroundmap/img/...') }}">#}
-    Mon profil
-    <div class='profile top'>
-        <p>Prenom</p>
-        <p>pilote chez Air France </p>
-        <img src="{{ asset('bundles/flyaroundmap/img/icones-89.png') }}">
-        <p>Paris</p>
+    <div class="container-fluid flylistpanel">
+         <div class="row">
+             <div class="proimg fondgris">
+                 <img class="imgprofile" src="{{ asset('bundles/flyaroundmap/img/panda.jpg') }}">
+                    <div class="textcenter">
+                        <p>{{ app.user.firstname }} {{ app.user.lastname }}</p>
+                        <p>---------------</p>
+                        <p>pilote chez Air France </p>
+                        <div class="col-md-1">
+                            <img class="icon" src="{{ asset('bundles/flyaroundmap/img/icones-89.png') }}">
+                        </div>
+                        <div class="col-md-2">
+                            <p>Location: {{ app.user.locale }}</p>
+                        </div>
+                    </div>
+             </div>
+         </div>
     </div>
-    <br>
-    <div class="proset">
-        <a href="#prosettings" role="button" class="" data-toggle="modal">Paramètres</a>
-    </div>
+
+
+
+        <div class='profile top'>
+
+
+
+
+        </div>
+        <br>
+        <div class="proform">
+            <form action="{{ url('application_sonata_user_profile_edit') }}" method="POST" >
+                <br>
+                <div>
+                    <input class="form-control" id="disabledInput" type="text" placeholder="{{ app.user.username }}" disabled>
+                    <input class="form-control" id="disabledInput" type="text" placeholder="{{ app.user.email }}" disabled>
+                    <label for="fos_user_profile_form_username" class="required">Nom utilisateur</label>
+                    <br>
+                    <input type="text" id="fos_user_profile_form_username" name="fos_user_profile_form[username]" required="required"/>
+                </div>
+                <br>
+                <div>
+                    <label for="fos_user_profile_form_email" class="required">Adresse Email</label>
+                    <br>
+                    <input type="email" id="fos_user_profile_form_email" name="fos_user_profile_form[email]" required="required"/>
+                </div>
+                <br>
+                <div>
+                    <label for="fos_user_profile_form_current_password" class="required">Most de passe actuelle</label>
+                    <br>
+                    <input type="password" id="fos_user_profile_form_current_password" name="fos_user_profile_form[current_password]" required="required"/>
+                </div>
+                <br>
+                <input type="submit" value="Validez">
+                <br>
+            </form>
+
+        </div>
 </div>
 
 
@@ -342,7 +386,7 @@
 </div>
 </div>
 
-<div class="modal fade" id="prosettings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+{#<div class="modal fade" id="prosettings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -374,7 +418,7 @@
             </form>
         </div>
     </div>
-</div>
+</div>#}
 
 {# jquery est chargé en local si l'environnement est dev #}
 {% if app.environment == 'dev' %}
