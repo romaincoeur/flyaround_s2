@@ -50,9 +50,11 @@ class TerrainController extends FOSRestController
         if ($lat1 && $lat2 && $lng1 && $lng2)
             $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->getZone($lat1, $lat2, $lng1, $lng2);
         else
-            $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->getZone(40, 60, -5, 10);
+            $entities = $em->getRepository('FlyaroundMapBundle:Terrain')->findByCountry('France');
 
-        return $entities;
+        $view = $this->view($entities, 200);
+        $view->setHeader('Access-Control-Allow-Origin', '*');
+        return $this->handleView($view);
     }
 
     /**

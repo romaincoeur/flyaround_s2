@@ -37,6 +37,7 @@ class Terrain
 
 
 
+
     // YAML GENERATED CODE
     
     
@@ -894,5 +895,145 @@ class Terrain
     public function getTown()
     {
         return $this->town;
+    }
+    /**
+     * @var string
+     */
+    private $clubs;
+
+    /**
+     * @var string
+     */
+    private $hotels;
+
+    /**
+     * @var integer
+     */
+    private $declinaison;
+
+    /**
+     * @var string
+     */
+    private $runwayInfo;
+
+    /**
+     * @var string
+     */
+    private $fuelPhone;
+
+
+    /**
+     * Set clubs
+     *
+     * @param string $clubs
+     * @return Terrain
+     */
+    public function setClubs($clubs)
+    {
+        $this->clubs = $clubs;
+
+        return $this;
+    }
+
+    /**
+     * Get clubs
+     *
+     * @return string 
+     */
+    public function getClubs()
+    {
+        return $this->clubs;
+    }
+
+    /**
+     * Set hotels
+     *
+     * @param string $hotels
+     * @return Terrain
+     */
+    public function setHotels($hotels)
+    {
+        $this->hotels = $hotels;
+
+        return $this;
+    }
+
+    /**
+     * Get hotels
+     *
+     * @return string 
+     */
+    public function getHotels()
+    {
+        return $this->hotels;
+    }
+
+    /**
+     * Set declinaison
+     *
+     * @param integer $declinaison
+     * @return Terrain
+     */
+    public function setDeclinaison($declinaison)
+    {
+        $this->declinaison = $declinaison;
+
+        return $this;
+    }
+
+    /**
+     * Get declinaison
+     *
+     * @return integer 
+     */
+    public function getDeclinaison()
+    {
+        return $this->declinaison;
+    }
+
+    /**
+     * Set runwayInfo
+     *
+     * @param string $runwayInfo
+     * @return Terrain
+     */
+    public function setRunwayInfo($runwayInfo)
+    {
+        $this->runwayInfo = $runwayInfo;
+
+        return $this;
+    }
+
+    /**
+     * Get runwayInfo
+     *
+     * @return string 
+     */
+    public function getRunwayInfo()
+    {
+        return $this->runwayInfo;
+    }
+
+    /**
+     * Set fuelPhone
+     *
+     * @param string $fuelPhone
+     * @return Terrain
+     */
+    public function setFuelPhone($fuelPhone)
+    {
+        $this->fuelPhone = $fuelPhone;
+
+        return $this;
+    }
+
+    /**
+     * Get fuelPhone
+     *
+     * @return string 
+     */
+    public function getFuelPhone()
+    {
+        return $this->fuelPhone;
     }
 }

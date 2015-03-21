@@ -33,7 +33,12 @@
         "willdurand/faker-bundle": "~1.0",
         "friendsofsymfony/rest-bundle": "~1.5",
         "jms/serializer-bundle": "0.13.*",
-        "nelmio/api-doc-bundle": "~2.7"
+        "nelmio/api-doc-bundle": "~2.7",
+        "lexik/jwt-authentication-bundle": "~1.0"
+    },
+    "require-dev": {
+        "liip/functional-test-bundle": "1.0.*",
+        "phpunit/phpunit": "4.4.*"
     },
     "scripts": {
         "post-install-cmd": [

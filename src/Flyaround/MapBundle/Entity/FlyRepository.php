@@ -12,4 +12,11 @@ use Doctrine\ORM\EntityRepository;
  */
 class FlyRepository extends EntityRepository
 {
+    public function getMarker()
+    {
+        $qb = $this->createQueryBuilder('f')
+            ->select('f.id', 'f.latitude', 'f.longitude');
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
 }

@@ -3,3 +3,17 @@ application_sonata_user_profile_edit:
     defaults: { _controller: "ApplicationSonataUserBundle:Profile:editProfile" }
     requirements:
         _method: POST
+
+application_sonata_user_api_security:
+    resource: "@ApplicationSonataUserBundle/Controller/ApiSecurityController.php"
+    type:     rest
+    prefix:   api
+
+api_login_check:
+    path: /api/login_check
+
+api_ping:
+    pattern: /api/ping
+    defaults: { _controller: 'ApplicationSonataUserBundle:ApiSecurity:ping' }
+    requirements:
+        _method: HEAD|GET

@@ -7,7 +7,7 @@
  */
 
 // src/Flyaround/MapBundle/DataFixtures/ORM/LoadGroupData.php
-namespace Vistagram\PlateformeBundle\DataFixtures\ORM;
+namespace Flyaround\MapBundle\DataFixtures\ORM;
 
 use Application\Sonata\UserBundle\Entity\Group;
 use Doctrine\Common\Persistence\ObjectManager;

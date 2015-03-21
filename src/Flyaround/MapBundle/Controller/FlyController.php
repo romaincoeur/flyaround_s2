@@ -2,18 +2,19 @@
 
 namespace Flyaround\MapBundle\Controller;
 
-use Flyaround\MapBundle\Form\Type\FlyType;
-use Symfony\Component\HttpFoundation\Request;
-use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-use Flyaround\MapBundle\Entity\Fly;
-use FOS\RestBundle\Util\Codes;
-use FOS\RestBundle\Controller\Annotations;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Request\ParamFetcherInterface;
-use FOS\RestBundle\View\RouteRedirectView;
+use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\View\View;
-use Symfony\Component\Form\FormTypeInterface;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use FOS\RestBundle\Controller\Annotations;
+use Flyaround\MapBundle\Entity\Fly;
+use FOS\RestBundle\Util\Codes;
+use Flyaround\MapBundle\Form\Type\FlyType;
+use FOS\RestBundle\View\RouteRedirectView;
+use Symfony\Component\Form\FormTypeInterface;
 
 /**
  * Fly controller.
@@ -40,20 +41,20 @@ class FlyController extends FOSRestController
      *   }
      * )
      *
-     * @Annotations\QueryParam(name="offset", requirements="\d+", nullable=true, description="Offset from which to start listing flies.")
-     * @Annotations\QueryParam(name="limit", requirements="\d+", default="5", description="How many flies to return.")
-     *
      * @Annotations\View()
      *
      * @param Request               $request      the request object
      * @param ParamFetcherInterface $paramFetcher param fetcher service
+     * @param Array                 $fields       fields
      *
      * @return array
      */
     public function getFliesAction(Request $request, ParamFetcherInterface $paramFetcher)
     {
         $flies = $this->getFlyRepository()->findAll();
-        return $flies;
+        $view = $this->view($flies, 200);
+        $view->setHeader('Access-Control-Allow-Origin', '*');
+        return $this->handleView($view);
     }
 
     /**
@@ -83,6 +84,7 @@ class FlyController extends FOSRestController
             throw $this->createNotFoundException("Fly does not exist.");
         }
         $view = new View($entity);
+        $view->setHeader('Access-Control-Allow-Origin', '*');
         $group = $this->container->get('security.context')->isGranted('ROLE_API') ? 'restapi' : 'standard';
         $view->getSerializationContext()->setGroups(array('Default', $group));
         return $view;
@@ -112,7 +114,7 @@ class FlyController extends FOSRestController
      *
      * @ApiDoc(
      *   resource = true,
-     *   input = "Flyaround\MapBundle\Form\FlyType",
+     *   input = "Flyaround\MapBundle\Form\Type\FlyType",
      *   statusCodes = {
      *     200 = "Returned when successful",
      *     400 = "Returned when the form has errors"
@@ -137,11 +139,13 @@ class FlyController extends FOSRestController
         if ($form->isValid()) {
             $em->persist($fly);
             $em->flush();
-            return $this->routeRedirectView('get_fly', array('id' => $fly->getId()));
+            return new Response('{"id": '.$fly->getId().'}', 200, array('Access-Control-Allow-Origin' => '*'));
         }
-        return array(
-            'form' => $form
-        );
+        $view = new View(array('form' => $form));
+        $view->setHeader('Access-Control-Allow-Origin', '*');
+        $group = $this->container->get('security.context')->isGranted('ROLE_API') ? 'restapi' : 'standard';
+        $view->getSerializationContext()->setGroups(array('Default', $group));
+        return $view;
     }
 
     /**
@@ -171,7 +175,10 @@ class FlyController extends FOSRestController
             throw $this->createNotFoundException("Fly does not exist.");
         }
         $form = $this->createForm(new FlyType(), $fly);
-        return $form;
+        $view = new View($form);
+        $group = $this->container->get('security.context')->isGranted('ROLE_API') ? 'restapi' : 'standard';
+        $view->getSerializationContext()->setGroups(array('Default', $group));
+        return $view;
     }
 
     /**
@@ -179,7 +186,7 @@ class FlyController extends FOSRestController
      *
      * @ApiDoc(
      *   resource = true,
-     *   input = "Flyaround\MapBundle\Form\FlyType",
+     *   input = "Flyaround\MapBundle\Form\Type\FlyType",
      *   statusCodes = {
      *     201 = "Returned when a new resource is created",
      *     204 = "Returned when successful",

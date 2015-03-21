@@ -24,12 +24,10 @@ Flyaround\MapBundle\Entity\Fly:
         image:
             type: string
             length: 255
+            nullable: true
     lifecycleCallbacks:
         prePersist: [ preUpload ]
         preUpdate: [ preUpload ]
         postPersist: [ upload ]
         postUpdate: [ upload ]
         postRemove: [ removeUpload ]
-
-
-

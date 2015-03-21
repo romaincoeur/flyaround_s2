@@ -115,6 +115,22 @@ Flyaround\MapBundle\Entity\Terrain:
             type: string
             length: 255
             nullable: true
+        clubs:
+            type: text
+            nullable: true
+        hotels:
+            type: text
+            nullable: true
+        declinaison:
+            type: integer
+            nullable: true
+        runwayInfo:
+            type: text
+            nullable: true
+        fuelPhone:
+            type: string
+            length: 255
+            nullable: true
     lifecycleCallbacks:
         prePersist: [ setCreatedAtValue ]
         preUpdate: [ setUpdatedAtValue ]
