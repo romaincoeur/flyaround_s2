@@ -1,0 +1,73 @@
+.headImg {
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 50px;
+}
+
+.flyaround_mapbundle_fly_name {
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
+    border: dashed 2px #d3d3d3;
+}
+
+#flyaround_mapbundle_fly_description {
+    border: dashed 2px #000000;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.containerTest {
+    height: 50%;
+    width: 100%;
+    border:dashed 2px #000000;
+    padding-top: 100px;
+    margin-bottom: 10px;
+}
+.photoImg {
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.validatebuttonimg {
+    height: 30px;
+    width: 150px;
+    display: block;
+    box-shadow: 0px 5px 0px #808080;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #ECF0EF;
+    color: #0000ff;
+    border-style: none;
+}
+
+.buttonImg {
+    height: 30px;
+    width: 30px;
+}
+
+.textSpace {
+    margin-bottom: 10px;
+}
+
+#flyaround_mapbundle_fly_category {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.sendImg {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+}

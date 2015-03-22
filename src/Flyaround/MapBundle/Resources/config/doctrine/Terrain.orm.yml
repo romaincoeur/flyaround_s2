@@ -1,0 +1,136 @@
+Flyaround\MapBundle\Entity\Terrain:
+    type: entity
+    table: null
+    repositoryClass: Flyaround\MapBundle\Entity\TerrainRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        latitude:
+            type: float
+        longitude:
+            type: float
+        iCAO:
+            type: string
+            length: '4'
+            column: ICAO
+            nullable: true
+        iATA:
+            type: string
+            length: '3'
+            column: IATA
+            nullable: true
+        description:
+            type: text
+            nullable: true
+        altitude:
+            type: float
+            nullable: true
+        city:
+            type: string
+            length: 255
+            nullable: true
+        country:
+            type: string
+            length: 255
+            nullable: true
+        timezone:
+            type: string
+            length: 255
+            nullable: true
+        dac:
+            type: string
+            length: 255
+            nullable: true
+        departement:
+            type: string
+            length: 255
+            nullable: true
+        restreint:
+            type: boolean
+            nullable: true
+        ulm:
+            type: boolean
+            nullable: true
+        heliStation:
+            type: boolean
+            nullable: true
+        vac:
+            type: string
+            length: 255
+            nullable: true
+        touchAndGoPrice:
+            type: string
+            length: 255
+            nullable: true
+        landingPrice:
+            type: string
+            length: 255
+            nullable: true
+        dayLawnPrice:
+            type: string
+            length: 255
+            nullable: true
+        hangarPrice:
+            type: string
+            length: 255
+            nullable: true
+        altiport:
+            type: boolean
+            nullable: true
+        region:
+            type: string
+            length: 255
+            nullable: true
+        phone:
+            type: string
+            length: 255
+            nullable: true
+        published:
+            type: boolean
+        slug:
+            type: string
+            length: 255
+            nullable: true
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+            nullable: true
+        address:
+            type: string
+            length: 255
+            nullable: true
+        postCode:
+            type: string
+            length: 255
+            nullable: true
+        town:
+            type: string
+            length: 255
+            nullable: true
+        clubs:
+            type: text
+            nullable: true
+        hotels:
+            type: text
+            nullable: true
+        declinaison:
+            type: integer
+            nullable: true
+        runwayInfo:
+            type: text
+            nullable: true
+        fuelPhone:
+            type: string
+            length: 255
+            nullable: true
+    lifecycleCallbacks:
+        prePersist: [ setCreatedAtValue ]
+        preUpdate: [ setUpdatedAtValue ]

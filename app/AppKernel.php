@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new Flyaround\CoreBundle\FlyaroundCoreBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
-            new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
@@ -29,6 +28,10 @@ class AppKernel extends Kernel
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Flyaround\MapBundle\FlyaroundMapBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -36,6 +39,8 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+            $bundles[] = new Bazinga\Bundle\FakerBundle\BazingaFakerBundle();
+            $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
         }
 
         return $bundles;

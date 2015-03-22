@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Fly</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fly.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ fly.name }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ fly.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ fly.longitude }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ fly.description }}</td>
+            </tr>
+        <tr>
+            <th>Image</th>
+            <td><img src="{{ asset('uploads/flies/' ~ fly.image) }}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('get_flies') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

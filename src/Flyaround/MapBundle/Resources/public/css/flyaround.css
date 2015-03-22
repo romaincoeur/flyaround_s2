@@ -1,0 +1,191 @@
+.header-terrain{
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background: #ffffff;
+}
+.care{
+  width: 150px;
+  height: 110px;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+#care1{
+  padding-top: 10px;
+}
+.icone{
+  width: 200px;
+  height: 35px;
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  text-align: center;
+}
+.ico{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 15px;
+}
+#ico1{
+  top: -3px;
+}
+#ico2{
+  top: 35px;
+}
+#ico3{
+  top: 73px;
+}
+.geo{
+  text-align: left;
+  margin: 0 0 0 40px;
+  font-size: 11px;
+}
+#line{
+  width: 40px;
+  height: 1px;
+  background-color: #000000;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+#croix{
+  width: 25px;
+  height: 25px;
+  margin-left: 130px;
+  cursor: pointer;
+}
+#bouton{
+  width: 150px;
+  height: 25px;
+  color: blue;
+  border-radius: 7px;
+  box-shadow: 0 4px 0 #B2B2B2;
+  text-align: left;
+  font-size: 10px;
+}
+#flag{
+  height: 20px;
+  width: 20px;
+}
+
+#logo{
+  height: 60px;
+  width: 60px;
+  margin: 0 auto;
+}
+#line2{
+  width: 40px;
+  height: 2px;
+  background-color: #C0C0C0;
+  margin: 0 auto;
+  margin-bottom: 35px;
+}
+#box{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: #F2F2F2;
+}
+.slider{
+  width: 20px;
+  height: 20px;
+  border: 4px solid #633950;
+  margin: 20px -8px 10px 0;
+  border-radius: 100%;
+  display: inline-block;
+}
+.line{
+  height: 4px;
+  width: 35px;
+  margin: 0 -8px 17px 0;
+  background-color: #633950;
+  display: inline-block;
+}
+.vue{
+  width: 200px;
+  height: 190px;
+  display: inline-block;
+  margin: 0 10px 20px 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.vue:hover{
+  box-shadow: 3px 3px 3px #A2A2A2;
+}
+.profil{
+  width: auto;
+  height: 50px;
+  background-color: #ffffff;
+  text-align: center;
+}
+.avatar{
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  float: left;
+  margin: 8px 0 0 8px;
+}
+.embleme{
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+  float: right;
+}
+#desc{
+  font-size: 16px;
+}
+
+.build{
+  width: 200px;
+  height: 200px;
+}
+.decor{
+  width: 100%;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#decor1{
+  background-image: url('http://localhost/flyaround_s2/src/Flyaround/MapBundle/Resources/public/img/chateau.jpg');
+}
+#decor2{
+  background-image: url('http://localhost/flyaround_s2/src/Flyaround/MapBundle/Resources/public/img/fribourg.jpg');
+}
+#decor3{
+  background-image: url('http://localhost/flyaround_s2/src/Flyaround/MapBundle/Resources/public/img/corse4.jpg');
+}
+#decor4{
+  background-image: url('http://localhost/flyaround_s2/src/Flyaround/MapBundle/Resources/public/img/chateau.jpg');
+}
+#line3{
+  width: 45px;
+  height: 1px;
+  background-color: #C0C0C0;
+  margin: 0 auto;
+}
+.name{
+  margin: 0;
+}
+.dynamicText{
+  padding-top: 5px;
+  width: 90px;
+  display: inline-block;
+  text-align: center;
+}
+.icone2{
+  width: 40px;
+  height: 40px;
+  margin: 100px 10px 0 10px;
+}
+.effet{
+  box-shadow: 3px 3px 3px #888888;
+}
+.perimetre{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}

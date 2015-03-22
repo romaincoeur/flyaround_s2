@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+
+
+{% block body %}
+    <h1 class="title">Edit note {{ id }}</h1>
+
+    <form action="{{ url('put_flies', {'id': id}) }}" method="POST" {{ form_enctype(form) }}>
+        <input type="hidden" name="_method" value="put" />
+
+        {{ form_widget(form) }}
+
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
