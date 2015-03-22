@@ -87,7 +87,7 @@ header {
 
     margin: 0;
     color: #000000;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     width: 100%;
     height: 40px;
@@ -245,43 +245,12 @@ header h2 {
     margin: 20px auto 30px auto;
 }
 
-#secret_sauce {
-    padding-top: 30px;
-}
-
-#secret_sauce .icon {
-    margin-left: 60px;
-}
-
-#secret_sauce .big-icon {
-    max-height: 100px;
-    max-width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#secret_sauce .chapter {
-    text-align: center;
-    margin: 50px;
-    display: inline-block;
-    width: 250px;
-}
-
-#secret_sauce h2 {
-    display: inline;
-    font-size: 18px;
-}
-
-#secret_sauce h3 {
-    font-size: 19px;
-}
-
 /*************************************************/
-/*               Page d'accueil                  */
+/*               Left Panel                      */
 /*************************************************/
 
 .leftPanel {
-    background-color: #AAAAAA;
+    background-color: #323A45;
     float: left;
     top: 0;
     position: absolute;
@@ -295,7 +264,6 @@ header h2 {
     text-align: center;
     padding: 30px;
 }
-
 .leftPanel .menu button {
     width: 100%;
     height: 50px;
@@ -321,6 +289,7 @@ header h2 {
     height: 100%;
     z-index: 1;
     margin-left: -45%;
+    /*overflow: scroll;*/
 }
 
 /*************************************************/
@@ -401,4 +370,7 @@ footer .big-icon:hover {
 .bg-grey {
     background-color: #E8E8E9;
 }
-
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}

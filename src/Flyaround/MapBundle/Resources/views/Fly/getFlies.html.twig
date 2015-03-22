@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1 class="title">Fly list</h1>
+
+    <ul id="fly-list">
+        {% for id, entity in data %}
+            <li>
+                <a href="{{ path('get_fly', {'id': entity.id}) }}">{{ entity.name }}</a>
+                [<a href="{{ path('edit_flies', {'id': entity.id}) }}">Edit</a>]
+                [<a href="{{ path('remove_flies', {'id': entity.id}) }}">Remove</a>]
+            </li>
+        {% else %}
+            <li>No fly</li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{{ path('new_fly') }}">Create a new entry</a>
+    </p>
+{% endblock %}

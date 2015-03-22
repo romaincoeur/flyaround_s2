@@ -4,7 +4,7 @@ imports:
 framework:
     test: ~
     session:
-        storage_id: session.storage.mock_file
+        storage_id: session.storage.filesystem
     profiler:
         collect: false
 
@@ -14,3 +14,19 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+liip_functional_test:
+    cache_sqlite_db: true
+
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                driver:   pdo_sqlite
+                path:     %kernel.cache_dir%/test.db
+
+lexik_jwt_authentication:
+    private_key_path:   %kernel.root_dir%/../src/Application/Sonata/UserBundle/Tests/Fixtures/JWT/private.pem
+    public_key_path:    %kernel.root_dir%/../src/Application/Sonata/UserBundle/Tests/Fixtures/JWT/public.pem
+    pass_phrase:        testing

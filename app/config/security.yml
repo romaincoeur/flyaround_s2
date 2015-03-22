@@ -11,6 +11,10 @@ security:
     providers:
         fos_userbundle:
             id: fos_user.user_manager
+        in_memory:
+            memory:
+                users:
+                    restapi:  { password: %restapiPassword%, roles: [ 'ROLE_API' ] }
 
     firewalls:
 
@@ -28,6 +32,29 @@ security:
             anonymous:    true
         # -> end custom configuration
 
+        login:
+            pattern:  ^/api/login
+            stateless: true
+            anonymous: true
+            form_login:
+                check_path:               /api/login_check
+                require_previous_session: false
+                username_parameter: username
+                password_parameter: password
+                success_handler:          lexik_jwt_authentication.handler.authentication_success
+                failure_handler:          lexik_jwt_authentication.handler.authentication_failure
+
+        api:
+            pattern: /api(.*)
+            stateless:  true
+            lexik_jwt:
+                authorization_header:
+                    enabled: true
+                    prefix:  Bearer
+                query_parameter:
+                    enabled: true
+                    name:    bearer
+
         # defaut login area for standard users
         main:
             pattern:      .*
@@ -36,7 +63,7 @@ security:
                 login_path:     /login
                 use_forward:    false
                 check_path:     /login_check
-                failure_path:   null
+                failure_path:   /app
             logout:       true
             anonymous:    true
 
@@ -60,3 +87,6 @@ security:
         # Change these rules to adapt them to your needs
         - { path: ^/admin, role: [ROLE_ADMIN, ROLE_SONATA_ADMIN] }
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }

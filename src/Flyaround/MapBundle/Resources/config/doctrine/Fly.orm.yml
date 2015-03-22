@@ -1,0 +1,33 @@
+Flyaround\MapBundle\Entity\Fly:
+    type: entity
+    table: null
+    repositoryClass: Flyaround\MapBundle\Entity\FlyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        latitude:
+            type: float
+        longitude:
+            type: float
+        description:
+            type: text
+        category:
+            type: string
+            length: 255
+        image:
+            type: string
+            length: 255
+            nullable: true
+    lifecycleCallbacks:
+        prePersist: [ preUpload ]
+        preUpdate: [ preUpload ]
+        postPersist: [ upload ]
+        postUpdate: [ upload ]
+        postRemove: [ removeUpload ]

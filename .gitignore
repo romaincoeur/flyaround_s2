@@ -9,5 +9,6 @@
 /vendor/
 /bin/
 /composer.phar
-.idea/*
-/composer.lock
+/web/uploads
+/app/var/jwt/*
+/app/var/sessions/*
