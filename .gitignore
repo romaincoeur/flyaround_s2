@@ -10,3 +10,5 @@
 /bin/
 /composer.phar
 /web/uploads
+/app/var/jwt/*
+/app/var/sessions/*
