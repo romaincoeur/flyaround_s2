@@ -18,6 +18,12 @@ Basculer sur la branche 'full-stack'
 
     git checkout full-stack
     
+Générer les clés SSH pour JWT Bundle (le mot de passe par défaut est azerty1234, il est peut-etre changé dans parameters.yml)
+
+    mkdir -p app/var/jwt
+    openssl genrsa -out app/var/jwt/private.pem -aes256 4096
+    openssl rsa -pubout -in app/var/jwt/private.pem -out app/var/jwt/public.pem
+    
 Mettre à jour les vendors
 
     composer install
@@ -34,12 +40,6 @@ Création de la base de données
 
 2) Configuration
 ----------------
-
-Générer les clés SSH pour JWT Bundle (le mot de passe par défaut est azerty1234, il est peut-etre changé dans parameters.yml)
-
-    mkdir -p app/var/jwt
-    openssl genrsa -out app/var/jwt/private.pem -aes256 4096
-    openssl rsa -pubout -in app/var/jwt/private.pem -out app/var/jwt/public.pem
 
 Charger les données initiales
 
