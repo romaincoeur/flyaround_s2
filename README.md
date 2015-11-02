@@ -18,7 +18,7 @@ Basculer sur la branche 'full-stack'
 
     git checkout full-stack
     
-Générer les clés SSH pour JWT Bundle (le mot de passe par défaut est azerty1234, il est peut-etre changé dans parameters.yml)
+Générer les clés SSH pour JWT Bundle (le mot de passe par défaut est azerty1234, il peut etre changé dans parameters.yml)
 
     mkdir -p app/var/jwt
     openssl genrsa -out app/var/jwt/private.pem -aes256 4096
@@ -34,8 +34,12 @@ Donner les droits en écriture au serveur
     
 Création de la base de données
 
-    php app/console doctrine:generate:database
+    php app/console doctrine:database:create
     php app/console doctrine:schema:update --force
+    
+Donner les droits au serveur pour la gestion des session avec le filesystem
+
+    sudo chmod 777 app/var/ -R
 
 
 2) Configuration
