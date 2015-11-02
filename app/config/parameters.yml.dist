@@ -16,4 +16,4 @@ parameters:
 
     restapipassword:   secretpw
 
-    jwt_passphrase:    ~
+    jwt_passphrase:    azerty1234

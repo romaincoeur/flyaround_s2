@@ -15,7 +15,7 @@ class Terrain
     {
         if(!$this->getCreatedAt())
         {
-            $this->created_at = new \DateTime();
+            $this->createdAt = new \DateTime();
         }
     }
 

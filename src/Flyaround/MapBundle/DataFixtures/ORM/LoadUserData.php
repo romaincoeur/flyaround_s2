@@ -33,14 +33,14 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $user1->setLastname('Coeur');
         $user1->setFirstname('Romain');
         $user1->setLastname('Coeur');
-        $user1->setEmail('coeurro@gmail.com');
+        $user1->setEmail('romain@innoveduc.fr');
         $user1->setUsername('romain');
         $user1->setEnabled(true);
         $user1->setSuperAdmin(true);
         $user1->setLocked(false);
         $this->addReference('user-romain', $user1);
         $encoder = $factory->getEncoder($user1);
-        $encodedPassword = $encoder->encodePassword('Rogvog4', $user1->getSalt());
+        $encodedPassword = $encoder->encodePassword('azerty1234', $user1->getSalt());
         $user1->setPassword($encodedPassword);
         $em->persist($user1);
 
